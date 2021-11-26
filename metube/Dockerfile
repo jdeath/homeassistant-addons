@@ -1,5 +1,5 @@
 ARG BUILD_VERSION
-FROM docker pull alexta69/metube
+FROM alexta69/metube:latest
 
 VOLUME [ "/share" ]
 
