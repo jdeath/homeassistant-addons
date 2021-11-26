@@ -1,5 +1,12 @@
 ARG BUILD_VERSION
-FROM docker pull e7db/speedtest:latest
+FROM docker pull alexta69/metube
+
+VOLUME [ "/share" ]
+
+USER root
+
+RUN mkidr /share/metube \
+    && ln -s /share/metube /downloads
 
 ### LABELS
 ARG BUILD_ARCH
