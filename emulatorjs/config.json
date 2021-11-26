@@ -1,0 +1,30 @@
+{
+  "arch": [
+    "amd64",
+	"armv7"
+  ],
+  "boot": "auto",
+  "description": "Retroarch Web",
+  "environment": { "TZ": "America/New_York"},
+  "map": [
+    "share:rw",
+    "ssl:ro"
+  ],
+  "name": "emulatorjs",
+  "options": {},
+  "ports": {
+    "80/tcp": "89",
+	"3000/tcp": "3000"
+  },
+  "ports_description": {
+    "80/tcp": "Web interface",
+	"3000/tcp": "Admin interface"
+  },
+  "schema": {},
+  "slug": "emulatorjs",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
+}
