@@ -5,7 +5,7 @@ VOLUME [ "/share" ]
 
 USER root
 
-RUN mkidr /share/metube \
+RUN mkdir /share/metube \
     && ln -s /downloads /share/metube
 
 ### LABELS
