@@ -1,0 +1,28 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Web GUI for youtube-dl",
+  "environment": { "DOWNLOAD_DIR": "/share/metube/"},
+  "map": [
+    "share:rw",
+    "ssl:ro"
+  ],
+  "name": "metube",
+  "options": {},
+  "ports": {
+    "8081/tcp": "8081"
+  },
+  "ports_description": {
+    "8081/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "metube",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/hassio-addons",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]"
+}

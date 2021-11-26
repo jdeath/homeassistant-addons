@@ -1,0 +1,27 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "auto",
+  "description": "Speedtest",
+  "environment": {},
+  "map": [
+    "share:rw",
+    "ssl:ro"
+  ],
+  "name": "speedtest",
+  "options": {},
+  "ports": {
+    "80/tcp": "8099"
+  },
+  "ports_description": {
+    "80/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "speedtest",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/hassio-addons",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8099]"
+}
