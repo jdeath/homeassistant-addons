@@ -6,7 +6,7 @@ VOLUME [ "/share" ]
 USER root
 
 RUN mkidr /share/metube \
-    && ln -s /share/metube /downloads
+    && ln -s /downloads /share/metube
 
 ### LABELS
 ARG BUILD_ARCH
