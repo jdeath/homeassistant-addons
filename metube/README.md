@@ -1,7 +1,6 @@
-# Home assistant add-on: Nextcloud
+# Home assistant add-on: MeTube
 
-![Supports 
- Architecture][aarch64-shield] 
+![Supports amd64 Architecture][amd64-shield]
  
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
