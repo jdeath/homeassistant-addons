@@ -1,4 +1,6 @@
 # Home assistant add-on: EmulatorJS
+ In browser web based emulation portable to nearly any device for many retro consoles. A mix of emulators is used between Libretro and EmulatorJS.
+ 
  
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
