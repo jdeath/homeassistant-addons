@@ -21,7 +21,7 @@
   "slug": "speedtest",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/hassio-addons",
+  "url": "https://github.com/jdeath/homeassistant-addons",
   "version": "1.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8099]"
 }
