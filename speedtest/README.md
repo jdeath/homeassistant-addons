@@ -1,4 +1,6 @@
 # Home assistant add-on: Speedtest
+
+A self-hosted, lightweight speed test implemented in JavaScript, and based on Web Workers and XMLHttpRequest.
  
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
