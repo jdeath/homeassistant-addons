@@ -7,3 +7,7 @@ Speedtest from https://hub.docker.com/r/e7db/speedtest
 
 Emulator JS from https://github.com/linuxserver/emulatorjs
 Make a directory /share/emulatorjs
+
+WireGuard Easy based on https://github.com/WeeJeWel/wg-easy/
+Make a directory /ssl/wgeasy
+
