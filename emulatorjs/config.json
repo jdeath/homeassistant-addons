@@ -14,11 +14,11 @@
   "options": {},
   "ports": {
     "80/tcp": "89",
-	"3000/tcp": "3000"
+    "3000/tcp": "3000"
   },
   "ports_description": {
     "80/tcp": "Web interface",
-	"3000/tcp": "Admin interface"
+    "3000/tcp": "Admin interface"
   },
   "schema": {},
   "slug": "emulatorjs",
@@ -26,5 +26,7 @@
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "version": "1.0",
+  "ingress": true,
+  "ingress_port": 80
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }
