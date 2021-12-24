@@ -22,7 +22,7 @@ comparison to installing any other Hass.io add-on.
 1. Make the directory /share/metube to store your downloaded files
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI will not work if reverse proxy, go to your local homeassistant IP:port.
+1. Open WebUI should work via ingress or <your-ip>:port.
 
 ## Configuration
 
