@@ -1,0 +1,24 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Earthwalker is a game of a similar concept to GeoGuessr. You get dropped somewhere in the world in Google StreetView, and the goal is to you find out where you are and guess your location more precisely than all of your friends. You can play against the clock, restrict the game to an area, and more.",
+  "name": "earthwalker",
+  "options": {},
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "earthwalker",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false
+}
