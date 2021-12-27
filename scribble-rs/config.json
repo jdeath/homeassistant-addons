@@ -1,0 +1,24 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Scribble.rs is an alternative to the web-based drawing game skribbl.io. My main problems with skribbl.io were the ads and the fact that a disconnect would cause you to lose your points. On top of that, the automatic word choice was quite annoying and caused some frustration.",
+  "name": "scribble-rs",
+  "options": {},
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "scribble-rs",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false
+}
