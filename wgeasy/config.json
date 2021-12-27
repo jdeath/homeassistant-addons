@@ -42,7 +42,7 @@
   "slug": "wgeasy",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons/wgeasy",
+  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/wgeasy",
   "version": "1.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:51821]",
   "ingress": true,
