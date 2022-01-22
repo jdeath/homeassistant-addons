@@ -21,7 +21,7 @@ comparison to installing any other Hass.io add-on.
 1. Make the directory /share/emulatorjs to store your games/art files
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI will not work if reverse proxy, go to your local homeassistant IP:port admin port.
+1. Open WebUI should ingress the PlayerUI, go to your local homeassistant IP:port or the admin port.
 1. Consult official docs for setup support: https://github.com/linuxserver/docker-emulatorjs
 
 ## Configuration
@@ -31,6 +31,6 @@ adminport : 3000 #port you want to run admin interface on.
 port: 89 # port you want to run frontend on
 ```
 
-Webui can be found at `<your-ip>:port`.
+Webui can be found at `<your-ip>:port`. Should be available via ingress. The adminport is not available via ingress
 
 [repository]: https://github.com/jdeath/homeassistant-addons
