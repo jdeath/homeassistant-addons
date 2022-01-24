@@ -1,0 +1,27 @@
+{
+  "arch": [
+    "amd64",
+	"aarch64",
+	"armv7"
+  ],
+  "boot": "auto",
+  "description": "A simple web GUI which allows you to compile fantastic Tasmota firmware with your own settings",
+  "environment": { "TZ": "America/New_York"},
+  "name": "tasmocompiler",
+  "options": {},
+  "ports": {
+    "3000/tcp": 3000
+  },
+  "ports_description": {
+    "3000/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "tasmocompiler",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "1.0",
+  "ingress": false,
+  "ingress_port": 3000,
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
+}
