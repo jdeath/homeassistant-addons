@@ -6,7 +6,8 @@ VOLUME [ "/share" ]
 USER root
 
 RUN mkdir /share/metube \
-    && ln -s /downloads /share/metube
+    && ln -s /downloads /share/metube \
+    && pip install --upgrade yt-dlp
 
 ### LABELS
 ARG BUILD_ARCH
