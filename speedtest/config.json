@@ -5,10 +5,6 @@
   "boot": "auto",
   "description": "Speedtest",
   "environment": {},
-  "map": [
-    "share:rw",
-    "ssl:ro"
-  ],
   "name": "speedtest",
   "options": {},
   "ports": {
@@ -22,6 +18,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/speedtest",
-  "version": "1.0",
+  "image": "e7db/speedtest",
+  "version": "latest",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8099]"
 }
