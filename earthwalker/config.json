@@ -18,7 +18,8 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "1.0",
+  "image": "registry.gitlab.com/glatteis/earthwalker",
+  "version": "latest",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
 }
