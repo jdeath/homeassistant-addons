@@ -1,0 +1,24 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64",
+	"armv7"
+  ],
+  "boot": "auto",
+  "description": "Type Draw Type is like the telephone game (Chinese whispers), only with pictures",
+  "environment": {},
+  "name": "typedrawtype",
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "WebUI"
+  },
+  "slug": "typedrawtype",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons/",
+  "image": "bronkoknorb/type-draw-type-game",
+  "version": "latest",
+  "ingress": false
+}
