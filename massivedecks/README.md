@@ -25,6 +25,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 ## About
 
 Based on https://github.com/Lattyware/massivedecks/
+
 The game is open source software available under [the AGPLv3 license](LICENSE).
 
 ## Installation
