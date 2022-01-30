@@ -1,0 +1,26 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64",
+	"armhf",
+	"armv7",
+	"i386"
+  ],
+  "boot": "auto",
+  "description": "Comedy party game based on Cards against Humanity",
+  "environment": {},
+  "name": "massivedecks",
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "WebUI"
+  },
+  "slug": "massivedecks",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons/",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false
+}
