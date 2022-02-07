@@ -35,6 +35,14 @@ WG_PATH=$(jq --raw-output '.WG_PATH // empty' $CONFIG_PATH)
 echo "WG_PATH: ${WG_PATH}"
 export WG_PATH="${WG_PATH}"
 
+WG_POST_UP=$(jq --raw-output '.WG_POST_UP // empty' $CONFIG_PATH)
+echo "WG_POST_UP: ${WG_POST_UP}"
+export WG_POST_UP="${WG_POST_UP}"
+
+WG_POST_DOWN=$(jq --raw-output '.WG_POST_DOWN // empty' $CONFIG_PATH)
+echo "WG_POST_DOWN: ${WG_POST_DOWN}"
+export WG_POST_DOWN="${WG_POST_DOWN}"
+
 mkdir -p WG_PATH
 
 /usr/bin/dumb-init node server.js

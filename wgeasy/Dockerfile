@@ -1,24 +1,15 @@
 ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM weejewel/wg-easy
 
 VOLUME [ "/ssl" ]
 
-RUN apk add -U --no-cache wireguard-tools dumb-init jq npm
-
-# Copy Web UI
-COPY src/ /app/
-WORKDIR /app
-RUN npm ci --production
-RUN npm i -g nodemon
-RUN mv /app/node_modules/ /node_modules/
-
-# Expose Ports
-EXPOSE 51820/udp
-EXPOSE 51821/tcp
-
-# Set Environment
-ENV DEBUG=Server,WireGuard
-
+RUN apk add -U --no-cache jq \
+	&& sed -i 's/'\''wg-quick down wg0'\''/`wg-quick down ${WG_PATH}wg0.conf`/' /app/lib/WireGuard.js \
+	&& sed -i 's/'\''wg-quick up wg0'\''/`wg-quick up ${WG_PATH}wg0.conf`/' /app/lib/WireGuard.js \
+	&& sed -i 's/'\''wg syncconf wg0 <(wg-quick strip wg0)'\''/`wg syncconf wg0 <(wg-quick strip ${WG_PATH}wg0.conf)`/' /app/lib/WireGuard.js \
+	&& sed -i 's/\/api${path}/.\/api${path}/' /app/www/js/api.js
+	
+	
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
