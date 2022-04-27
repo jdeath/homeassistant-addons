@@ -5,12 +5,14 @@
   ],
   "boot": "auto",
   "description": "Web GUI for youtube-dl",
-  "environment": { "DOWNLOAD_DIR": "/share/metube/"},
+  "environment": {
+    "DOWNLOAD_DIR": "/share/metube/"
+  },
   "map": [
     "share:rw"
   ],
   "image": "alexta69/metube",
-  "version": "2022-03-15",
+  "version": "2022-04-09",
   "name": "metube",
   "options": {},
   "ports": {
@@ -22,7 +24,7 @@
   "schema": {},
   "slug": "metube",
   "startup": "services",
-  "upstream": "2022-03-15",
+  "upstream": "2022-04-09",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
