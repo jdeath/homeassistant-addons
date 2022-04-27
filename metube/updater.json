@@ -4,7 +4,7 @@
   "beta": "true",
   "repository": "jdeath/homeassistant-addons",
   "slug": "metube",
-  "source": "duckerhub",
+  "source": "dockerhub",
   "upstream_repo": "alexta69/metube",
   "upstream_version": "2022-03-15"
 }
