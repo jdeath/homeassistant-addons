@@ -1,11 +1,13 @@
 {
   "arch": [
     "amd64",
-	"armv7"
+    "armv7"
   ],
   "boot": "auto",
   "description": "Retroarch Web",
-  "environment": { "TZ": "America/New_York"},
+  "environment": {
+    "TZ": "America/New_York"
+  },
   "map": [
     "share:rw",
     "ssl:ro"
@@ -25,8 +27,8 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "1.0",
+  "version": "1.7.0-ls27",
   "ingress": true,
-  "ingress_port": 80,	
+  "ingress_port": 80,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
 }
