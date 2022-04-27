@@ -3,7 +3,7 @@
   "last_update": "2022-03-15",
   "repository": "jdeath/homeassistant-addons",
   "slug": "speedtest",
-  "source": "github",
+  "source": "dockerhub",
   "upstream_repo": "e7db/speedtest",
   "upstream_version": "0.1"
 }
