@@ -2,7 +2,7 @@
   "github_fulltag": "true",
   "last_update": "2022-03-15",
   "repository": "jdeath/homeassistant-addons",
-  "slug": "speedtest",
+  "slug": "typedrawtype",
   "source": "dockerhub",
   "upstream_repo": "bronkoknorb/type-draw-type-game",
   "upstream_version": "0.1"
