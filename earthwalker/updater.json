@@ -5,7 +5,7 @@
   "slug": "earthwalker",
   "source": "gitlab",
   "upstream_repo": "glatteis/earthwalker",
-  "github_beta": false,
+  "github_beta": true,
   "github_havingasset" : false,
   "upstream_version": "1"
 }
