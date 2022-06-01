@@ -1,11 +1,12 @@
 {
   "name": "RTLAMR to MQTT Bridge",
-  "version": "0.5",
+  "version": "0.51",
   "slug": "rtlamr",
   "description": "RF to MQTT Bridge based on RTL_SDR/RTL_433 for RTL2832U based DVB-T USB tuners",
   "startup": "application",
   "boot": "auto",
   "map": ["config:rw", "ssl"],
+  "init": false,
   "url": "https://github.com/jdeath/RTLAMR2MQQT/tree/master/RTLAMR2MQQT",
   "usb": true,
   "host_network": "False",
