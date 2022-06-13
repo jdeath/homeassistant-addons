@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "27-05-2022",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "wgeasy",
+  "source": "dockerhub",
+  "upstream_repo": "weejewel/wg-easy",
+  "upstream_version": "5"
+}
