@@ -6,9 +6,7 @@ VOLUME [ "/ssl" ]
 RUN apk add -U --no-cache jq \
 	&& sed -i 's/'\''wg-quick down wg0'\''/`wg-quick down ${WG_PATH}wg0.conf`/' /app/lib/WireGuard.js \
 	&& sed -i 's/'\''wg-quick up wg0'\''/`wg-quick up ${WG_PATH}wg0.conf`/' /app/lib/WireGuard.js \
-	&& sed -i 's/'\''wg syncconf wg0 <(wg-quick strip wg0)'\''/`wg syncconf wg0 <(wg-quick strip ${WG_PATH}wg0.conf)`/' /app/lib/WireGuard.js \
-	&& sed -i 's/\/api${path}/.\/api${path}/' /app/www/js/api.js
-	
+	&& sed -i 's/'\''wg syncconf wg0 <(wg-quick strip wg0)'\''/`wg syncconf wg0 <(wg-quick strip ${WG_PATH}wg0.conf)`/' /app/lib/WireGuard.js
 	
 COPY run.sh /
 RUN chmod a+x /run.sh
