@@ -6,6 +6,6 @@
   "slug": "wgeasy",
   "source": "dockerhub",
   "upstream_repo": "weejewel/wg-easy",
-  "upstream_version": "7",
+  "upstream_version": "7-nightly",
   "fulltag": "false"
 }
