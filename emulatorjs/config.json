@@ -13,7 +13,8 @@
     "ssl:ro"
   ],
   "name": "emulatorjs",
-  "options": {},
+  "options": {},  
+  "init": false,
   "ports": {
     "80/tcp": "89",
     "3000/tcp": "3000"
