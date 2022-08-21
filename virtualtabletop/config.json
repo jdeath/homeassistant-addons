@@ -10,6 +10,7 @@
   "description": "Virtual Tabletop is a free to use platform for creating and playing games.",
   "environment": {},
   "name": "virtualtabletop",
+  "init": false,
   "ports": {
     "8272/tcp": "8272"
   },
