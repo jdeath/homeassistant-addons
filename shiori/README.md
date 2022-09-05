@@ -1,7 +1,7 @@
 # Home assistant add-on: Shiori
  Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application. 
  
- 
+Detailed information at: https://github.com/go-shiori/shiori/ 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
