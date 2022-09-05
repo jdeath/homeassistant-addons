@@ -4,6 +4,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "shiori",
   "source": "github",
-  "upstream_repo": "ghcr.io/go-shiori/shiori",
+  "upstream_repo": "go-shiori/shiori",
   "upstream_version": "1.0"
 }
