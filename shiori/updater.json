@@ -5,5 +5,5 @@
   "slug": "shiori",
   "source": "github",
   "upstream_repo": "go-shiori/shiori",
-  "upstream_version": "1.0"
+  "upstream_version": "1.5.3"
 }
