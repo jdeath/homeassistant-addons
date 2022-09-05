@@ -5,5 +5,5 @@
   "slug": "shiori",
   "source": "dockerhub",
   "upstream_repo": "archivebox/archivebox",
-  "upstream_version": "1.0"
+  "upstream_version": "sha-9899377"
 }

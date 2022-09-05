@@ -2,28 +2,28 @@
   "arch": [
     "amd64",
     "aarch64",
-	"armhf",
-	"armv7",
-	"i386"
+    "armhf",
+    "armv7",
+    "i386"
   ],
   "boot": "auto",
   "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline",
   "environment": {},
   "map": [
-	"share:rw"
+    "share:rw"
   ],
   "name": "archivebox",
   "ports": {
-	"8000/tcp": "8000"
+    "8000/tcp": "8000"
   },
   "ports_description": {
-	"8000/tcp": "WebUI"
+    "8000/tcp": "WebUI"
   },
   "slug": "archivebox",
   "startup": "services",
-  "upstream": "1.0",
+  "upstream": "sha-9899377",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
-  "version": "1.0",
+  "version": "sha-9899377",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
   "ingress": false,
   "ingress_port": 8000
