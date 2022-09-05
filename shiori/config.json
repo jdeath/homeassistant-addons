@@ -1,0 +1,30 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "auto",
+  "description": "A simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket.",
+  "environment": {},
+  "map": [
+    "share:rw",
+    "ssl:ro"
+  ],
+  "name": "shiori",
+  "options": {},
+  "ports": {
+    "8080/tcp": 8000
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "shiori",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "latest",
+  "ingress": true,
+  "ingress_port": 8080,
+  "image": "ghcr.io/go-shiori/shiori",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
+}
