@@ -1,0 +1,30 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64",
+	"armhf",
+	"armv7",
+	"i386"
+  ],
+  "boot": "auto",
+  "description": "Live your data-life pro-actively, track website content changes and receive notifications via Discord, Email, Slack, Telegram and 70+ more",
+  "environment": {},
+  "map": [
+	"share:rw"
+  ],
+  "name": "changedetection",
+  "ports": {
+	"5000/tcp": "5000"
+  },
+  "ports_description": {
+	"5000/tcp": "WebUI"
+  },
+  "slug": "changedetection",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
+  "ingress": true,
+  "ingress_port": 5000
+}
