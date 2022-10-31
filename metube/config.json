@@ -12,7 +12,7 @@
     "share:rw"
   ],
   "image": "alexta69/metube",
-  "version": "2022-10-05",
+  "version": "2022-10-30",
   "name": "metube",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "metube",
   "startup": "services",
-  "upstream": "2022-10-05",
+  "upstream": "2022-10-30",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
