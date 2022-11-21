@@ -21,9 +21,9 @@
   },
   "slug": "changedetection",
   "startup": "services",
-  "upstream": "0.39.21.1",
+  "upstream": "0.39.22",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
-  "version": "0.39.21.1",
+  "version": "0.39.22",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "ingress": true,
   "ingress_port": 5000
