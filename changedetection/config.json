@@ -22,7 +22,7 @@
   "slug": "changedetection",
   "startup": "services",
   "upstream": "0.40.0.2",
-  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
+  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/changedetection",
   "version": "0.40.0.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "ingress": true,
