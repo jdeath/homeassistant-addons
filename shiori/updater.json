@@ -1,9 +1,9 @@
 {
   "github_fulltag": "false",
-  "last_update": "05-09-2022",
+  "last_update": "23-01-2023",
   "repository": "jdeath/homeassistant-addons",
   "slug": "shiori",
   "source": "github",
   "upstream_repo": "go-shiori/shiori",
-  "upstream_version": "1.5.3"
+  "upstream_version": "1.5.4"
 }
