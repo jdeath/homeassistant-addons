@@ -1,7 +1,7 @@
 {
   "github_fulltag": "true",
   "last_update": "08-01-2021",
-  "beta": "true",
+  "github_beta": "true",
   "repository": "jdeath/homeassistant-addons",
   "slug": "tubesync",
   "source": "github",
