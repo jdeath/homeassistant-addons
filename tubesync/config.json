@@ -1,0 +1,34 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64",
+	"armhf",
+	"armv7",
+	"i386"
+  ],
+  "boot": "auto",
+  "description": "TubeSync is a PVR (personal video recorder) for YouTube",
+  "environment": {},
+  "map": [
+	"config:rw"
+  ],
+  "name": "tubesync",
+  "options": {
+  },
+  "ports": {
+	"4848/tcp": "4848"
+  },
+  "ports_description": {
+	"4848/tcp": "WebUI"
+  },
+  "schema": {
+  },
+  "slug": "tubesync",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons/tree/main/tubesync",
+  "version": "1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:4848]",
+  "init": false,
+  "ingress": false
+}
