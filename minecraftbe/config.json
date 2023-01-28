@@ -1,0 +1,26 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "auto",
+  "description": "Minecraft Dedicated Server",
+  "environment": { "EULA": "TRUE"},
+  "map": [
+    "share:rw"
+  ],
+  "name": "minecraftbe",
+  "options": {},
+  "ports": {
+    "19132/udp": 19132
+  },
+  "ports_description": {
+    "19132/udp": "Api Port"
+  },
+  "schema": {},
+  "slug": "minecraftbe",
+  "startup": "services",
+  "upstream": "1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "version": "latest",
+  "ingress": false
+}
