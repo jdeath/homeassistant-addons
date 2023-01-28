@@ -22,10 +22,13 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
-1. Click the `Save` button to store your configuration.
-1. Make /share/minecraftbe
-1. Start the add-on.
-1. Check the logs of the add-on to see if everything went well.
-1. Edit any server properties you want in /share/minecraftbe/server.properties and restart addon
-1. If you want external access, be sure to forward you port
+2. Change the API port if desired
+3. Click the `Save` button to store your configuration.
+4. Make /share/minecraftbe
+5. Start the add-on.
+6. Check the logs of the add-on to see if everything went well.
+7. Edit any server/permissions/whitelist properties you want in /share/minecraftbe/ and restart addon
+8. If you want external access, be sure to forward your external port to your homeassistant IP.
+
+
 [repository]: https://github.com/jdeath/homeassistant-addons
