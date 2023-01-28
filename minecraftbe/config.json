@@ -4,7 +4,9 @@
   ],
   "boot": "auto",
   "description": "Minecraft Dedicated Server",
-  "environment": { "EULA": "TRUE"},
+  "environment": {
+    "EULA": "TRUE"
+  },
   "map": [
     "share:rw"
   ],
@@ -19,8 +21,8 @@
   "schema": {},
   "slug": "minecraftbe",
   "startup": "services",
-  "upstream": "1.0",
+  "upstream": "2022.1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "latest",
+  "version": "2022.1.0",
   "ingress": false
 }
