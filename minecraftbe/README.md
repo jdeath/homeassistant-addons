@@ -15,6 +15,8 @@ Your world,,settings, and the server executable are stored in /share/minecraftbe
 
 You may want to create a service to restart the addon in the middle of the night so it updates the minecraft version (see below)
 
+If you want to monitor your bedrock server in homeassistant, install this integration as the built-in one only monitors java: https://github.com/jdeath/Bedrock-Homeassistant
+
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
