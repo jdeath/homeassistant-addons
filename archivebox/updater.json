@@ -2,8 +2,9 @@
   "github_fulltag": "false",
   "last_update": "05-09-2022",
   "repository": "jdeath/homeassistant-addons",
-  "slug": "shiori",
+  "slug": "archivebox",
   "source": "dockerhub",
+  "dockerhub_by_date":"true",
   "upstream_repo": "archivebox/archivebox",
   "upstream_version": "sha-9899377"
 }
