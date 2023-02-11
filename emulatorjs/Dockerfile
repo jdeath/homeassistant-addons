@@ -6,8 +6,12 @@ VOLUME [ "/share" ]
 USER root
 
 RUN mkdir /share/emulatorjs \
+	&& mkdir /share/emulatorjs/config \
+	&& mkdir /share/emulatorjs/data \
 	&& rmdir /data \
-    && ln -s /share/emulatorjs /data 
+    && ln -s /share/emulatorjs/data/ /data \
+	&& rmdir /config \
+    && ln -s /share/emulatorjs/config /config 
 
 ### LABELS
 ARG BUILD_ARCH

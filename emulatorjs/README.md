@@ -19,11 +19,15 @@ comparison to installing any other Hass.io add-on.
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Make the directory /share/emulatorjs to store your games/art files
+1. Make the /share/emulatorjs/config and /share/emulatorjs/data
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Place roms in the correct folders in /share/emulatorjs/
+1. Place roms in the correct folders in /share/emulatorjs/data/EMULATORNAME/roms
+1. Go to Admin port
+1. Click Scan for the Emulator you added games for
+1. Click Emulator box, Do Step 1 and Step 2
 1. Open WebUI should ingress the PlayerUI, go to your local homeassistant IP:port or the admin port.
-1. Go to the admin port manually to setup games
+1. Your games should be available
 1. Consult official docs for setup support: https://github.com/linuxserver/docker-emulatorjs
 1. If starting addon results in wiping your setup, stop addon, and restart. Sometimes the mapping to /share/emulatorjs does not work
 2. 
