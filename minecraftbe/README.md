@@ -29,7 +29,7 @@ comparison to installing any other Hass.io add-on.
 4. Make the directory /share/minecraftbe
 5. Start the add-on.
 6. Check the logs of the add-on to see if everything went well.
-7. Edit any server/permissions/whitelist properties you want in /share/minecraftbe/ and restart addon
+7. Edit any server/permissions/whitelist properties you want in /share/minecraftbe/ and restart addon . Note you cannot change the port in server.properties as it will get overridden for some reason. However, you can change the port in the addon configuration tab in homeassistant. I only expose the IP4 port. If need IP6, let me know.
 8. If you want external access, be sure to forward your external port to your homeassistant IP.
 
 ## Restart Automation
