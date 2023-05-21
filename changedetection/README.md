@@ -51,6 +51,23 @@ comparison to installing any other Hass.io add-on.
 1. Go to ip:port . Ingress sorta works, but page does not render correctly
 
 
+## How to use Playwright JS enabled fetcher instead of built in Plaintext/HTTP Client
+
+The Changedetection.io addon by itself can only fetch websites using a built in Plaintext/HTTP Client.
+
+Many modern web pages use JavaScript to fill-in the content, they are more dynamic and sometimes need a real chrome browser for fetching the content, although many may work with the built in 'fetcher'
+
+You can configure Changedetection.io to fetch pages using the Playwright fetcher, otherwise it will fetch using a plain non-JS built in browser. Using the Playwright fetcher offers the full Changedetection.io functionality, incl. JS Browser steps to fetch content and Visual Filter Selector.
+
+To use the Playwright fetcher, Changedetection.io addon needs to team up with the Browserless Chrome addon made by alexbelgium.
+
+To Install the Browserless Chrome addon, add the alexbelgium/hassio-addons repository (https://github.com/alexbelgium/hassio-addons/) in Homeassistant. Install and start the addon from the Homeassistant Interface. To use the Playwright fetcher simply check "Playwright Chromium/Javascript" it in the "Request" tab when adding a new site to be monitored or to set it as system standard for all monitored Sites, go to the Webinterface of your Changedetection.io addon > Settings > Fetching and select "Playwright Chromium/Javascript".
+
+More on Browserless Chrome addon: https://github.com/alexbelgium/hassio-addons/tree/master/browserless_chrome
+
+Both addons need to run on the same machine. Tested on Home Assistant 2023.5.3/Supervisor 2023.04.1/Operating System 10.1 on a Raspberry Pi 4B, but should work with any other Version and with amd64 devices as well.
+
+Note: Browserless Chrome addon is quite ressource hungry when fetching websites, bot in terms of RAM and CPU. Works fine on RPi 4B, may be slow on older devices. Maximum simultaneous fetches are limited to 1.
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons
