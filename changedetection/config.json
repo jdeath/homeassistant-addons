@@ -8,7 +8,10 @@
   ],
   "boot": "auto",
   "description": "Live your data-life pro-actively, track website content changes and receive notifications via Discord, Email, Slack, Telegram and 70+ more",
-  "environment": {},
+  "environment": {
+    "PLAYWRIGHT_DRIVER_URL": "ws://db21ed7f-browserless-chrome:3000/?stealth=1&--disable-web-security=true",
+    "FETCH_WORKERS": "1"
+  },
   "map": [
     "share:rw"
   ],
