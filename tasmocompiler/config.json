@@ -21,9 +21,9 @@
   "slug": "tasmocompiler",
   "startup": "services",
   "upstream": "1.0",
-  "url": "https://github.com/jdeath/homeassistant-addons",
+  "url": "https://github.com/dunkelschunkel/homeassistant-addons",
   "image": "benzino77/tasmocompiler",
-  "version": "x86-64",
+  "version": "latest",
   "ingress": false,
   "ingress_port": 3000,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
