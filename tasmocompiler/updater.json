@@ -5,5 +5,5 @@
   "slug": "metube",
   "source": "dockerhub",
   "upstream_repo": "benzino77/tasmocompiler",
-  "upstream_version": "x86-64"
+  "upstream_version": "latest"
 }
