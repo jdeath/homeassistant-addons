@@ -1,10 +1,10 @@
 {
   "github_fulltag": "false",
-  "last_update": "2023-03-27",
+  "last_update": "2023-07-02",
   "repository": "jdeath/homeassistant-addons",
   "slug": "archivebox",
   "source": "dockerhub",
   "dockerhub_by_date": "true",
   "upstream_repo": "archivebox/archivebox",
-  "upstream_version": "sha-f86891b-2023-03-27"
+  "upstream_version": "sourcery-pull-1168-2023-07-02"
 }
