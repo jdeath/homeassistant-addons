@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "30-06-2023",
+  "last_update": "03-07-2023",
   "repository": "jdeath/homeassistant-addons",
   "slug": "metube",
   "source": "dockerhub",
   "dockerhub_list_size": "10",
   "upstream_repo": "benzino77/tasmocompiler",
-  "upstream_version": "10.4.0",
+  "upstream_version": "11.0.0",
   "dockerhub_by_date": "false"
 }
