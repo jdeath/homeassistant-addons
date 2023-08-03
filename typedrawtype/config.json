@@ -19,7 +19,7 @@
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/",
   "image": "bronkoknorb/type-draw-type-game",
-  "version": "",
+  "version": "latest",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
 }
