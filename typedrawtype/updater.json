@@ -5,5 +5,6 @@
   "slug": "typedrawtype",
   "source": "dockerhub",
   "upstream_repo": "bronkoknorb/type-draw-type-game",
-  "upstream_version": "1.0"
+  "dockerhub_by_date": "true",
+  "upstream_version": "latest"
 }
