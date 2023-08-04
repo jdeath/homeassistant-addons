@@ -16,10 +16,10 @@
   },
   "slug": "typedrawtype",
   "startup": "services",
-  "upstream": "-",
+  "upstream": "latest",
   "url": "https://github.com/jdeath/homeassistant-addons/",
   "image": "bronkoknorb/type-draw-type-game",
-  "version": "-",
+  "version": "1.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
 }
