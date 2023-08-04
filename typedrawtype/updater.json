@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "04-08-2023",
+  "last_update": "",
   "repository": "jdeath/homeassistant-addons",
   "slug": "typedrawtype",
   "source": "dockerhub",
   "upstream_repo": "bronkoknorb/type-draw-type-game",
   "dockerhub_by_date": "true",
-  "upstream_version": "latest"
+  "upstream_version": "-"
 }
