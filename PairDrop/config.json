@@ -1,0 +1,37 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Local file sharing in your browser. Inspired by Apple's AirDrop",
+  "environment": {
+    "PUID": "1000",
+	"PGID": "1000",
+	"RATE_LIMIT": "false",
+	"WS_FALLBACK": "true",
+	"TZ": "Etc/UTC"
+  },
+  "map": [
+    "share:rw"
+  ],
+  "init": "false",
+  "image": "lscr.io/linuxserver/pairdrop",
+  "version": "latest",
+  "name": "pairdrop",
+  "options": {},
+  "ports": {
+    "3000/tcp": "3000"
+  },
+  "ports_description": {
+    "3000/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "pairdrop",
+  "startup": "services",
+  "upstream": "latest",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
+  "ingress": true,
+  "ingress_port": 3000
+}

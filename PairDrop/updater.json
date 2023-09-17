@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "21-08-2023",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "pairdrop",
+  "source": "dockerhub",
+  "upstream_repo": "linuxserver/pairdrop",
+  "upstream_version": "v1.7.6-ls40"
+}
