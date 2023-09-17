@@ -7,17 +7,17 @@
   "description": "Local file sharing in your browser. Inspired by Apple's AirDrop",
   "environment": {
     "PUID": "1000",
-	"PGID": "1000",
-	"RATE_LIMIT": "false",
-	"WS_FALLBACK": "true",
-	"TZ": "Etc/UTC"
+    "PGID": "1000",
+    "RATE_LIMIT": "false",
+    "WS_FALLBACK": "true",
+    "TZ": "Etc/UTC"
   },
   "map": [
     "share:rw"
   ],
   "init": "false",
   "image": "lscr.io/linuxserver/pairdrop",
-  "version": "latest",
+  "version": "version-v1.7.7",
   "name": "pairdrop",
   "options": {},
   "ports": {
