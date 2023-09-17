@@ -1,9 +1,9 @@
 {
   "github_fulltag": "true",
-  "last_update": "07-04-2023",
+  "last_update": "17-09-2023",
   "repository": "jdeath/homeassistant-addons",
   "slug": "emulatorjs",
   "source": "github",
   "upstream_repo": "linuxserver/docker-emulatorjs",
-  "upstream_version": "1.7.2-ls59"
+  "upstream_version": "1.7.2-ls60"
 }
