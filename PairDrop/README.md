@@ -1,6 +1,6 @@
-# Home assistant add-on: MeTube
+# Home assistant add-on: Pairdrop
 
-Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites (https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md).
+PairDrop is a sublime alternative to AirDrop that works on all platforms. 
 
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
