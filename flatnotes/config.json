@@ -33,5 +33,5 @@
   "version": "v3.4.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,
-  "ingress": true
+  "ingress": false
 }
