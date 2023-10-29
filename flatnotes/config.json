@@ -9,9 +9,9 @@
   "boot": "auto",
   "description": "A self-hosted, database-less note-taking web app that utilises a flat folder of markdown files for storage.",
   "environment": {
-	"FLATNOTES_PATH": "/config/addons_config/flatnotes",
-	"FLATNOTES_USERNAME": "user",
-	"FLATNOTES_AUTH_TYPE": "none"
+    "FLATNOTES_PATH": "/config/addons_config/flatnotes",
+    "FLATNOTES_USERNAME": "user",
+    "FLATNOTES_AUTH_TYPE": "none"
   },
   "map": [
     "config:rw"
@@ -30,7 +30,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/flatnotes",
-  "version": "latest",
+  "version": "v3.4.0",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,
   "ingress": true
