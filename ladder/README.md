@@ -27,7 +27,7 @@ comparison to installing any other Hass.io add-on.
 ## Configuration
 
 ```
-port : 8081 #port you want to run on.
+port : 8080 #port you want to run on.
 ```
 
 Webui can be found at `<your-ip>:port`.
