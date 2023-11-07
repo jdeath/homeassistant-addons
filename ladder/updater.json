@@ -4,7 +4,7 @@
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "ladder",
-  "source": "dockerhub",
-  "upstream_repo": "ghcr.io/kubero-dev/ladder",
+  "source": "github",
+  "upstream_repo": "kubero-dev/ladder",
   "upstream_version": ""
 }
