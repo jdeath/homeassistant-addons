@@ -1,0 +1,30 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Ladder is a web proxy to help bypass paywalls. This is a selfhosted version of 1ft.io and 12ft.io. It is inspired by 13ft.",
+  "environment": {
+  },
+  "map": [
+    "share:rw"
+  ],
+  "image": "ghcr.io/kubero-dev/ladder",
+  "version": "v0.0.11",
+  "name": "ladder",
+  "options": {},
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "ladder",
+  "startup": "services",
+  "upstream": "2023-10-20",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false
+}
