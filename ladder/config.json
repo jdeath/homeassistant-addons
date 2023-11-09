@@ -10,7 +10,7 @@
     "share:rw"
   ],
   "image": "ghcr.io/kubero-dev/ladder",
-  "version": "v0.0.11",
+  "version": "v0.0.12",
   "name": "ladder",
   "options": {},
   "ports": {
@@ -22,7 +22,7 @@
   "schema": {},
   "slug": "ladder",
   "startup": "services",
-  "upstream": "v0.0.11",
+  "upstream": "v0.0.12",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false

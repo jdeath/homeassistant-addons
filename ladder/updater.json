@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "06-11-2023",
+  "last_update": "08-11-2023",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "ladder",
   "source": "github",
   "upstream_repo": "kubero-dev/ladder",
-  "upstream_version": "v0.0.11"
+  "upstream_version": "v0.0.12"
 }
