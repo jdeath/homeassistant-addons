@@ -7,10 +7,10 @@
   "description": "Ladder is a web proxy to help bypass paywalls. This is a selfhosted version of 1ft.io and 12ft.io. It is inspired by 13ft.",
   "environment": {},
   "map": [
-    "share:rw"
+    "share:ro"
   ],
-  "image": "ghcr.io/kubero-dev/ladder",
-  "version": "v0.0.18",
+  "image": "ghcr.io/everywall/ladder",
+  "version": "v0.0.18.1",
   "name": "ladder",
   "options": {},
   "ports": {
