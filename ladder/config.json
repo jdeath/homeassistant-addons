@@ -10,7 +10,7 @@
     "share:ro"
   ],
   "image": "ghcr.io/everywall/ladder",
-  "version": "v0.0.18.1",
+  "version": "v0.0.18",
   "name": "ladder",
   "options": {},
   "ports": {
