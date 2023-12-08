@@ -10,7 +10,7 @@
     "share:ro"
   ],
   "image": "ghcr.io/everywall/ladder",
-  "version": "v0.0.20",
+  "version": "v0.0.21",
   "name": "ladder",
   "options": {},
   "ports": {
@@ -22,7 +22,7 @@
   "schema": {},
   "slug": "ladder",
   "startup": "services",
-  "upstream": "v0.0.20",
+  "upstream": "v0.0.21",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
