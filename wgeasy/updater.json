@@ -6,6 +6,7 @@
   "slug": "wgeasy",
   "source": "github",
   "upstream_repo": "wg-easy/wg-easy",
-  "upstream_version": "",
-  "fulltag": "false"
+  "upstream_version": "8",
+  "fulltag": "false",
+  "paused": "true"
 }
