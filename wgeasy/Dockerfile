@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM weejewel/wg-easy
+FROM ghcr.io/wg-easy/wg-easy
 
 VOLUME [ "/ssl" ]
 
