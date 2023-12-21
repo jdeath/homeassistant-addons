@@ -5,7 +5,7 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "wgeasy",
   "source": "github",
-  "upstream_repo": "ghcr.io/wg-easy/wg-easy",
+  "upstream_repo": "wg-easy/wg-easy",
   "upstream_version": "",
   "fulltag": "false"
 }
