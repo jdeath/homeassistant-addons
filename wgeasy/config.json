@@ -51,7 +51,7 @@
   "startup": "services",
   "upstream": "8",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/wgeasy",
-  "version": "",
+  "version": "8",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:51821]",
   "ingress": true,
   "ingress_port": 51821,
