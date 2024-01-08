@@ -21,8 +21,8 @@
   "schema": {},
   "slug": "minecraftbe",
   "startup": "services",
-  "upstream": "2023.8.1",
+  "upstream": "2024.1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "2023.8.1",
+  "version": "2024.1.0",
   "ingress": false
 }
