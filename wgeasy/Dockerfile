@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM ghcr.io/wg-easy/wg-easy:latest
+FROM ghcr.io/wg-easy/wg-easy:10
 
 VOLUME [ "/ssl" ]
 
