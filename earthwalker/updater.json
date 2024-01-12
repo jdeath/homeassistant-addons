@@ -7,5 +7,6 @@
   "upstream_repo": "https://gitlab.com/glatteis/earthwalker",
   "github_beta": true,
   "github_havingasset": false,
-  "upstream_version": ""
+  "upstream_version": "1",
+  "paused": "true"
 }
