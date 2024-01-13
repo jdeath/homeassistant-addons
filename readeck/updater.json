@@ -7,5 +7,6 @@
   "slug": "readeck",
   "source": "website-feed",
   "url": "https://codeberg.org/readeck/readeck",
-  "upstream_version": ""
+  "upstream_version": "",
+  "paused": true
 }
