@@ -5,13 +5,12 @@
   ],
   "boot": "auto",
   "description": "A simple web application that lets you save the precious readable content of web pages you like and want to keep forever.",
-  "environment": {
-  },
+  "environment": {},
   "map": [
-	  "addon_config:rw"
+    "addon_config:rw"
   ],
   "init": "false",
-  "version": "0.11.2",
+  "version": "0.3.1",
   "name": "readeck",
   "options": {},
   "ports": {
@@ -23,7 +22,7 @@
   "schema": {},
   "slug": "readeck",
   "startup": "services",
-  "upstream": "0.11.2",
+  "upstream": "0.3.1",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
   "ingress": false,
