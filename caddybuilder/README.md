@@ -14,7 +14,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-This addon is based on the caddy-builder[docker image](https://hub.docker.com/_/caddy).
+This addon is based on the caddy-builder [docker image](https://hub.docker.com/_/caddy).
 
 ## Installation
 
