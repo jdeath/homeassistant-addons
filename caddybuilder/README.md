@@ -20,13 +20,14 @@ This addon is based on the caddy-builder [docker image](https://hub.docker.com/_
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
-1. Turn of "Start on Boot" switch
+1. Turn off "Start on Boot" switch
 1. Click the `Save` button to store your configuration.
-1. Copy the xcaddyCommand.sh from this repo to /addon_configs/XXXXXX_caddybuilder
-1. edit the xcaddyCommand.sh to have the xcaddy command you want to run. Make sure all on one line
-1. Run the addon. A custom caddy binary should be build in /addon_configs/XXXXXX_caddybuilder
+1. Run the addon once. It should fail, that is ok.
+1. Copy the [xcaddyCommand.sh](https://raw.githubusercontent.com/jdeath/homeassistant-addons/main/caddybuilder/xcaddyCommand.sh) from this repo to /addon_configs/XXXXXX_caddybuilder (XXXXX is some string like 2effc9b9 and will be created by the previous step)
+1. Edit the xcaddyCommand.sh to have the xcaddy command you want to run. Make sure all on one line. Review xcaddy documentation to add plugins.
+1. Run the addon. A custom caddy binary should be built in /addon_configs/XXXXXX_caddybuilder/
 1. May take a while, so refresh the logs to see if built correctly
-1. copy caddy binary to /share/caddy/
-1. restart caddy2 addon (not this addon) and it should use your new custom caddy
+1. Copy caddy binary to /share/caddy/
+1. Restart [caddy2](https://github.com/einschmidt/hassio-addons) addon (not this addon) and it should use your new custom caddy binary
 
 [repository]: https://github.com/jdeath/homeassistant-addons
