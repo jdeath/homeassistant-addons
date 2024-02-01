@@ -1,0 +1,28 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Caddy Builder",
+  "environment": {
+  },
+  "map": [
+	  "addon_config:rw"
+  ],
+  "init": "false",
+  "version": "v0.3.5",
+  "name": "caddybuilder",
+  "options": {},
+  "ports": {
+  },
+  "ports_description": {
+  },
+  "schema": {},
+  "slug": "caddybuilder",
+  "startup": "services",
+  "upstream": "v0.3.5",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
+  "ingress": false
+}
