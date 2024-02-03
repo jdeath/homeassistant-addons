@@ -1,25 +1,22 @@
 {
   "arch": [
     "armhf",
-	"armv7",
-	"amd64",
+    "armv7",
+    "amd64",
     "aarch64"
   ],
   "boot": "auto",
   "description": "Caddy Builder",
-  "environment": {
-  },
+  "environment": {},
   "map": [
-	  "addon_config:rw"
+    "addon_config:rw"
   ],
   "init": "false",
   "version": "v0.3.5",
   "name": "caddybuilder",
   "options": {},
-  "ports": {
-  },
-  "ports_description": {
-  },
+  "ports": {},
+  "ports_description": {},
   "schema": {},
   "slug": "caddybuilder",
   "startup": "services",
