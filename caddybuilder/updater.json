@@ -8,5 +8,5 @@
   "source": "github",
   "upstream_repo": "caddyserver/xcaddy",
   "upstream_version": "0.3.5",
-  "paused": "true"
+  "paused": "false"
 }
