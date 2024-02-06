@@ -1,4 +1,4 @@
-FROM codeberg.org/readeck/readeck:latest AS build
+FROM codeberg.org/readeck/readeck:0.12.0 AS build
 
 FROM ghcr.io/hassio-addons/base:stable
 COPY --from=build /bin/ /bin/
