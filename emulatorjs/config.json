@@ -28,7 +28,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "1.8.7-ls98",
+  "version": "1.8.8-ls99",
   "ingress": true,
   "ingress_port": 80,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]"
