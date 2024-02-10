@@ -11,17 +11,20 @@
   "map": [
     "share:rw"
   ],
-  "image": "alexta69/metube",
   "version": "2024-01-26",
   "name": "metube",
-  "options": {},
+  "options": {
+    "DELETE_FILE_ON_TRASHCAN": false
+  },
   "ports": {
     "8081/tcp": "8081"
   },
   "ports_description": {
     "8081/tcp": "Web interface"
   },
-  "schema": {},
+  "schema": {
+	  "DELETE_FILE_ON_TRASHCAN":"bool"
+	},
   "slug": "metube",
   "startup": "services",
   "upstream": "2024-01-26",
