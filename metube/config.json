@@ -23,8 +23,8 @@
     "8081/tcp": "Web interface"
   },
   "schema": {
-	  "DELETE_FILE_ON_TRASHCAN":"bool"
-	},
+    "DELETE_FILE_ON_TRASHCAN": "bool"
+  },
   "slug": "metube",
   "startup": "services",
   "upstream": "2024-01-26",
