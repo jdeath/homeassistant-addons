@@ -21,9 +21,9 @@
   },
   "slug": "archivebox",
   "startup": "services",
-  "upstream": "sha-fffc872-2024-01-28",
+  "upstream": "sha-fbb3c84-2024-02-13",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
-  "version": "sha-fffc872-2024-01-28",
+  "version": "sha-fbb3c84-2024-02-13",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
   "ingress": false,
   "ingress_port": 8000
