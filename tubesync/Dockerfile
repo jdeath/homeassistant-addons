@@ -11,10 +11,10 @@ RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \x27\/config\/a
 RUN sed -i 's/MEDIA_ROOT = CONFIG_BASE_DIR \/ \x27media\x27/MEDIA_ROOT = \x27\/config\/addons_config\/tubesync\/media\x27/g' /app/tubesync/settings.py
 RUN sed -i 's/DOWNLOAD_ROOT = DOWNLOADS_BASE_DIR \/ \x27downloads\x27/DOWNLOAD_ROOT = \x27\/config\/addons_config\/tubesync\/downloads\x27/g' /app/tubesync/settings.py
 
-RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \x27\/config\/addons_config\/tubesync\x27/g' /app/tubesync/local_settings.py 
-#RUN sed -i 's/CONFIG_BASE_DIR = BASE_DIR/CONFIG_BASE_DIR = \x27\/config\/addons_config\/tubesync\x27/g' /app/tubesync/local_settings.py
-RUN sed -i 's/MEDIA_ROOT = CONFIG_BASE_DIR \/ \x27media\x27/MEDIA_ROOT = \x27\/config\/addons_config\/tubesync\/media\x27/g' /app/tubesync/local_settings.py
-RUN sed -i 's/DOWNLOAD_ROOT = DOWNLOADS_BASE_DIR \/ \x27downloads\x27/DOWNLOAD_ROOT = \x27\/config\/addons_config\/tubesync\/downloads\x27/g' /app/tubesync/local_settings.py
+RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \x27\/config\/addons_config\/tubesync\x27/g' /app/tubesync/local_settings.py.container
+#RUN sed -i 's/CONFIG_BASE_DIR = BASE_DIR/CONFIG_BASE_DIR = \x27\/config\/addons_config\/tubesync\x27/g' /app/tubesync/local_settings.py.container
+RUN sed -i 's/MEDIA_ROOT = CONFIG_BASE_DIR \/ \x27media\x27/MEDIA_ROOT = \x27\/config\/addons_config\/tubesync\/media\x27/g' /app/tubesync/local_settings.py.container
+RUN sed -i 's/DOWNLOAD_ROOT = DOWNLOADS_BASE_DIR \/ \x27downloads\x27/DOWNLOAD_ROOT = \x27\/config\/addons_config\/tubesync\/downloads\x27/g' /app/tubesync/local_settings.py.container
 
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/settings.py
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/local_settings.py
