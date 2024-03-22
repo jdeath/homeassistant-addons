@@ -21,6 +21,7 @@ RUN sed -i 's/CONFIG_BASE_DIR \/ \x27db.sqlite3\x27/\x27\/config\/addons_config\
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/settings.py
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/local_settings.py
 RUN sed -i 's/YOUTUBE_DL_CACHEDIR = CONFIG_BASE_DIR \/ \x27cache\x27/YOUTUBE_DL_CACHEDIR = \x27\/config\/addons_config\/tubesync\/cache\x27/g' /app/tubesync/local_settings.py
+RUN sed -i 's/COOKIES_FILE = CONFIG_BASE_DIR \/ \x27cookies.txt\x27/COOKIES_FILE = \x27\/config\/addons_config\/tubesync\/cookies.txt\x27/g' /app/tubesync/local_settings.py
 
 ### LABELS
 ARG BUILD_ARCH
