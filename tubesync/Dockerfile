@@ -6,8 +6,8 @@ VOLUME [ "/config" ]
 #RUN sed -i 's/Path('\''\/'\'')/Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/local_settings.py 
 #RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \/share\/tubesync/g' /app/tubesync/local_settings.py
 RUN sed -i 's/Path('\''\/'\'')/Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/local_settings.py 
-RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \"\/config\/addons_config\/tubesync\"/g' /app/tubesync/settings.py 
-RUN sed -i 's/CONFIG_BASE_DIR = BASE_DIR/CONFIG_BASE_DIR = \"\/config\/addons_config\/tubesync\"/g' /app/tubesync/settings.py
+RUN sed -i 's/DOWNLOADS_BASE_DIR = BASE_DIR/DOWNLOADS_BASE_DIR = \'\/config\/addons_config\/tubesync\'/g' /app/tubesync/settings.py 
+RUN sed -i 's/CONFIG_BASE_DIR = BASE_DIR/CONFIG_BASE_DIR = \'\/config\/addons_config\/tubesync\'/g' /app/tubesync/settings.py
  
 ### LABELS
 ARG BUILD_ARCH
