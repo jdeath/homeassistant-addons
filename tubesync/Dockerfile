@@ -20,7 +20,8 @@ RUN sed -i 's/DOWNLOAD_ROOT = DOWNLOADS_BASE_DIR \/ \x27downloads\x27/DOWNLOAD_R
 RUN sed -i 's/CONFIG_BASE_DIR \/ \x27db.sqlite3\x27/\x27\/config\/addons_config\/tubesync\/db.sqlite3\x27/g' /app/tubesync/local_settings.py
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/settings.py
 #RUN sed -i 's/BASE_DIR = Path(__file__).resolve().parent.parent/BASE_DIR =Path('\''\/config\/addons_config\/tubesync'\'')/' /app/tubesync/local_settings.py
- 
+RUN sed -i 's/YOUTUBE_DL_CACHEDIR = CONFIG_BASE_DIR \/ \x27cache\x27/YOUTUBE_DL_CACHEDIR = \x27\/config\/addons_config\/tubesync\/cache\x27/g' /app/tubesync/local_settings.py
+
 ### LABELS
 ARG BUILD_ARCH
 ARG BUILD_DATE
