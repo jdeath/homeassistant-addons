@@ -8,5 +8,5 @@
   "upstream_repo": "wg-easy/wg-easy",
   "upstream_version": "12",
   "fulltag": "false",
-  "paused": "false"
+  "paused": "true"
 }
