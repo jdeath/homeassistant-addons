@@ -1,6 +1,7 @@
 {
   "arch": [
-    "amd64"
+    "amd64",
+    "armv7"
   ],
   "boot": "auto",
   "description": "A simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket.",
