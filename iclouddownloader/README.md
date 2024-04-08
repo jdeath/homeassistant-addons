@@ -8,7 +8,7 @@
 1. You can mount an smb/nfs share in Home Assistant Settings->System->Storage to the media directory and point to that location. Location will be /media/<share name>/ with any directory structure under that you wish
 1. Run Addon, it will fail (do not hit stop on the addon)
 1. In next hour, log into home assistant via SSH (you must set protection mode to false in ssh addon)
-1. run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh'
+1. run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
 1. Enter the 2fa code that shows on your iPhone (you will need to repeat this step every 2 months)
 1. Restart addon
 
