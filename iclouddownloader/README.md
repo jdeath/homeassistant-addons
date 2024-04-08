@@ -1,7 +1,8 @@
 # Home assistant add-on: iCloud Downloader
 
 1. Install Addon
-1. Copy iclouddownloader.sh into /addon_configs/2effc9b9_iclouddownloader
+1. Run Addon, it will fail, but will create the directory we need for the next step
+1. Copy iclouddownloader.sh from this repo into /addon_configs/2effc9b9_iclouddownloader
 1. Edit the command with your username,password, and location you want to download files
 1. You should be able to run multiple lines in the code use multiple accounts
 1. Review all the possible commands here and setup as you like: https://pypi.org/project/icloudpd/1.12.0/
