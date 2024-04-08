@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export TZ=America/Los_Angeles
 # Account #1
 # No space before/after the = or it will crash
 
