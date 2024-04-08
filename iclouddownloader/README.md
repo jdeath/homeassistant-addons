@@ -11,7 +11,7 @@
 1. run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
 1. Enter the 2fa code that shows on your iPhone (you will need to repeat this step every 2 months)
 1. Hit Control-C or exit out of terminal
-1. Restart addon
+1. Restart addon and it should start downloading photos
 
 
 
