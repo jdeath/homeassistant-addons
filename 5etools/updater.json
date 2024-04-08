@@ -6,6 +6,6 @@
   "slug": "5etools",
   "source": "github",
   "upstream_repo": "ghcr.io/5etools-mirror-2/5etools",
-  "upstream_version": "1.202.0"
-  "paused": "true",
+  "upstream_version": "1.202.0",
+  "paused": "true"
 }
