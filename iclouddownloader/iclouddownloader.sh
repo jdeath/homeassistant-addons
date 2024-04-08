@@ -12,7 +12,7 @@ folderstructure={:%Y/%m}
 
 if [ $# -eq 0 ]
   then
-    icloudpd --cookie-directory /data --directory $photoLocation -u $username -p $password --watch-with-interval $interval --folder-structure $folderstructure
+    icloudpd --cookie-directory /data --directory $photoLocation -u $username -p $password --watch-with-interval $interval --folder-structure $folderstructure # & <-- if not last account
   else
 	icloudpd --cookie-directory /data -u $username -p $password --auth-only
 fi
