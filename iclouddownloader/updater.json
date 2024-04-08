@@ -1,0 +1,9 @@
+{
+  "github_fulltag": "true",
+  "last_update": "06-10-2023",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "changedetection",
+  "source": "github",
+  "upstream_repo": "icloud-photos-downloader/icloud_photos_downloader",
+  "upstream_version": "v1.17.3"
+}
