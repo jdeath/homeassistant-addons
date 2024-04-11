@@ -9,20 +9,17 @@
   "boot": "auto",
   "init": false,
   "description": "A command-line tool to download all your iCloud photos. Should probably be made into an integration, but this works fine!",
-  "environment": {
-  },
+  "environment": {},
   "map": [
     "media:rw",
-	"addon_config:rw"
+    "addon_config:rw"
   ],
   "name": "iclouddownloader",
-  "ports": {
-  },
-  "ports_description": {
-  },
+  "ports": {},
+  "ports_description": {},
   "slug": "iclouddownloader",
   "startup": "services",
-  "upstream": "v1.17.3",
+  "upstream": "1.17.4",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/iclouddownloader",
-  "version": "v1.17.3"
+  "version": "1.17.4"
 }
