@@ -8,7 +8,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-This addon is based on the [docker image](https://github.com/wg-easy/wg-easy). The src has been slightly modified from WeeJeWel/wg-easy to allow ingress and custom wiregaurd config location. I rehost this code locally so rebuilding automatically pulls in the latest version of wireguard but not any changes to the UI from WeeJeWel/wg-easy.
+This addon is based on the [docker image](https://github.com/wg-easy/wg-easy). The src has been slightly modified from WeeJeWel/wg-easy to allow ingress and custom Wireguard config location. I rehost this code locally so rebuilding automatically pulls in the latest version of wireguard but not any changes to the UI from WeeJeWel/wg-easy.
 
 
 * All-in-one: WireGuard + Web UI.
