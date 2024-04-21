@@ -12,7 +12,7 @@
   "map": [
     "ssl:rw"
   ],
-  "name": "wgeasy",
+  "name": "WG Easy",
   "options": {
     "WG_HOST": "hassio.local",
     "PASSWORD": "12",
@@ -55,6 +55,7 @@
   "webui": "[PROTO:ssl]://[HOST]:[PORT:51821]",
   "ingress": true,
   "ingress_port": 51821,
+  "panel_icon": "mdi:vpn",
   "privileged": [
     "NET_ADMIN"
   ],
