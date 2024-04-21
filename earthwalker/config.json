@@ -16,7 +16,7 @@
   "schema": {},
   "slug": "earthwalker",
   "startup": "services",
-  "upstream": "1.0",
+  "upstream": "latest",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "image": "registry.gitlab.com/glatteis/earthwalker",
   "version": "1",
