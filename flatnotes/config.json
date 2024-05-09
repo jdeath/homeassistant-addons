@@ -11,7 +11,9 @@
   "environment": {
     "FLATNOTES_PATH": "/config/addons_config/flatnotes",
     "FLATNOTES_USERNAME": "user",
-    "FLATNOTES_AUTH_TYPE": "none"
+    "FLATNOTES_AUTH_TYPE": "none",
+    "PUID","0",
+    "PGID","0"
   },
   "map": [
     "config:rw"
