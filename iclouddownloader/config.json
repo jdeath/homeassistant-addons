@@ -19,7 +19,7 @@
   "ports_description": {},
   "slug": "iclouddownloader",
   "startup": "services",
-  "upstream": "1.17.5",
+  "upstream": "1.17.6",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/iclouddownloader",
-  "version": "1.17.5"
+  "version": "1.17.6"
 }
