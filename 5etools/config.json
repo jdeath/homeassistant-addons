@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "ghcr.io/5etools-mirror-2/5etools",
-  "version": "v1.207.0",
+  "version": "v1.207.1",
   "name": "5etools",
   "options": {},
   "ports": {
