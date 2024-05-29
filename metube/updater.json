@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "27-05-2024",
+  "last_update": "29-05-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "metube",
   "source": "dockerhub",
   "upstream_repo": "alexta69/metube",
-  "upstream_version": "2024-05-27"
+  "upstream_version": "2024-05-28"
 }
