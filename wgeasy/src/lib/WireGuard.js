@@ -14,6 +14,7 @@ const {
   WG_PATH,
   WG_HOST,
   WG_PORT,
+  WG_CONFIG_PORT,
   WG_DEFAULT_DNS,
   WG_DEFAULT_ADDRESS,
   WG_PERSISTENT_KEEPALIVE,
@@ -187,7 +188,7 @@ PublicKey = ${config.server.publicKey}
 PresharedKey = ${client.preSharedKey}
 AllowedIPs = ${WG_ALLOWED_IPS}
 PersistentKeepalive = ${WG_PERSISTENT_KEEPALIVE}
-Endpoint = ${WG_HOST}:${WG_PORT}`;
+Endpoint = ${WG_HOST}:${WG_CONFIG_PORT}`;
   }
 
   async getClientQRCodeSVG({ clientId }) {
