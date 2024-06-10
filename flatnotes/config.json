@@ -18,16 +18,29 @@
   "map": [
     "config:rw"
   ],
-  "image": "dullage/flatnotes",
   "name": "flatnotes",
-  "options": {},
+  "options": {
+    "FLATNOTES_AUTH_TYPE": "none",
+	"FLATNOTES_USERNAME": "none",
+	"FLATNOTES_PASSWORD": "ChangeMe123",
+	"FLATNOTES_SECRET_KEY": "1234",
+	"FLATNOTES_SESSION_EXPIRY_DAYS": "30",
+	"FLATNOTES_TOTP_KEY":"123"
+  },
+  "schema": {
+    "FLATNOTES_AUTH_TYPE": "str?",
+	"FLATNOTES_USERNAME": "str?",
+	"FLATNOTES_PASSWORD": "str?",
+	"FLATNOTES_SECRET_KEY": "str?",
+	"FLATNOTES_SESSION_EXPIRY_DAYS": "int",
+	"FLATNOTES_TOTP_KEY":"str?"
+  },
   "ports": {
     "8080/tcp": "8080"
   },
   "ports_description": {
     "8080/tcp": "WebUI"
   },
-  "schema": {},
   "slug": "flatnotes",
   "startup": "services",
   "upstream": "1.0",
