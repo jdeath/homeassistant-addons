@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "corentinth/it-tools",
-  "version": "",
+  "version": "2024.5.13-a0bc346",
   "name": "IT-Tools",
   "options": {},
   "ports": {
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "IT-Tools",
   "startup": "services",
-  "upstream": "",
+  "upstream": "2024.5.13-a0bc346",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": false,
