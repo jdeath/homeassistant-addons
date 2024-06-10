@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "23-10-2023",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "IT-Tools",
+  "source": "dockerhub",
+  "upstream_repo": "corentinth/it-tools",
+  "upstream_version": "2024.5.13-a0bc346"
+}
