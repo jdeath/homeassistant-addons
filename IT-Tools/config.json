@@ -5,12 +5,10 @@
   ],
   "boot": "auto",
   "description": "Useful tools for developer and people working in IT",
-  "environment": {
-  },
-  "map": [
-  ],
+  "environment": {},
+  "map": [],
   "image": "corentinth/it-tools",
-  "version": "2024.5.13-a0bc346",
+  "version": "",
   "name": "IT-Tools",
   "options": {},
   "ports": {
@@ -22,7 +20,7 @@
   "schema": {},
   "slug": "IT-Tools",
   "startup": "services",
-  "upstream": "2024.5.13-a0bc346",
+  "upstream": "",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": false,
