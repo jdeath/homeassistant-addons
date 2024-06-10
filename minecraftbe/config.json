@@ -1,6 +1,7 @@
 {
   "arch": [
-    "amd64"
+    "amd64",
+    "aarch64"
   ],
   "boot": "auto",
   "description": "Minecraft Dedicated Server",
