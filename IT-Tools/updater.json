@@ -4,7 +4,7 @@
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "IT-Tools",
-  "source": "dockhub",
+  "source": "dockerhub",
   "upstream_repo": "corentinth/it-tools",
   "upstream_version": ""
 }
