@@ -28,11 +28,11 @@
 	"FLATNOTES_TOTP_KEY":"123"
   },
   "schema": {
-    "FLATNOTES_AUTH_TYPE": "str?",
+    "FLATNOTES_AUTH_TYPE": "list(none|read_only|password|totp)",
 	"FLATNOTES_USERNAME": "str?",
 	"FLATNOTES_PASSWORD": "str?",
 	"FLATNOTES_SECRET_KEY": "str?",
-	"FLATNOTES_SESSION_EXPIRY_DAYS": "int",
+	"FLATNOTES_SESSION_EXPIRY_DAYS": "int?",
 	"FLATNOTES_TOTP_KEY":"str?"
   },
   "ports": {
