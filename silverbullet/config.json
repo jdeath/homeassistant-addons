@@ -13,17 +13,20 @@
   "map": [
     "addon_config:rw"
   ],
-  "image": "zefhemel/silverbullet",
   "version": "0.7.7",
   "name": "silverbullet",
-  "options": {},
   "ports": {
     "3000/tcp": "3000"
   },
   "ports_description": {
     "3000/tcp": "Web interface"
   },
-  "schema": {},
+  "options": {
+    "SB_USER": ""
+  },
+  "schema": {
+	"SB_USER": "str?"
+  },
   "slug": "silverbullet",
   "startup": "services",
   "upstream": "0.7.7",

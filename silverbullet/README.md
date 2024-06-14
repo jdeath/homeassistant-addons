@@ -1,4 +1,4 @@
-# Home assistant add-on: MeTube
+# Home assistant add-on: SilverBullet
 
 SilverBullet is a note-taking application optimized for people with a hacker mindset. We all take notes. There’s a million note taking applications out there. Literally. Wouldn’t it be nice to have one where your notes are more than plain text files? Where your notes essentially become a database that you can query; that you can build custom knowledge applications on top of? A hackable notebook, if you will?
 
@@ -19,6 +19,7 @@ comparison to installing any other Hass.io add-on.
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
+1. If you want to password protection, set SB_HOME field to UserName:Password, eg. Mike:Pass123
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via ingress or <your-ip>:port.
