@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "convos",
   "startup": "services",
-  "upstream": "",
+  "upstream": "v8.07",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,
