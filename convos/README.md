@@ -1,4 +1,4 @@
-# Home assistant add-on: MeTube
+# Home assistant add-on: Convos
 
 Convos is an IRC client that runs in your browser and brings the IRC experience into the 21st century.
 
@@ -27,7 +27,7 @@ comparison to installing any other Hass.io add-on.
 ## Configuration
 
 ```
-port : 8081 #port you want to run on.
+port : 3000 #port you want to run on.
 ```
 
 Webui can be found at `<your-ip>:port`.
