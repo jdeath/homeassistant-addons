@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "ghcr.io/convos-chat/convos",
-  "version": "v8.07",
+  "version": "",
   "name": "convos",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "convos",
   "startup": "services",
-  "upstream": "v8.07",
+  "upstream": "",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,
