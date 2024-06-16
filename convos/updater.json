@@ -5,6 +5,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "convos",
   "source": "github",
-  "upstream_repo": "ghcr.io/convos-chat/convos",
-  "upstream_version": ""
+  "upstream_repo": "convos-chat/convos",
+  "upstream_version": "v8.07"
 }
