@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "ghcr.io/convos-chat/convos",
-  "version": "",
+  "version": "v8.07",
   "name": "convos",
   "options": {},
   "ports": {
