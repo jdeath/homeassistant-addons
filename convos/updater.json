@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "23-10-2023",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "convos",
+  "source": "github",
+  "upstream_repo": "ghcr.io/convos-chat/convos",
+  "upstream_version": "v8.07"
+}

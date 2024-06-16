@@ -1,0 +1,32 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Convos is an IRC client that runs in your browser and brings the IRC experience into the 21st century",
+  "environment": {
+    "CONVOS_HOME": "/config/"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "image": "ghcr.io/convos-chat/convos",
+  "version": "v8.07",
+  "name": "convos",
+  "options": {},
+  "ports": {
+    "3000/tcp": "3000"
+  },
+  "ports_description": {
+    "3000/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "convos",
+  "startup": "services",
+  "upstream": "v8.07",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
+  "ingress": false,
+  "ingress_port": 3000
+}
