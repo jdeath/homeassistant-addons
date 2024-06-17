@@ -1,0 +1,65 @@
+# Home assistant add-on: MS Rewards Farmer
+
+## Description
+Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches...)
+
+This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork of the MS-Rewards-Farmer (initially coded by [**@charlesbel**](https://github.com/charlesbel)). It runs completely headless in a docker environment with google chrome and xvfb as virtual display
+
+Based on LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
+
+This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
+
+The resulting image is about 2.5 gigs! I tried rebuilding myself with python:slim and have not gotten it to work. Give it time to install.
+
+_Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
+
+[![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
+
+
+## Installation
+
+The installation of this add-on is pretty straightforward and not different in
+comparison to installing any other Hass.io add-on.
+
+1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Install this add-on.
+1. Click the `Save` button to store your configuration.
+1. Start the add-on. It will fail, this is ok
+1. go to /addon-configs/2effc9b9_msrewardsfarmer
+1. Edit the accounts.json with your username and password. Delete the second entry if there is one.
+1. Run the addon again and check the logs
+1. After confirmed working, use an automation to run this once a day
+
+## Automatic Running
+1. Create an automation to run this addon once a day (at a random time to avoid ban)
+
+```
+alias: Start MS Rewards Farmer
+description: ""
+trigger:
+  - platform: time
+    at: "05:00:00"
+condition: []
+action:
+  - delay: "{{ (range(0, 1)|random|int) }}:{{ (range(1, 59)|random|int) }}:00"
+  - service: hassio.addon_start
+    data:
+      addon: local_msrewardsfarmer
+mode: single
+```
+
+# Sending a notification.
+1. edit /addon-configs/2effc9b9_msrewardsfarmer/config.yaml
+1. Configure the line for a notification
+1. To send a hassio notification, use this: `https://github.com/caronc/apprise/wiki/Notify_homeassistant` with a created long-term token
+
+Should look something like this:
+```
+# config.yaml
+apprise:
+  urls:
+    - 'hassio://192.168.X.XXX/eyXXXXXXXXXXX.eyXXXXXXXXXXXXXXXX'
+```
+
+
+[repository]: https://github.com/jdeath/homeassistant-addons
