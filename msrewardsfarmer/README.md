@@ -44,7 +44,7 @@ action:
   - delay: "{{ (range(0, 1)|random|int) }}:{{ (range(1, 59)|random|int) }}:00"
   - service: hassio.addon_start
     data:
-      addon: local_msrewardsfarmer
+      addon: 2effc9b9_msrewardsfarmer
 mode: single
 ```
 
