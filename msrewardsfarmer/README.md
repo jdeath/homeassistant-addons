@@ -51,7 +51,14 @@ mode: single
 # Sending a notification.
 1. edit /addon-configs/2effc9b9_msrewardsfarmer/config.yaml
 1. Configure the line for a notification
-1. To send a hassio notification, use this: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
+
+It should look something like this for homeassistant notification:
+```
+# config.yaml
+apprise:
+  urls:
+    - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'
+```
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons
