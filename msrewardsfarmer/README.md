@@ -60,5 +60,6 @@ apprise:
     - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'
 ```
 
+More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
 [repository]: https://github.com/jdeath/homeassistant-addons
