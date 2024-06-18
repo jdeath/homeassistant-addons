@@ -4,8 +4,8 @@ set -e
 CONFIG_PATH=/data/options.json
 cat /data/options.json
 
-cp -rn /app/src /config/
-cp -n /app/main.py /config/
+cp -ru /app/src /config/
+cp -u /app/main.py /config/
 cp -n /app/config.yaml /config/
 
 cd /config
