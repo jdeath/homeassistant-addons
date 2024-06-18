@@ -7,9 +7,9 @@ This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork 
 
 Based on LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
 
-This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
+Currently using a Fork of @klept0 repo, as it needs a patch to run in docker. 
 
-The resulting image is about 2.5 gigs! I tried rebuilding myself with python:slim and have not gotten it to work. Give it time to install.
+This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
@@ -44,22 +44,14 @@ action:
   - delay: "{{ (range(0, 1)|random|int) }}:{{ (range(1, 59)|random|int) }}:00"
   - service: hassio.addon_start
     data:
-      addon: 2effc9b9_msrewardsfarmer
+      addon: local_msrewardsfarmer
 mode: single
 ```
 
 # Sending a notification.
 1. edit /addon-configs/2effc9b9_msrewardsfarmer/config.yaml
 1. Configure the line for a notification
-1. To send a hassio notification, use this: `https://github.com/caronc/apprise/wiki/Notify_homeassistant` with a created long-term token
-
-Should look something like this:
-```
-# config.yaml
-apprise:
-  urls:
-    - 'hassio://192.168.X.XXX/eyXXXXXXXXXXX.eyXXXXXXXXXXXXXXXX'
-```
+1. To send a hassio notification, use this: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons

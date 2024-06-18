@@ -1,16 +1,30 @@
 ARG BUILD_FROM
-FROM ghcr.io/ltcmdstone/ms-rewards-farmer-docker
+FROM python:slim
 
+RUN apt-get update && apt-get install -y xvfb git wget 
 RUN wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y /tmp/chrome.deb 
-RUN rm /tmp/chrome.deb 
-
+RUN apt-get install -y /tmp/chrome.deb
+RUN rm /tmp/chrome.deb
 RUN google-chrome --version
 
-COPY run.sh /
-#COPY entrypoint.sh /
-RUN chmod a+x /run.sh
-ENTRYPOINT [ "/run.sh" ]
+WORKDIR /app
+
+# clone the project
+RUN git clone https://github.com/jdeath/MS-Rewards-Farmer.git ./
+
+# install dependencies
+RUN pip install --root-user-action=ignore -r requirements.txt
+
+# setting display environment stuff
+ENV DISPLAY=:99
+ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
+
+COPY run.sh ./
+COPY entrypoint.sh ./
+RUN chmod a+x ./*.sh
+
+ENTRYPOINT [ "/app/entrypoint.sh" ]
+CMD ["/app/run.sh"]
 
 ### LABELS
 ARG BUILD_ARCH

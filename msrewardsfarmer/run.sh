@@ -9,4 +9,4 @@ cp -n /app/main.py /config/
 cp -n /app/config.yaml /config/
 
 cd /config
-python3 main.py
+python3 /config/main.py
