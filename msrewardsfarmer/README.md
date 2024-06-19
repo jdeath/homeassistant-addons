@@ -49,7 +49,7 @@ mode: single
 ```
 
 # Sending a notification.
-1. edit /addon-configs/2effc9b9_msrewardsfarmer/config.yaml
+1. edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml`
 1. Configure the line for a notification
 
 It should look something like this for homeassistant notification:
@@ -61,5 +61,8 @@ apprise:
 ```
 
 More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
+
+# Issues
+The farmer code will be copied to `/addon-configs/2effc9b9_msrewardsfarmer` . This is needed to load the config and keep the logs accessable. When rebuilding the app it *should* update this code. However, if have issues, first delete `main.py` and the `src/` directory.
 
 [repository]: https://github.com/jdeath/homeassistant-addons
