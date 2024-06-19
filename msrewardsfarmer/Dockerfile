@@ -9,6 +9,7 @@ RUN apt-get update -y && \
 	google-chrome --version && \
 	mkdir /app && cd /app && \
 	git clone https://github.com/jdeath/MS-Rewards-Farmer.git ./ && \
+ 	pip install --no-deps --no-cache-dir --root-user-action=ignore --upgrade -r requirements.txt && \
 	pip install --no-deps --no-cache-dir --root-user-action=ignore -r requirements.txt
 
 # setting display environment stuff
