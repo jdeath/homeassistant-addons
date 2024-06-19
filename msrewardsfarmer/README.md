@@ -5,7 +5,7 @@ Automatically get points for the MS Rewards program and does all the tasks for y
 
 This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork of the MS-Rewards-Farmer (initially coded by [**@charlesbel**](https://github.com/charlesbel)). It runs completely headless in a docker environment with google chrome and xvfb as virtual display
 
-Based on LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
+Based on LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker, but this add-on builds the docker file locally. This way chrome and the farmer code will get updated if you rebuild the addon.
 
 Currently using a Fork of @klept0 repo, as it needs a patch to run in docker. 
 
