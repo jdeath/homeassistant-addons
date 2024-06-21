@@ -63,7 +63,10 @@ Where the `eyXXX.eyXXX` string is a Home Assistant Long-Lived Token. Long-lived 
 More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
 # Issues
-The farmer code will be copied to `/addon-configs/2effc9b9_msrewardsfarmer` . This is needed to load the config and keep the logs accessable. When rebuilding the app it *should* update this code. However, if have issues, first delete `main.py` and the `src/` directory.
+
+If you are having issues first ask - did I make sure I have updated all of the files and cleared the sessions folder before running again?
+
+Stuck at "Writting password"? Try again later.
 
 Still a work in progress and sometimes the farmer will crash, as headless chrome can be buggy.
 
