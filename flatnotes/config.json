@@ -18,7 +18,7 @@
   ],
   "name": "flatnotes",
   "options": {
-    "FLATNOTES_AUTH_TYPE": "none",
+    "FLATNOTES_AUTH_TYPE": "none"
   },
   "schema": {
     "FLATNOTES_AUTH_TYPE": "list(none|read_only|password|totp)",
