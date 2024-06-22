@@ -11,7 +11,7 @@ RUN apt-get update -y && \
 	git clone --depth=1 https://github.com/jdeath/MS-Rewards-Farmer.git ./ && \
 	sed -i 's/Path(__file__).resolve().parent/Path.cwd()/g' main.py && \
 	sed -i 's/currentPath.parent.parent/Path.cwd()/g' src/browser.py && \ 
- 	sed -i 's/driver.close()/driver.quit()/g' src/browser.py && \ 
+ 	sed -i 's/self.webdriver.close()/self.webdriver.quit()/g' src/browser.py && \ 
 	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
 
 # setting display environment stuff
