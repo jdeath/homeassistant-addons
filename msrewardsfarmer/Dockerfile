@@ -1,24 +1,24 @@
 ARG BUILD_FROM
 FROM python:slim
 
-RUN apt-get update && apt-get install -y xvfb git wget 
-RUN wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install -y /tmp/chrome.deb
-RUN rm /tmp/chrome.deb
-RUN google-chrome --version
-
-WORKDIR /app
-
-# clone the project
-RUN git clone https://github.com/jdeath/MS-Rewards-Farmer.git ./
-
-# install dependencies
-RUN pip install --root-user-action=ignore -r requirements.txt
+RUN apt-get update -y && \
+	apt-get install -y git wget xvfb --no-install-recommends && \
+	wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
+	rm /tmp/chrome.deb && \
+	google-chrome --version && \
+	mkdir /app && cd /app && \
+	git clone --depth=1 https://github.com/jdeath/MS-Rewards-Farmer.git ./ && \
+	sed -i 's/Path(__file__).resolve().parent/Path.cwd()/g' main.py && \
+	sed -i 's/currentPath.parent.parent/Path.cwd()/g' src/browser.py && \ 
+ 	sed -i 's/self.webdriver.close()/self.webdriver.quit()/g' src/browser.py && \ 
+	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
 
 # setting display environment stuff
 ENV DISPLAY=:99
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
+WORKDIR /app
 COPY run.sh ./
 COPY entrypoint.sh ./
 RUN chmod a+x ./*.sh
