@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "5etools",
   "startup": "services",
-  "upstream": "1.204.0",
+  "upstream": "latest",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": true,
