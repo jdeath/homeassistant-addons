@@ -12,6 +12,7 @@
   "version": "125",
   "name": "Microsoft Rewards Farmer",
   "options": {},
+  "panel_icon": "mdi:medal",
   "ports": {
   },
   "ports_description": {
