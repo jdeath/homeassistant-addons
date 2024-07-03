@@ -62,6 +62,20 @@ Where the `eyXXX.eyXXX` string is a Home Assistant Long-Lived Token. Long-lived 
 
 More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
+# Add To Sidebar
+Since there is no WebUI, this cannot be shown in the sidebar. However you can add the following code to your Home Assistant `configuration.yaml` to show the log via a sidebar entry
+
+```
+panel_custom:
+  - name: panel_rewards
+    sidebar_title: Rewards
+    sidebar_icon: mdi:medal
+    url_path: 'hassio/addon/2effc9b9_msrewardsfarmer/logs'
+    module_url: /api/hassio/app/entrypoint.js
+    embed_iframe: true
+    require_admin: true
+```
+
 # Issues
 
 If you are having issues first ask - did I make sure I have updated all of the files and cleared the sessions folder before running again?
