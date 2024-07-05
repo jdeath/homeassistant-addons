@@ -1,0 +1,30 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "CyberChef is a simple, intuitive web app for carrying out all manner of \"cyber\" operations within a web browser",
+  "environment": {
+  },
+  "map": [
+  ],
+  "image": "ghcr.io/gchq/cyberchef",
+  "version": "10.19.0",
+  "name": "CyberChef",
+  "options": {},
+  "ports": {
+    "80/tcp": "80"
+  },
+  "ports_description": {
+    "80/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "cyberchef",
+  "startup": "services",
+  "upstream": "10.19.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
+  "ingress": true,
+  "ingress_port": 80
+}

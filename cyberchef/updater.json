@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "false",
+  "last_update": "10.19.0",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "cyberchef",
+  "source": "github",
+  "upstream_repo": "ghcr.io/remvze/moodist",
+  "upstream_version": "10.19.0"
+}
