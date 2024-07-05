@@ -5,6 +5,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "cyberchef",
   "source": "github",
-  "upstream_repo": "ghcr.io/remvze/moodist",
+  "upstream_repo": "gchq/CyberChef",
   "upstream_version": "10.19.0"
 }
