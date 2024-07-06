@@ -1,0 +1,29 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "manual",
+  "description": "Fasten securely connects your healthcare providers together, creating a personal health record that never leaves your hands",
+  "environment": {
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "v1.1.2",
+  "name": "Fasten",
+  "options": {},
+  "ports": {
+	 "8080/tcp": "8080"
+  },
+  "ports_description": {
+	  "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "fasten",
+  "startup": "services",
+  "upstream": "v1.1.2",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false,
+  "ingress_port": 8080
+}
