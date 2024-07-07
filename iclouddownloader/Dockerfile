@@ -1,4 +1,6 @@
 FROM ghcr.io/hassio-addons/base-python:stable
+
+EXPOSE 8080
 RUN pip install icloudpd
 COPY run.sh /
 RUN chmod a+x /run.sh

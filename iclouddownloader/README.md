@@ -8,11 +8,13 @@
 1. Review all the possible commands here and setup as you like: https://pypi.org/project/icloudpd/1.12.0/
 1. You can mount an smb/nfs share in Home Assistant Settings->System->Storage to the media directory and point to that location. Location will be /media/ShareName/ with any directory structure under that you wish, where sharename is what you named the share in homeassistant
 1. Run/restart the Addon, it will fail again. (Do not hit stop on the addon)
-1. In next hour, log into home assistant via SSH (you must set protection mode to false in ssh addon)
-1. run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
-1. Enter the 2fa code that shows on your iPhone (you will need to repeat this reauthentication step every 2 months)
-1. Hit Control-C or exit out of terminal
-1. Restart addon one last time and it should start downloading photos.
+1. Option 1: Go to your homeassistantIP:8080 (or other port you configured) and enter the 2FA code. Ingress does not work
+1. Option 1: It should now download your photos
+1. Option 2: In next hour, log into home assistant via SSH (you must set protection mode to false in ssh addon)
+1. Option 2: run 'docker exec -it addon_2effc9b9_iclouddownloader /config/iclouddownloader.sh authorize'
+1. Option 2: Enter the 2fa code that shows on your iPhone (you will need to repeat this reauthentication step every 2 months)
+1. Option 2: Hit Control-C or exit out of terminal
+1. Option 2: Restart addon one last time and it should start downloading photos.
 
 
 
