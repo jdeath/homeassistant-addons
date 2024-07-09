@@ -17,6 +17,9 @@
   "ports_description": {
     "8272/tcp": "WebUI"
   },
+  "map": [
+    "addon_config:rw"
+  ],
   "slug": "virtualtabletop",
   "startup": "services",
   "upstream": "1.0",

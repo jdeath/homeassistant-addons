@@ -4,19 +4,17 @@ FROM $BUILD_FROM
 RUN apk add curl unzip npm \
     && curl -LO https://github.com/ArnoldSmith86/virtualtabletop/archive/refs/heads/main.zip \
     && unzip main.zip \
-    && curl -LO https://github.com/ArnoldSmith86/virtualtabletop-library/archive/refs/heads/master.zip \
-    && unzip master.zip \
-    && mv virtualtabletop-library-master/* virtualtabletop-main/library \
-    && rm main.zip master.zip \
-    && rmdir virtualtabletop-library-master \
+    && rm main.zip \
     && apk del curl unzip \
     && cd virtualtabletop-main \
     && npm install --prod
+	
 EXPOSE 8272
-VOLUME /virtualtabletop-main/save
 WORKDIR /virtualtabletop-main
-CMD ["npm", "start"]
-
+COPY run.sh /
+RUN chmod a+x /*.sh
+CMD ["/run.sh"]
+	
 ### LABELS
 ARG BUILD_ARCH
 ARG BUILD_DATE
