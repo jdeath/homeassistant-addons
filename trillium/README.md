@@ -36,6 +36,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Make the directory `/share/trillium/` on your homeassistant
+1. ssh in to your home assistant and run `chmod 2777 /share/trillium`
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Go to your local homeassistant IP:port admin port or ingress.
