@@ -7,13 +7,13 @@
   "description": "Silver Bullet (SB) is an extensible, open source personal knowledge platform",
   "environment": {
     "SB_FOLDER": "/config/",
-	"PUID": "0",
-	"PGID": "0"
+    "PUID": "0",
+    "PGID": "0"
   },
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.7.7",
+  "version": "0.8.1",
   "name": "silverbullet",
   "ports": {
     "3000/tcp": "3000"
@@ -25,11 +25,11 @@
     "SB_USER": ""
   },
   "schema": {
-	"SB_USER": "str?"
+    "SB_USER": "str?"
   },
   "slug": "silverbullet",
   "startup": "services",
-  "upstream": "0.7.7",
+  "upstream": "0.8.1",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,

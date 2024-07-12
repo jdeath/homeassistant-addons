@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "0.7.7",
+  "last_update": "12-07-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "moodist",
   "source": "github",
   "upstream_repo": "zefhemel/silverbullet",
-  "upstream_version": "0.7.7"
+  "upstream_version": "0.8.1"
 }
