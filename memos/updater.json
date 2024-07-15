@@ -4,8 +4,8 @@
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "memos",
-  "source": "dockerhub",
-  "upstream_repo": "neosmemo/memos",
+  "source": "github",
+  "upstream_repo": "usememos/memos",
   "upstream_version": "test",
   "dockerhub_by_date": "false"
 }
