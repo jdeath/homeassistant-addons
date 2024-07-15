@@ -1,0 +1,32 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "A privacy-first, lightweight note-taking service. Easily capture and share your great thoughts.",
+  "environment": {
+    "MEMOS_DATA": "/config/"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "image": "neosmemo/memos",
+  "version": "0.22.2",
+  "name": "memos",
+  "options": {},
+  "ports": {
+    "5230/tcp": "5230"
+  },
+  "ports_description": {
+    "5230/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "memos",
+  "startup": "services",
+  "upstream": "0.22.2",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:5230]",
+  "ingress": false,
+  "ingress_port": 5230
+}
