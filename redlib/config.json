@@ -1,0 +1,29 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Redlib is a private front-end like Invidious but for Reddit",
+  "environment": {
+  },
+  "map": [
+  ],
+  "version": "0.35.1",
+  "name": "Redlib",
+  "options": {},
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "redlib",
+  "startup": "services",
+  "upstream": "0.35.1",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false,
+  "ingress_port": 8080
+}
