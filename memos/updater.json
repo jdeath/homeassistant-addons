@@ -6,6 +6,6 @@
   "slug": "memos",
   "source": "github",
   "upstream_repo": "usememos/memos",
-  "upstream_version": "test",
+  "upstream_version": "0.22.2",
   "dockerhub_by_date": "false"
 }
