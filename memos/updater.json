@@ -7,5 +7,5 @@
   "source": "dockerhub",
   "upstream_repo": "neosmemo/memos",
   "upstream_version": "test",
-  "dockerhub_by_date": "false"
+  "by_date": "false"
 }
