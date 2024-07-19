@@ -13,7 +13,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.8.1",
+  "version": "0.8.2",
   "name": "silverbullet",
   "ports": {
     "3000/tcp": "3000"
@@ -29,7 +29,7 @@
   },
   "slug": "silverbullet",
   "startup": "services",
-  "upstream": "0.8.1",
+  "upstream": "0.8.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,
