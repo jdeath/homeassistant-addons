@@ -4,8 +4,6 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 **Issue: If add-on will not start, make sure WG_POST_UP, WG_POST_DOWN is set to "" in the YAML or blank in the UI. There was a error after a recent update.**
 
-**Issue2: Version 13 Will not work if you do not use the defualt port. This is an issue upstream. Revert to Version 12 if cannot use default port** 
-
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
@@ -33,7 +31,7 @@ comparison to installing any other Hass.io add-on.
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
 1. Edit add-on config as needed. Only WG_HOST must be changed to your external IP address
-1. Forward WG_PORT (usually 51820) to your homeassistat IP from your router
+1. Forward WG_CONFIG_PORT (usually 51820) to your homeassistat IP from your router
 1. Click the `Save` button to store your configuration.
 1. Make the directory /ssl/wgeasy to store your configuration. (make different directory if change WGPATH in the addon-on config)
 1. Start the add-on.
@@ -48,7 +46,7 @@ comparison to installing any other Hass.io add-on.
 | - | - | - | - |
 | `PASSWORD` | `changeme` | `foobar123` | When set, requires a password when logging in to the Web UI. |
 | `WG_HOST` | - | `vpn.myserver.com` | The public hostname of your VPN server. |
-| `WG_PORT` | `51820` | `12345` | The public UDP port of your VPN server. WireGuard will always listen on `51820` inside the Docker container. |
+| `WG_CONFIG_PORT` | `51820` | `12345` | The public UDP port of your VPN server. WireGuard will always listen on `51820` inside the Docker container. |
 | `WG_DEVICE` | `eth0` | `eno1` | Ethernet device the wireguard traffic should be forwarded through. Should not be needed |
 | `WG_PATH` | `/ssl/wgeasy` | `/share/wgeasy` | Persistant storage location on homeassistant |
 | `WG_PERSISTENT_KEEPALIVE` | `0` | `25` | Value in seconds to keep the "connection" open. |
@@ -58,7 +56,7 @@ comparison to installing any other Hass.io add-on.
 | `WG_POST_UP` | `...` | `iptables ...` | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. |
 | `WG_POST_DOWN` | `...` | `iptables ...` | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L26) for the default value. |
 
-> If you change `WG_PORT`, make sure to also change the exposed port.
+> If you change `WG_CONFIG_PORT`, make sure to also change the exposed port.
 
 > If want to use Adguard Home Addon https://github.com/hassio-addons/addon-wireguard , set `WG_DEFAULT_DNS` to 172.30.32.1
 
