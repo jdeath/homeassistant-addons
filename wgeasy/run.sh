@@ -11,10 +11,6 @@ PASSWORD=$(jq --raw-output '.PASSWORD // empty' $CONFIG_PATH)
 echo "PASSWORD: ${PASSWORD}"
 export PASSWORD="${PASSWORD}"
 
-WG_PORT=$(jq --raw-output '.WG_PORT // empty' $CONFIG_PATH)
-echo "WG_PORT: ${WG_PORT}"
-export WG_PORT="${WG_PORT}"
-
 WG_CONFIG_PORT=$(jq --raw-output '.WG_CONFIG_PORT // empty' $CONFIG_PATH)
 echo "WG_CONFIG_PORT: ${WG_CONFIG_PORT}"
 export WG_CONFIG_PORT="${WG_CONFIG_PORT}"

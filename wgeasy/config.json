@@ -16,7 +16,6 @@
   "options": {
     "WG_HOST": "hassio.local",
     "PASSWORD": "ChangeMe",
-    "WG_PORT": "51820",
     "WG_CONFIG_PORT": "51820",
     "WG_DEVICE": "eth0",
     "WG_PATH": "/ssl/wgeasy/",
@@ -38,7 +37,6 @@
   "schema": {
     "WG_HOST": "str",
     "PASSWORD": "str",
-    "WG_PORT": "str",
     "WG_CONFIG_PORT": "str",
     "WG_DEVICE": "str",
     "WG_PATH": "str",
