@@ -24,9 +24,9 @@
   },
   "slug": "changedetection",
   "startup": "services",
-  "upstream": "0.46.1",
+  "upstream": "0.46.2",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/changedetection",
-  "version": "0.46.1",
+  "version": "0.46.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "ingress": true,
   "ingress_port": 5000
