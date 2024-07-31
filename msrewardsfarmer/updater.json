@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "false",
+  "last_update": "23-10-2023",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "msrewardsfarmer",
+  "source": "github",
+  "upstream_repo": "klept0/MS-Rewards-Farmer",
+  "upstream_version": "0.1"
+}

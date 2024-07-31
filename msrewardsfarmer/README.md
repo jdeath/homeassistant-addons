@@ -5,9 +5,10 @@ Automatically get points for the MS Rewards program and does all the tasks for y
 
 This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork of the MS-Rewards-Farmer (initially coded by [**@charlesbel**](https://github.com/charlesbel)). It runs completely headless in a docker environment with google chrome and xvfb as virtual display
 
-Based on LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker, but this add-on builds the docker file locally on your home assistant machine. The Dockerfile/Entrypoint.sh is basically copied from LtCMDstone. This way chrome and the farmer code will get updated if you rebuild the addon and be less likely to get out of sync.
+Docker implantation leveraged the work of LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
 
-Currently using a Fork of @klept0 repo, as it needs a patch to run in docker. 
+ 
+This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
@@ -22,12 +23,20 @@ comparison to installing any other Hass.io add-on.
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
+1. Set your GEO and LANG if not `US` (United States) and `en` (english)
 1. Start the add-on. It will fail, this is ok
-1. go to `/addon-configs/2effc9b9_msrewardsfarmer`
+1. go to /addon-configs/2effc9b9_msrewardsfarmer
 1. Edit the accounts.json with your username and password. Delete the second entry if there is one.
-1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
+1. 1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
 1. Run the addon again and check the logs
 1. After confirmed working, use an automation to run this once a day
+
+## GEO and Lang
+This must be set correctly, because MS might only allows you to get points from one county a day, effectively disabling this farmer or your standard way of getting points.
+
+1. Go to https://trends.google.com/trends/
+1. Change your country. The URL should end with =XX wheere XX is the GEO code to use. Must be capitalized
+1. Language defaults to English (en). Use the proper code to change the language if desired
 
 ## Automatic Running
 1. Create an automation to run this addon once a day (at a random time to avoid ban)
@@ -80,8 +89,8 @@ panel_custom:
 
 If you are having issues first ask - did I make sure I have updated all of the files and cleared the sessions folder before running again?
 
-Stuck at "Writting password"? Try again later.
+Still a work in progress and sometimes the farmer will crash or run slowly, as headless chrome can be buggy. Just run it again when crashes. Having a notification sent to home assistant makes this easy to see.
 
-Still a work in progress and sometimes the farmer will crash, as headless chrome can be buggy.
+[repository]: https://github.com/jdeath/homeassistant-addons
 
 [repository]: https://github.com/jdeath/homeassistant-addons

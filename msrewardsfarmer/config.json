@@ -9,17 +9,22 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "125",
+  "version": "0.1.0",
   "name": "Microsoft Rewards Farmer",
-  "options": {},
-  "panel_icon": "mdi:medal",
+  "options": {
+    "GEO": "US",
+	"LANG": "en"
+  },
+  "schema": {
+    "GEO": "str",
+	"LANG": "str"
+  },
   "ports": {
   },
   "ports_description": {
   },
-  "schema": {},
   "slug": "msrewardsfarmer",
   "startup": "services",
-  "upstream": "125",
+  "upstream": "0.1.0",
   "url": "https://github.com/jdeath/homeassistant-addons"
 }

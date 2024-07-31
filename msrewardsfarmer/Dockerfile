@@ -2,17 +2,19 @@ ARG BUILD_FROM
 FROM python:slim
 
 RUN apt-get update -y && \
-	apt-get install -y git wget xvfb --no-install-recommends && \
+	apt-get install -y git wget xvfb jq --no-install-recommends && \
 	wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
 	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
 	rm /tmp/chrome.deb && \
 	google-chrome --version && \
 	mkdir /app && cd /app && \
-	git clone --depth=1 https://github.com/jdeath/MS-Rewards-Farmer.git ./ && \
-	sed -i 's/Path(__file__).resolve().parent/Path.cwd()/g' main.py && \
-	sed -i 's/currentPath.parent.parent/Path.cwd()/g' src/browser.py && \ 
- 	sed -i 's/self.webdriver.close()/self.webdriver.quit()/g' src/browser.py && \ 
-	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
+	git clone --depth=1 https://github.com/klept0/MS-Rewards-Farmer.git ./ && \
+	sed -i 's/Path(__file__).parent.parent/Path.cwd()/g' src/utils.py && \
+	sed -i 's/self.webdriver.close()//g' src/browser.py && \
+	sed -i 's/timeToWait=20/timeToWait=60/g' src/*.py && \
+	sed -i 's/WebDriverWait(self.webdriver, 10)/WebDriverWait(self.webdriver, 20)/g' src/searches.py && \
+	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt && \
+	pip install --no-cache-dir --root-user-action=ignore --upgrade -r requirements.txt
 
 # setting display environment stuff
 ENV DISPLAY=:99
