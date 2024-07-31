@@ -4,8 +4,7 @@
   ],
   "boot": "manual",
   "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
-  "environment": {
-  },
+  "environment": {},
   "map": [
     "addon_config:rw"
   ],
@@ -13,16 +12,14 @@
   "name": "Microsoft Rewards Farmer",
   "options": {
     "GEO": "US",
-	"LANG": "en"
+    "LANG": "en"
   },
   "schema": {
     "GEO": "str",
-	"LANG": "str"
+    "LANG": "str"
   },
-  "ports": {
-  },
-  "ports_description": {
-  },
+  "ports": {},
+  "ports_description": {},
   "slug": "msrewardsfarmer",
   "startup": "services",
   "upstream": "0.1.0",
