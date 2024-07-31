@@ -27,7 +27,7 @@ comparison to installing any other Hass.io add-on.
 1. Start the add-on. It will fail, this is ok
 1. go to /addon-configs/2effc9b9_msrewardsfarmer
 1. Edit the accounts.json with your username and password. Delete the second entry if there is one.
-1. 1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
+1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
 1. Run the addon again and check the logs
 1. After confirmed working, use an automation to run this once a day
 
