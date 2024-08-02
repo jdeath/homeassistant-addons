@@ -73,7 +73,7 @@ With the exception of videos, not a single request is made from your browser to 
 1. Open WebUI should work via ingress or <your-ip>:port.
 
 ## Updating
-Because the source code is not hosted on github, very hard to automaticall update this. Click "Rebuild" and it should pull in the latest version of readeck
+Because the source code is not hosted on github, very hard to automatically update this. Click "Rebuild" and it should pull in the latest version of readeck
 ## Configuration
 
 ```
