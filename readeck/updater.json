@@ -7,6 +7,6 @@
   "slug": "readeck",
   "source": "github",
   "upstream_repo": "readeck/readeck",
-  "upstream_version": "0.13.1",
+  "upstream_version": "0.15.0",
   "paused": "true"
 }
