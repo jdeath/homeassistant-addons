@@ -1,16 +1,20 @@
 ARG BUILD_FROM
 FROM python:slim
 
+ARG BUILD_VERSION
+
 RUN apt-get update -y && \
-	apt-get install -y git wget xvfb jq --no-install-recommends && \
+	apt-get install -y tar wget xvfb jq --no-install-recommends && \
 	wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
 	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
 	rm /tmp/chrome.deb && \
 	google-chrome --version && \
 	mkdir /app && cd /app && \
-	git clone --depth=1 https://github.com/klept0/MS-Rewards-Farmer.git ./ && \
+	wget "https://github.com/klept0/MS-Rewards-Farmer/archive/refs/tags/${BUILD_VERSION}.tar.gz" && \
+	tar --strip-components=1 -zxf "${BUILD_VERSION}.tar.gz" && \
+	rm -f "${BUILD_VERSION}.tar.gz" && \
 	sed -i 's/Path(__file__).parent.parent/Path.cwd()/g' src/utils.py && \
-	sed -i 's/\bdriver.close()\b//g' src/browser.py && \
+	sed -i 's/driver.close()//g' src/browser.py && \
 	sed -i 's/self.webdriver.close()//g' src/browser.py && \
 	sed -i 's/timeToWait=20/timeToWait=60/g' src/*.py && \
 	sed -i 's/WebDriverWait(self.webdriver, 10)/WebDriverWait(self.webdriver, 20)/g' src/searches.py && \
