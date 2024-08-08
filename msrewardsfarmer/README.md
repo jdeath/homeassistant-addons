@@ -7,7 +7,6 @@ This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork 
 
 Docker implantation leveraged the work of LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
 
- 
 This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
@@ -26,7 +25,7 @@ comparison to installing any other Hass.io add-on.
 1. Set your GEO and LANG if not `US` (United States) and `en` (english)
 1. Start the add-on. It will fail, this is ok
 1. go to /addon-configs/2effc9b9_msrewardsfarmer
-1. Edit the accounts.json with your username and password. Delete the second entry if there is one.
+1. Edit the accounts.json with your username and password. Delete the second entry.
 1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
 1. Run the addon again and check the logs
 1. After confirmed working, use an automation to run this once a day
@@ -64,8 +63,14 @@ It should look something like this for homeassistant notification:
 ```
 # config.yaml
 apprise:
+  summary: ALWAYS
   urls:
-    - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'
+    - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'  # Replace with your actual Apprise service URLs
+attempts:
+retries:
+  base_delay_in_seconds: 14 # base_delay_in_seconds * 2^max = 14.0625 * 2^6 = 900 = 15 minutes
+  max: 7
+  strategy: EXPONENTIAL
 ```
 Where the `eyXXX.eyXXX` string is a Home Assistant Long-Lived Token. Long-lived access tokens can be created using the "Long-Lived Access Tokens" section at the bottom of a user's Home Assistant profile page.
 
@@ -90,7 +95,5 @@ panel_custom:
 If you are having issues first ask - did I make sure I have updated all of the files and cleared the sessions folder before running again?
 
 Still a work in progress and sometimes the farmer will crash or run slowly, as headless chrome can be buggy. Just run it again when crashes. Having a notification sent to home assistant makes this easy to see.
-
-[repository]: https://github.com/jdeath/homeassistant-addons
 
 [repository]: https://github.com/jdeath/homeassistant-addons
