@@ -14,7 +14,7 @@ RUN apt-get update -y && \
 	tar --strip-components=1 -zxf "${BUILD_VERSION}.tar.gz" && \
 	rm -f "${BUILD_VERSION}.tar.gz" && \
 	sed -i 's/Path(__file__).parent.parent/Path.cwd()/g' src/utils.py && \
-	sed -i 's/driver.close()//g' src/browser.py && \
+	sed -i 's/\bdriver.close()\b//g' src/browser.py && \
 	sed -i 's/self.webdriver.close()//g' src/browser.py && \
 	sed -i 's/timeToWait=20/timeToWait=60/g' src/*.py && \
 	sed -i 's/WebDriverWait(self.webdriver, 10)/WebDriverWait(self.webdriver, 20)/g' src/searches.py && \
