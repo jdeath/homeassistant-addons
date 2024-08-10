@@ -48,8 +48,8 @@ comparison to installing any other Hass.io add-on.
 | - | - | - | - |
 | `PASSWORD` | `changeme` | `foobar123` | When set, requires a password when logging in to the Web UI. |
 | `WG_HOST` | - | `vpn.myserver.com` | The public hostname of your VPN server. |
-| `WG_PORT` | `51820` | `12345` | The public UDP port of your VPN server. WireGuard will always listen on `51820` inside the Docker container. |
-| `WG_CONFIG_PORT` | `51820` | `12345` | The UDP port used on Home Assistant Plugin. Don't really understand why an extra port needs to be set |
+| `WG_PORT` | `51820` | `12345` | The public UDP port of your VPN server. WireGuard will always listen on `51820` inside the Docker container. Not used >v14|
+| `WG_CONFIG_PORT` | `51820` | `12345` | The UDP port used on Home Assistant Plugin. The public UDP port of your VPN server. Make sure network port is the same in home assistant network config |
 | `WG_DEVICE` | `eth0` | `eno1` | Ethernet device the wireguard traffic should be forwarded through. Should not be needed |
 | `WG_PATH` | `/ssl/wgeasy` | `/share/wgeasy` | Persistant storage location on homeassistant |
 | `WG_PERSISTENT_KEEPALIVE` | `0` | `25` | Value in seconds to keep the "connection" open. |
