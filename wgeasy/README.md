@@ -4,7 +4,7 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 **Issue: If add-on will not start, make sure WG_POST_UP, WG_POST_DOWN is set to "" in the YAML or blank in the UI. There was a error after a recent update.**
 
-**Issue2: Version 13 Will not work if you do not use the defualt port. This is an issue upstream. Revert to Version 12 if cannot use default port** 
+**Issue2: Version 13 Will not work if you do not use the defualt port. This is an issue upstream. Revert to Version 12 (or try new version 14) if cannot use default port** 
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
