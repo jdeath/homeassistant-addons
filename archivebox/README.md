@@ -13,6 +13,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
+Now stores data in /addon_configs/2effc9b9_archivebox
 ## Key Features
 
 
@@ -30,7 +31,7 @@ comparison to installing any other Hass.io add-on.
 1. type "docker ps" to find container ID of archivebox
 1. type "docker exec -it CONTAINERID /bin/bash",
 1. type "su archivebox"
-1. type "cd /data/archivebox"
+1. type "cd /config/"
 1. type "archivebox manage createsuperuser" and enter information
 1. type "archivebox config --set SAVE_ARCHIVE_DOT_ORG=False" to set any extra configuration found here: https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration
 1. Go to http://localhomeassistantip:8000/ to use webUI. Ingress is not working
