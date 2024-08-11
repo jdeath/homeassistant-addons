@@ -10,7 +10,7 @@
   "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view sites you want to preserve offline",
   "environment": {},
   "map": [
-    "share:rw"
+    "addon_config:rw"
   ],
   "name": "archivebox",
   "ports": {
