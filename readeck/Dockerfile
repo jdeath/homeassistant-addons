@@ -1,5 +1,5 @@
 ARG BUILD_VERSION
-FROM codeberg.org/readeck/readeck:0.15.0 AS build
+FROM codeberg.org/readeck/readeck:${BUILD_VERSION}  AS build
 
 FROM ghcr.io/hassio-addons/base:stable
 COPY --from=build /bin/ /bin/
