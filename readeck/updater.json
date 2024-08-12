@@ -8,5 +8,5 @@
   "source": "github",
   "upstream_repo": "https://codeberg.org/readeck/readeck",
   "upstream_version": "0.14.0",
-  "paused": "true"
+  "paused": "false"
 }
