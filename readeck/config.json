@@ -6,13 +6,13 @@
   "boot": "auto",
   "description": "A simple web application that lets you save the precious readable content of web pages you like and want to keep forever.",
   "environment": {
-	  "READECK_SERVER_HOST": "0.0.0.0"
+    "READECK_SERVER_HOST": "0.0.0.0"
   },
   "map": [
-	  "addon_config:rw"
+    "addon_config:rw"
   ],
   "init": "false",
-  "version": "0.15.0",
+  "version": "",
   "name": "readeck",
   "options": {},
   "ports": {
