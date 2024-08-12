@@ -6,7 +6,7 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "readeck",
   "source": "github",
-  "upstream_repo": "readeck/readeck",
-  "upstream_version": "0.15.0",
+  "upstream_repo": "https://codeberg.org/readeck/readeck",
+  "upstream_version": "0.14.0",
   "paused": "true"
 }
