@@ -7,6 +7,6 @@
   "slug": "readeck",
   "source": "github",
   "upstream_repo": "https://codeberg.org/readeck/readeck",
-  "upstream_version": "",
-  "paused": "false"
+  "upstream_version": "0.15.0",
+  "paused": "true"
 }
