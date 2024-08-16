@@ -23,7 +23,7 @@
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "image": "benzino77/tasmocompiler",
-  "version": "12.1.0",
+  "version": "12.2.0",
   "ingress": false,
   "ingress_port": 3000,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]"
