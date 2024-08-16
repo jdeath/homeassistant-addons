@@ -1,10 +1,10 @@
 {
   "github_fulltag": "false",
-  "last_update": "10.19.0",
+  "last_update": "16-08-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "cyberchef",
   "source": "github",
   "upstream_repo": "gchq/CyberChef",
-  "upstream_version": "10.19.0"
+  "upstream_version": "10.19.2"
 }
