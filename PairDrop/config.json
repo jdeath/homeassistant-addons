@@ -17,7 +17,7 @@
   ],
   "init": "false",
   "image": "lscr.io/linuxserver/pairdrop",
-  "version": "version-v1.10.9",
+  "version": "version-v1.10.10",
   "name": "pairdrop",
   "options": {},
   "ports": {
