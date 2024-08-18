@@ -33,3 +33,26 @@ variables are required:
 [repository]: https://github.com/jdeath/homeassistant-addons
 
 ## Usage
+Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation`
+
+Edit `/share/caddy/Caddyfile`
+
+Add a GEOFilter block to allow certain countries and your local IP address. I found this online, so ask at Caddyforums if you need help.
+
+```
+(GEOFILTER) {
+        @geofilter {
+                not maxmind_geolocation {
+                        db_path "/share/caddy/GeoLite2-Country.mmdb"
+                        allow_countries IT FR
+                }
+                not remote_ip private_ranges
+        }
+        respond @geofilter 403
+}
+```
+
+Then add this line before any `reverse_proxy` directive
+```
+import GEOFILTER
+```
