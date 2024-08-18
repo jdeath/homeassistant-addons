@@ -2,6 +2,10 @@
 
 The GeoIP Update program performs automatic updates of GeoIP2 and GeoLite2 binary databases.
 
+Desiged to work with @einschmidt Caddy2 Addon for Home Assistant `https://github.com/einschmidt/hassio-addons`
+
+Also need a custom caddy binary with `https://github.com/porech/caddy-maxmind-geolocation` setup. Use my `Caddy Builder` addon to make one.
+
 Must setup license key at maxmind.com
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
@@ -27,3 +31,5 @@ variables are required:
   databases. The default is `/share/caddy`.
   
 [repository]: https://github.com/jdeath/homeassistant-addons
+
+## Usage
