@@ -33,7 +33,7 @@ variables are required:
 [repository]: https://github.com/jdeath/homeassistant-addons
 
 ## Usage
-Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation`
+Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation` and put it in `/share/caddy/` with the filename `caddy`
 
 Edit `/share/caddy/Caddyfile`
 
