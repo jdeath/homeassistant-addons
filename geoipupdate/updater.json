@@ -1,0 +1,12 @@
+{
+  "github_fulltag": "true",
+  "last_update": "27-03-2024",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "geoipupdate",
+  "source": "github",
+  "upstream_repo": "maxmind/geoipupdate",
+  "upstream_version": "v7.0.1",
+  "fulltag": "true",
+  "paused": "false"
+}

@@ -1,0 +1,40 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "boot": "auto",
+  "description": "The GeoIP Update program performs automatic updates of GeoIP2 and GeoIP Legacy binary databases. ",
+  "environment": {},
+  "map": [
+    "share:rw"
+  ],
+  "name": "Maxmind GEO IP Update",
+  "options": {
+	"GEOIPUPDATE_DB_DIR": "/share/caddy",
+    "GEOIPUPDATE_ACCOUNT_ID": "1234567",
+    "GEOIPUPDATE_LICENSE_KEY": "abcdefghi",
+    "GEOIPUPDATE_EDITION_IDS": "GeoLite2-ASN GeoLite2-City GeoLite2-Country",
+	"GEOIPUPDATE_FREQUENCY": "24"
+  },
+  "ports": {
+  },
+  "ports_description": {
+  },
+  "schema": {
+	"GEOIPUPDATE_DB_DIR": "str",
+    "GEOIPUPDATE_ACCOUNT_ID": "str",
+    "GEOIPUPDATE_LICENSE_KEY": "str",
+    "GEOIPUPDATE_EDITION_IDS": "str",
+	"GEOIPUPDATE_FREQUENCY": "str"
+  },
+  "slug": "geoipupdate",
+  "startup": "services",
+  "upstream": "v7.0.1",
+  "url": "https://github.com/jdeath/homeassistant-addons/geoipupdate",
+  "version": "v7.0.1",
+  "ingress": false
+}
