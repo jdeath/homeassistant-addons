@@ -1,0 +1,33 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "mitmproxy is a free and open source interactive HTTPS proxy",
+  "environment": {
+  },
+  "map": [
+	  "addon_config:rw"
+  ],
+  "init": "false",
+  "version": "10.4.2",
+  "name": "mitmproxy",
+  "options": {},
+  "ports": {
+    "8080/tcp": "8080",
+	"8081/tcp": "8081"
+  },
+  "ports_description": {
+    "8080/tcp": "Proxy Port",
+	"8081/tcp": "Web Interface"
+  },
+  "schema": {},
+  "slug": "mitmproxy",
+  "startup": "services",
+  "upstream": "10.4.2",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
+  "ingress": true,
+  "ingress_port": 8081
+}
