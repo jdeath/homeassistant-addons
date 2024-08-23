@@ -11,7 +11,7 @@
   "map": [
     "share:rw"
   ],
-  "version": "2024-08-19",
+  "version": "2024-08-22",
   "name": "metube",
   "options": {
     "DELETE_FILE_ON_TRASHCAN": false
@@ -27,7 +27,7 @@
   },
   "slug": "metube",
   "startup": "services",
-  "upstream": "2024-08-19",
+  "upstream": "2024-08-22",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
