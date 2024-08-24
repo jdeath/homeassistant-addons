@@ -27,6 +27,6 @@
   "upstream": "v10.4.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
-  "ingress": true,
+  "ingress": false,
   "ingress_port": 8081
 }
