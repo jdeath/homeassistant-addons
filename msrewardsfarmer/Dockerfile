@@ -2,10 +2,13 @@ ARG BUILD_FROM
 FROM python:slim
 
 ARG BUILD_VERSION
+ARG CHROME_VERSION="127.0.6533.119-1"
+# Chrome Stable, but 127 works better
+# https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 RUN apt-get update -y && \
 	apt-get install -y tar wget xvfb jq --no-install-recommends && \
-	wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+	wget -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb && \
 	apt-get install -y --no-install-recommends /tmp/chrome.deb && \
 	rm /tmp/chrome.deb && \
 	google-chrome --version && \
