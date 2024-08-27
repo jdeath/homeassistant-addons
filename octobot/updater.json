@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "false",
+  "last_update": "23-10-2023",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "octobot",
+  "source": "github",
+  "upstream_repo": "Drakkar-Software/OctoBot",
+  "upstream_version": "2.0.5"
+}
