@@ -1,0 +1,35 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "A lightweight RSS feed aggregator and reader",
+  "environment": {
+    "DB": "/config/fusion.db"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "0.8.7",
+  "name": "Fusion RSS",
+  "options": {
+	  "PASSWORD": "rss123456"
+	},
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8081/tcp": "Web interface"
+  },
+  "schema": {
+	  "PASSWORD": "str"
+	  },
+  "slug": "fusionrss",
+  "startup": "services",
+  "upstream": "0.8.7",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
+  "ingress": false,
+  "ingress_port": 8080
+}
