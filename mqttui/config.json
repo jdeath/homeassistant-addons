@@ -5,20 +5,18 @@
   ],
   "boot": "auto",
   "description": "Web GUI for mqttui",
-  "environment": {
-  },
+  "environment": {},
   "map": [
     "share:rw"
   ],
-  "version": "v1.3.0",
+  "version": "",
   "name": "mqttui",
   "options": {
-	"MQTT_BROKER": "hassio.local",
+    "MQTT_BROKER": "hassio.local",
     "MQTT_PORT": 1883,
     "MQTT_USERNAME": "hassio",
-	"MQTT_PASSWORD": "password"
+    "MQTT_PASSWORD": "password"
   },
-  
   "ports": {
     "5000/tcp": "5000"
   },
@@ -29,11 +27,11 @@
     "MQTT_BROKER": "str",
     "MQTT_PORT": "int",
     "MQTT_USERNAME": "str",
-	"MQTT_PASSWORD": "str"
+    "MQTT_PASSWORD": "str"
   },
   "slug": "mqttui",
   "startup": "services",
-  "upstream": "v1.3.0",
+  "upstream": "",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "ingress": false,
