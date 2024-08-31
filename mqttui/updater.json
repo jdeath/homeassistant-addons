@@ -5,6 +5,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "mqttui",
   "source": "github",
-  "upstream_repo": "terdia07/mqttui",
+  "upstream_repo": "terdia/mqttui",
   "upstream_version": ""
 }
