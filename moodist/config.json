@@ -5,12 +5,10 @@
   ],
   "boot": "auto",
   "description": "Ambient sounds for focus and calm",
-  "environment": {
-  },
-  "map": [
-  ],
+  "environment": {},
+  "map": [],
   "image": "ghcr.io/remvze/moodist",
-  "version": "v1.5.1",
+  "version": "",
   "name": "moodist",
   "options": {},
   "ports": {
@@ -22,7 +20,7 @@
   "schema": {},
   "slug": "moodist",
   "startup": "services",
-  "upstream": "v1.5.1",
+  "upstream": "",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,
