@@ -9,7 +9,7 @@
   "map": [
     "share:rw"
   ],
-  "version": "v1.3.0",
+  "version": "",
   "name": "mqttui",
   "options": {
     "MQTT_BROKER": "hassio.local",
@@ -31,7 +31,7 @@
   },
   "slug": "mqttui",
   "startup": "services",
-  "upstream": "v1.3.0",
+  "upstream": "",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
   "ingress": false,
