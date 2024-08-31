@@ -5,6 +5,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "moodist",
   "source": "github",
-  "upstream_repo": "ghcr.io/remvze/moodist",
+  "upstream_repo": "remvze/moodist",
   "upstream_version": ""
 }
