@@ -11,11 +11,11 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.8.7",
+  "version": "0.8.8",
   "name": "Fusion RSS",
   "options": {
-	  "PASSWORD": "rss123456"
-	},
+    "PASSWORD": "rss123456"
+  },
   "ports": {
     "8080/tcp": "8080"
   },
@@ -23,11 +23,11 @@
     "8081/tcp": "Web interface"
   },
   "schema": {
-	  "PASSWORD": "str"
-	  },
+    "PASSWORD": "str"
+  },
   "slug": "fusionrss",
   "startup": "services",
-  "upstream": "0.8.7",
+  "upstream": "0.8.8",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": false,
