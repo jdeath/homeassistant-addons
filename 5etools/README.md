@@ -1,6 +1,6 @@
 # Home assistant add-on: 5etools
 
-A suite of browser-based tools for players and DMs of D&D 5e. Downloads posted image from 5etools GitHub. No image or content is hosted/posted on jdeath's repo. No support given as Home Assistant Addon creator does not use this. Self-hosted image can be a revision behind the 5etools website. Image is 4 GB, so will take a long time to install, be parient.
+A suite of browser-based tools for players and DMs of D&D 5e. Downloads posted image from 5etools GitHub. No image or content is hosted/posted on jdeath's repo. No support given as Home Assistant Addon creator does not use this. Self-hosted image can be a revision behind the 5etools website. Image is 4 GB, so will take a long time to install, be patient.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
