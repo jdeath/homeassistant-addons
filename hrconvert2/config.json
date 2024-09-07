@@ -1,0 +1,28 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "A self-hosted drag-and-drop file conversion server & file sharing tool that supports 86 file formats with 4 color schemes & 13 end-user selectable languages",
+  "environment": {},
+  "map": [],
+  "image": "zelon88/hrconvert2",
+  "version": "v3.3.7",
+  "name": "hrconvert2",
+  "options": {},
+  "ports": {
+    "80/tcp": "8080"
+  },
+  "ports_description": {
+    "80/tcp": "Web interface"
+  },
+  "schema": {},
+  "slug": "hrconvert2",
+  "startup": "services",
+  "upstream": "v3.3.7",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": false,
+  "ingress_port": 80
+}
