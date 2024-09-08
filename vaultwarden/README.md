@@ -34,12 +34,21 @@ If you have an existing vaultwarden installation (default addon or alexbelgium's
 1. all the files should now be in `/addon-configs/2effc9b9_vaultwarden/`
 1. stop default addon, turn off "start on boot"
 1. start my addon
+1. Review documetation to configure: https://github.com/dani-garcia/vaultwarden
 
 
 ## Configuration
+1. Once setup, remove access to admin control panel from outside your network
+1. You can manually configure many parameters by stopping container and editing `/addon-configs/2effc9b9_vaultwarden/config.json`
+1. Make sure your `admin_token` is argon2 encrypted: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page#secure-the-admin_token
+1. If not, `docker ps | grep "vault"` and numbers/letters in front is containerID
+2. `docker exec -it containerID /bin/bash`
+3. `cd /` `/vaultwarden hash --preset owasp` enter a password, then replace admin token
+4. Since this file is accessible, I guess anyone could do this, so be careful. If have access to your homeassistnat machine, this could be done inside the container too, so not really any less secure 
+
 
 ```
-port : 8080 #port you want to run on.
+port : 7277 #port you want to run on.
 ```
 
 Webui can be found at `<your-ip>:port`.
