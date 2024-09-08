@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "26-08-2024",
+  "last_update": "07-09-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "hrconvert2",
   "source": "dockerhub",
   "upstream_repo": "zelon88/hrconvert2",
-  "upstream_version": "1.210.1",
+  "upstream_version": "v3.3.7",
   "paused": "false"
 }
