@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "0.15.1",
+  "version": "0.15.3",
   "name": "readeck",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "readeck",
   "startup": "services",
-  "upstream": "0.15.1",
+  "upstream": "0.15.3",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
   "ingress": false,
