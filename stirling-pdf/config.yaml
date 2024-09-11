@@ -1,0 +1,27 @@
+name: "Stirling-PDF"
+version: "0.28.3"
+upstream: "0.28.3"
+slug: stirling-pdf
+description: >-
+  "a robust, locally hosted web-based PDF manipulation tool"
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  8080/tcp: 8080 
+ports_description:
+  8080/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /configs
+environment:
+  DOCKER_ENABLE_SECURITY: "false"
+  INSTALL_BOOK_AND_ADVANCED_HTML_OPS: "false"
+image: ghcr.io/stirling-tools/s-pdf
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:8080]"
+ingress: false
+ingress_port: 8080 
