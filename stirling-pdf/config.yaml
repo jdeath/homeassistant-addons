@@ -3,7 +3,7 @@ version: "0.28.3"
 upstream: "0.28.3"
 slug: stirling-pdf
 description: >-
-  "a robust, locally hosted web-based PDF manipulation tool"
+  A robust, locally hosted web-based PDF manipulation tool
 arch:
   - amd64
   - aarch64
