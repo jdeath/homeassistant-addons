@@ -1,0 +1,28 @@
+name: "ConvertX"
+version: "v0.4.0"
+upstream: "v0.4.0"
+slug: convertx
+description: >-
+  "A self-hosted online file converter. Supports 831 different formats. Written with TypeScript, Bun and Elysia"
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/data
+environment:
+  ACCOUNT_REGISTRATION: "false"
+  HTTP_ALLOWED: "true"
+  ALLOW_UNAUTHENTICATED: "true"
+image: ghcr.io/c4illin/convertx
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:3000]"
+ingress: false
+ingress_port: 3000
