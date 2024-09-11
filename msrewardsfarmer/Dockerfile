@@ -2,8 +2,9 @@ ARG BUILD_FROM
 FROM python:slim
 
 ARG BUILD_VERSION
-ARG CHROME_VERSION="127.0.6533.119-1"
-# Chrome Stable, but 127 works better
+#ARG CHROME_VERSION="127.0.6533.119-1"
+ARG CHROME_VERSION="128.0.6613.119-1"
+# Chrome Stable, but 128 works better
 # https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 RUN apt-get update -y && \
@@ -19,12 +20,12 @@ RUN apt-get update -y && \
 	sed -i 's/Path(__file__).parent.parent/Path.cwd()/g' src/utils.py && \
 	sed -i 's/\bdriver.close()\b//g' src/browser.py && \
 	sed -i 's/self.webdriver.close()//g' src/browser.py && \
-	sed -i 's/timeToWait=20/timeToWait=60/g' src/*.py && \
- 	sed -i 's/timeToWait=40/timeToWait=60/g' src/*.py && \
-	sed -i 's/WebDriverWait(self.webdriver, 10)/WebDriverWait(self.webdriver, 20)/g' src/searches.py && \
- 	sed -i 's/WebDriverWait(self.webdriver, 20)/WebDriverWait(self.webdriver, 30)/g' src/searches.py && \
-	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt && \
-	pip install --no-cache-dir --root-user-action=ignore --upgrade -r requirements.txt
+	#sed -i 's/timeToWait=20/timeToWait=60/g' src/*.py && \
+ 	#sed -i 's/timeToWait=40/timeToWait=60/g' src/*.py && \
+	#sed -i 's/WebDriverWait(self.webdriver, 10)/WebDriverWait(self.webdriver, 20)/g' src/searches.py && \
+ 	#sed -i 's/WebDriverWait(self.webdriver, 20)/WebDriverWait(self.webdriver, 30)/g' src/searches.py && \
+	pip install --no-cache-dir --root-user-action=ignore -r requirements.txt #&& \
+	#pip install --no-cache-dir --root-user-action=ignore --upgrade -r requirements.txt
 
 # setting display environment stuff
 ENV DISPLAY=:99
