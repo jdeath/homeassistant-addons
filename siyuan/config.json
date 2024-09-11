@@ -5,12 +5,11 @@
   ],
   "boot": "auto",
   "description": "SiYuan is a privacy-first personal knowledge management system, support fine-grained block-level reference and Markdown WYSIWYG",
-  "environment": {
-  },
+  "environment": {},
   "map": [
     "addon_config:rw"
   ],
-  "version": "v3.1.5",
+  "version": "v3.1.6",
   "name": "siyuan",
   "ports": {
     "6806/tcp": "6806"
@@ -22,11 +21,11 @@
     "ACCESS_CODE": "ABCD1234"
   },
   "schema": {
-	"ACCESS_CODE": "str?"
+    "ACCESS_CODE": "str?"
   },
   "slug": "siyuan",
   "startup": "services",
-  "upstream": "v3.1.5",
+  "upstream": "v3.1.6",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:6806]",
   "ingress": false,

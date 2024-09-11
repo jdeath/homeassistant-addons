@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "v3.1.5",
+  "last_update": "11-09-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "siyuan",
   "source": "github",
   "upstream_repo": "siyuan-note/siyuan",
-  "upstream_version": "v3.1.5"
+  "upstream_version": "v3.1.6"
 }
