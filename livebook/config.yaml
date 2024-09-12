@@ -1,0 +1,25 @@
+name: "LiveBook"
+version: "0.14.0"
+upstream: "0.14.0"
+slug: livebook
+description: >-
+  Livebook is a web application for writing interactive and collaborative code notebooks
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  8080/tcp: 8080
+ports_description:
+  8080/tcp: "Web Interface"
+image: ghcr.io/livebook-dev/livebook
+map:
+  - type: addon_config
+    read_only: false
+environment:
+  LIVEBOOK_DATA_PATH: "/config/"
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:8080]"
+ingress: false
+ingress_port: 8080
