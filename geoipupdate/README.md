@@ -4,6 +4,8 @@ The GeoIP Update program performs automatic updates of GeoIP2 and GeoLite2 binar
 
 Desiged to work with @einschmidt Caddy2 Addon for Home Assistant `https://github.com/einschmidt/hassio-addons`
 
+Note: Recent Caddy-2 update (v2.0) changed the config path to `/addon_configs/c80c7555_caddy-2`. If you were running with v1.x, save your configuration of this addon, uninstall, and reinstall, then replace your config but change the directory to above. This is needed because addon has to be rebuilt to be able to see the new directory
+
 Also need a custom caddy binary with `https://github.com/porech/caddy-maxmind-geolocation` setup. Use my `Caddy Builder` addon to make one.
 
 Must setup license key at maxmind.com
@@ -28,12 +30,12 @@ variables are required:
   If this is not set or is set to `0`, `geoipupdate` will run once and exit.
 
 * `GEOIPUPDATE_DB_DIR` - The directory where geoipupdate will download the
-  databases. The default is `/share/caddy`.
+  databases. The default is `/addon_configs/c80c7555_caddy-2` to be consistent with new caddy-2 plugin.
   
 [repository]: https://github.com/jdeath/homeassistant-addons
 
 ## Usage
-Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation` and put it in `/share/caddy/` with the filename `caddy`
+Make a custom caddy build that includes `--with github.com/porech/caddy-maxmind-geolocation` and put it in `/share/caddy/` (v1.x) with the filename `caddy` or `/addon_configs/c80c7555_caddy-2` (v2.0)
 
 Edit `/share/caddy/Caddyfile`
 
