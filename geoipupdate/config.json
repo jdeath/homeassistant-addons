@@ -10,11 +10,12 @@
   "description": "The GeoIP Update program performs automatic updates of GeoIP2 and GeoIP Legacy binary databases. ",
   "environment": {},
   "map": [
-    "share:rw"
+    "share:rw",
+    "all_addon_configs:rw"
   ],
   "name": "Maxmind GEO IP Update",
   "options": {
-	"GEOIPUPDATE_DB_DIR": "/share/caddy",
+    "GEOIPUPDATE_DB_DIR": "/addon_configs/c80c7555_caddy-2",
     "GEOIPUPDATE_ACCOUNT_ID": "1234567",
     "GEOIPUPDATE_LICENSE_KEY": "abcdefghi",
     "GEOIPUPDATE_EDITION_IDS": "GeoLite2-ASN GeoLite2-City GeoLite2-Country",
