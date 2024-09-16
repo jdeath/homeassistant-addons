@@ -1,0 +1,24 @@
+name: "linkding"
+version: "1.33.0"
+upstream: "1.33.0"
+slug: linkding
+description: >-
+  linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  9090/tcp: 9090 
+ports_description:
+  9090/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /etc/linkding/data
+image: sissbruecker/linkding
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:9090]"
+ingress: false
+ingress_port: 9090
