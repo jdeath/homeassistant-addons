@@ -7,9 +7,9 @@ WG_HOST=$(jq --raw-output '.WG_HOST // empty' $CONFIG_PATH)
 echo "WG_HOST: ${WG_HOST}"
 export WG_HOST="${WG_HOST}"
 
-PASSWORD=$(jq --raw-output '.PASSWORD // empty' $CONFIG_PATH)
-echo "PASSWORD: ${PASSWORD}"
-export PASSWORD="${PASSWORD}"
+PASSWORD_HASH=$(jq --raw-output '.PASSWORD_HASH // empty' $CONFIG_PATH)
+echo "PASSWORD_HASH: ${PASSWORD_HASH}"
+export PASSWORD_HASH="${PASSWORD_HASH}"
 
 WG_PORT=51820
 echo "WG_PORT: ${WG_PORT}"
