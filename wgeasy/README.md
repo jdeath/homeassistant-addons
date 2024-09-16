@@ -46,7 +46,7 @@ comparison to installing any other Hass.io add-on.
 
 | Env | Default | Example | Description |
 | - | - | - | - |
-| `PASSWORD_HASH` | `` | `$2a$12$XC....` | When set, requires a password when logging in to the Web UI. See below |
+| `PASSWORD_HASH` | - | `$2a$12$XC....` | When set, requires a password when logging in to the Web UI. See above |
 | `WG_HOST` | - | `vpn.myserver.com` | The public hostname of your VPN server. |
 | `WG_PORT` | `51820` | `12345` | The public UDP port of your VPN server. WireGuard will always listen on `51820` inside the Docker container. Not used >v14|
 | `WG_CONFIG_PORT` | `51820` | `12345` | The UDP port used on Home Assistant Plugin. The public UDP port of your VPN server. Make sure network port is the same in home assistant network config |
