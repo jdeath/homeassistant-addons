@@ -41,7 +41,9 @@ comparison to installing any other Hass.io add-on.
 1. Open WebUI should load via ingress
 1. Make the client configs, scan the QR codes or download the config file.
 1. If change settings, you may need to remake the client configs, but it is super simple now!
-
+1. If you want to use a password for the UI, log into your homeassistant and type:
+   `docker run -it ghcr.io/wg-easy/wg-easy wgpw YOUR_PASSWORD`
+1. Copy everything between the single quotes and put into the PASSWORD_HASH field. Since the UI is available via ingress, not really needed. I would not recommend exposing this webUI to the internet, but you can if you dare!
 ## Configuration
 
 | Env | Default | Example | Description |
