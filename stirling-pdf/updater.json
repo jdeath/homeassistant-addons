@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "26-08-2024",
+  "last_update": "16-09-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "stirling-pdf",
   "source": "github",
   "upstream_repo": "Stirling-Tools/Stirling-PDF",
-  "upstream_version": "0.28.3",
+  "upstream_version": "0.29.0",
   "paused": "false"
 }
