@@ -15,7 +15,6 @@
   "name": "WG Easy",
   "options": {
     "WG_HOST": "hassio.local",
-    "PASSWORD_HASH": "ChangeMe",
     "WG_CONFIG_PORT": "51820",
     "WG_DEVICE": "eth0",
     "WG_PATH": "/ssl/wgeasy/",
