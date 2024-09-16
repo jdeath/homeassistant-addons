@@ -6,16 +6,16 @@
   "boot": "auto",
   "description": "Inventory and organization system built for the Home User",
   "environment": {
-	  "HBOX_STORAGE_DATA": "/config",
-	  "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1"
-	  },
+    "HBOX_STORAGE_DATA": "/config",
+    "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1"
+  },
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.14.1",
+  "version": "0.14.2",
   "name": "Homebox",
   "options": {
-	  "HBOX_OPTIONS_ALLOW_REGISTRATION": "true"
+    "HBOX_OPTIONS_ALLOW_REGISTRATION": "true"
   },
   "ports": {
     "7745/tcp": "7745"
@@ -24,11 +24,11 @@
     "7745/tcp": "Web interface"
   },
   "schema": {
-	  "HBOX_OPTIONS_ALLOW_REGISTRATION": "list(true|false)"
-	  },
+    "HBOX_OPTIONS_ALLOW_REGISTRATION": "list(true|false)"
+  },
   "slug": "homebox",
   "startup": "services",
-  "upstream": "0.14.1",
+  "upstream": "0.14.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7745]",
   "ingress": false,
