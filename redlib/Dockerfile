@@ -1,1 +1,1 @@
-FROM quay.io/redlib/redlib
+FROM quay.io/redlib/redlib:latest
