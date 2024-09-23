@@ -1,6 +1,6 @@
 name: "ConvertX"
-version: "v0.4.1"
-upstream: "v0.4.1"
+version: "v0.5.0"
+upstream: "v0.5.0"
 slug: convertx
 description: >-
   A self-hosted online file converter. Supports 831 different formats. Written with TypeScript, Bun and Elysia
