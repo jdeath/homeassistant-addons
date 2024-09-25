@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "false",
+  "last_update": "26-08-2024",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "wikijs",
+  "source": "github",
+  "upstream_repo": "requarks/wiki",
+  "upstream_version": "2.5.304",
+  "paused": "false"
+}

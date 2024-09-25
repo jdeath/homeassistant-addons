@@ -1,0 +1,27 @@
+name: "Wiki.js"
+version: "2.5.304"
+upstream: "2.5.304"
+slug: wikijs
+description: >-
+  A modern, lightweight and powerful wiki app built on NodeJS
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  3000/tcp: 3000 
+ports_description:
+  3000/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+environment:
+    CONFIG_FILE: "/config/wikijs-config.yml"
+    PUID: "0"
+    PGID: "0"
+image: ghcr.io/requarks/wiki
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:3000]"
+ingress: true
+ingress_port: 3000 
