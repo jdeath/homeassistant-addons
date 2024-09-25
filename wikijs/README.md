@@ -19,7 +19,7 @@ comparison to installing any other Hass.io add-on.
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on. Add-on will error
-1. Copy default configuration wikijs-config.yml (not config.yaml!) from this repo to /addon_configs/2effc9b9_wikijs
+1. Copy default configuration [wikijs-config.yml](https://github.com/jdeath/homeassistant-addons/blob/main/wikijs/wikijs-config.yml) (not config.yaml!) from this repo to /addon_configs/2effc9b9_wikijs
 1. start addon
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via <your-ip>:port.
