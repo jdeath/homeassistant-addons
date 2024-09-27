@@ -1,6 +1,6 @@
 name: "Wiki.js"
-version: "2.5.304"
-upstream: "2.5.304"
+version: "2.3.81"
+upstream: "2.3.81"
 slug: wikijs
 description: >-
   A modern, lightweight and powerful wiki app built on NodeJS
