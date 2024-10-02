@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "23-10-2023",
+  "last_update": "02-10-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "fasten",
   "source": "github",
   "upstream_repo": "fastenhealth/fasten-onprem",
-  "upstream_version": "v1.1.2"
+  "upstream_version": "v1.1.3"
 }
