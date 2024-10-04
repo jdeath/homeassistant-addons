@@ -6,13 +6,13 @@
   "boot": "auto",
   "description": "Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal",
   "environment": {
-	  "DATA_FOLDER": "/config"
+    "DATA_FOLDER": "/config"
   },
   "map": [
-	  "addon_config:rw"
-	  ],
+    "addon_config:rw"
+  ],
   "image": "ghcr.io/dani-garcia/vaultwarden",
-  "version": "1.32.0",
+  "version": "1.32.1",
   "name": "Vaultwarden",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "vaultwarden",
   "startup": "services",
-  "upstream": "1.32.0",
+  "upstream": "1.32.1",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": true,
