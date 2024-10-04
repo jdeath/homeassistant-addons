@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "23-09-2024",
+  "last_update": "04-10-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "livebook",
   "source": "github",
   "upstream_repo": "livebook-dev/livebook",
-  "upstream_version": "0.14.2",
+  "upstream_version": "0.14.3",
   "paused": "false"
 }
