@@ -5,12 +5,11 @@
   ],
   "boot": "auto",
   "description": "Octobot is a powerful open-source cryptocurrency trading robot",
-  "environment": {
-  },
+  "environment": {},
   "map": [
     "addon_config:rw"
   ],
-  "version": "2.0.5",
+  "version": "2.0.6",
   "name": "octobot",
   "options": {},
   "ports": {
@@ -22,7 +21,7 @@
   "schema": {},
   "slug": "octobot",
   "startup": "services",
-  "upstream": "2.0.5",
+  "upstream": "2.0.6",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5001]",
   "ingress": false,
