@@ -1,0 +1,29 @@
+name: n8n
+version: 1.62.4
+upstream: 1.62.4
+slug: n8n
+description: >-
+  n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  5678/tcp: 5678 
+ports_description:
+  5678/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /home/node/
+environment:
+    PUID: "1"
+    PGID: "1"
+    N8N_SECURE_COOKIE: "false"
+    TINI_SUBREAPER: "true"
+image: docker.n8n.io/n8nio/n8n
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:5678]"
+ingress: false
+ingress_port: 5678 
