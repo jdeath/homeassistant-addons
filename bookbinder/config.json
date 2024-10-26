@@ -1,0 +1,22 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
+  "environment": {
+  },
+  "version": "v1.3.1",
+  "name": "Book Binder JS",
+  "ports": {
+    "5173/tcp": "5173"
+  },
+  "ports_description": {
+    "5173/tcp": "Web interface"
+  },
+  "slug": "bookbinderjs",
+  "startup": "services",
+  "upstream": "v1.3.1",
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}
