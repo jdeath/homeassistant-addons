@@ -5,8 +5,7 @@
   ],
   "boot": "manual",
   "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
-  "environment": {
-  },
+  "environment": {},
   "version": "v1.3.1",
   "name": "Book Binder JS",
   "ports": {
