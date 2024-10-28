@@ -1,0 +1,24 @@
+name: Otter Wiki
+version: 2.7.0
+upstream: 2.7.0
+slug: otterwiki
+description: >-
+  An Otter Wiki is Python-based software for collaborative content management, called a wiki. The content is stored in a git repository, which keeps track of all changes. Markdown is used as Markup language. An Otter Wiki is written in python using the microframework Flask. halfmoon is used as CSS framework and CodeMirror as editor. Font Awesome Free serves the icons.
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  80/tcp: 8084 
+ports_description:
+  80/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app-data
+image: redimp/otterwiki
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:80]"
+ingress: false
+ingress_port: 80 
