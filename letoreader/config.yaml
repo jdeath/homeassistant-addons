@@ -1,0 +1,24 @@
+name: LetoReader
+upstream: latest
+version: latest
+slug: letoreader
+description: >-
+  LetoReader is a versatile speed reader designed to enhance your reading efficiency. It supports high-speed reading for skimming or consuming easy texts at e.g. 400-1000 words per minute. However, it can also be used at lower speeds for better comprehension while still benefiting from Rapid Serial Visual Presentation (RSVP)
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  8080/tcp: 8080  
+ports_description:
+  8080/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /home/app/.aspnet
+image: davidewiest/reader
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:8080]"
+ingress: false
+ingress_port: 8080 
