@@ -1,4 +1,4 @@
-# Home assistant add-on: Stirling-pdf
+# Home assistant add-on: Otter Wiki
 
 # An Otter Wiki
 
