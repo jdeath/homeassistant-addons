@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "v0.4.2",
+  "version": "v0.4.4",
   "name": "caddybuilder",
   "options": {},
   "ports": {},
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "caddybuilder",
   "startup": "services",
-  "upstream": "v0.4.2",
+  "upstream": "v0.4.4",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
   "ingress": false
