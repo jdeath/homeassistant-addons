@@ -1,0 +1,24 @@
+name: FreeBeeGee
+version: 0.24.0
+upstream: 0.24.0
+slug: freebeegee
+description: >-
+  A virtual gaming tabletop you can host on your own server
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  80/tcp: 8765 
+ports_description:
+  80/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /var/www/html/api/data
+image: ghcr.io/ludus-leonis/freebeegee
+boot: manual
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:80]"
+ingress: false
+ingress_port: 80 
