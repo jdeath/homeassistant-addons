@@ -1,0 +1,24 @@
+name: CommaFeed
+version: 5.3.4-h2
+upstream: 5.3.4-h2
+slug: commafeed
+description: >-
+  Google Reader inspired self-hosted RSS reader, based on Quarkus and React/TypeScript.
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  8082/tcp: 8082 
+ports_description:
+  8082/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /commafeed/data
+image: athou/commafeed
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:8082]"
+ingress: true
+ingress_port: 8082
