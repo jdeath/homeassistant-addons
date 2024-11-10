@@ -5,6 +5,7 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "commafeed",
   "github_tagfilter": "h2",
+  "github_exclude": "master",
   "source": "dockerhub",
   "upstream_repo": "athou/commafeed",
   "upstream_version": "master-h2-jvm",
