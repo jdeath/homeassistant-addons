@@ -6,6 +6,7 @@
   "slug": "commafeed",
   "github_tagfilter": "h2",
   "github_exclude": "master",
+  "dockerhub_by_date":"true",
   "source": "dockerhub",
   "upstream_repo": "athou/commafeed",
   "upstream_version": "master-h2",
