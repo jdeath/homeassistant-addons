@@ -7,6 +7,6 @@
   "slug": "readeck",
   "source": "website-feed",
   "upstream_repo": "https://codeberg.org/readeck/readeck/releases.rss",
-  "upstream_version": "",
-  "paused": "false"
+  "upstream_version": "0.15.6",
+  "paused": "true"
 }
