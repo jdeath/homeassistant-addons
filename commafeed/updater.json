@@ -8,6 +8,6 @@
   "github_exclude": "jvm",
   "source": "dockerhub",
   "upstream_repo": "athou/commafeed",
-  "upstream_version": "master-h2-jvm",
+  "upstream_version": "master-h2",
   "paused": "false"
 }
