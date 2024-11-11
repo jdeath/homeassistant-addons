@@ -29,7 +29,7 @@ comparison to installing any other Hass.io add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via <your-ip>:port and ingress
+1. Open WebUI should work via <your-ip>:port
 1. Settings will be in /addon_configs/2effc9b9_medassist
 ## Configuration
 
