@@ -12,7 +12,7 @@ ports:
   18966/tcp: 18966 
 ports_description:
   18966/tcp: "Web Interface"
-image: jason5ng32/myip
+image: ghcr.io/jason5ng32/myip
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:18966]"
