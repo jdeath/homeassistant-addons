@@ -2,7 +2,7 @@
 
 Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.
 
-Difference between this version, the official homeassistant addon and Alex Belgium's addon is this stores the data in /addons_config which makes it easier to move things around if you accidentally uninstall or have a bad upgrade. You must be sure to use an argon encrypted password, which should be default now. Also the built-in homeassistant one often is not updated (even after multiple requests). This addon also just runs the raw docker container, where the other addons edit the container.
+Difference between this version, the official homeassistant addon and Alex Belgium's addon is this stores the data in /addons_config which makes it easier to move things around if you accidentally uninstall or have a bad upgrade. You must be sure to use an argon encrypted password, which should be default now. Also the built-in homeassistant one often is not updated (even after multiple requests). This addon also just uses the official docker image with no changes, where the other addons edit the image with extra stuff.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
