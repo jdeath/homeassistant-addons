@@ -1,4 +1,4 @@
-# Home assistant add-on: Wiki.js
+# Home assistant add-on: MyIP
 
 MyIP is an advanced IP utility designed to provide a wide range of information and diagnostics about your IP address. It's perfect for users who need to view and analyze their IP details, check website accessibility, perform DNS leak tests, and more
 
