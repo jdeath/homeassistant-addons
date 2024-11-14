@@ -39,6 +39,7 @@ The installation of this add-on takes a few extra steps.
 1. It will fail, that is ok
 1. Settings will be in `/addon_configs/2effc9b9_plannarally`
 1. ssh in to homeassistant type `chmod 2777 addon_configs/2effc9b9_plannarally`
+2. Start the add-on, it will start, but then stop the addon.
 1. edit `/addon_configs/2effc9b9_plannarally/server_config.cfg`
 1. Under `[General]` make the next two lines:
 
