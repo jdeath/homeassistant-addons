@@ -1,13 +1,13 @@
 {
   "github_fulltag": "false",
-  "last_update": "13-08-2024",
+  "last_update": "14-11-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "planarally",
   "source": "dockerhub",
   "github_tagfilter": "v",
   "upstream_repo": "Kruptein/PlanarAlly",
-  "upstream_version": "v2024.3.0",
+  "upstream_version": "",
   "fulltag": "true",
   "paused": "false"
 }
