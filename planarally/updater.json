@@ -4,9 +4,10 @@
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "planarally",
-  "source": "github",
+  "source": "dockerhub",
+  "github_tagfilter": "v",
   "upstream_repo": "Kruptein/PlanarAlly",
-  "upstream_version": "2024.3",
-  "fulltag": "false",
-  "paused": "true"
+  "upstream_version": "v2024.3.0",
+  "fulltag": "true",
+  "paused": "false"
 }
