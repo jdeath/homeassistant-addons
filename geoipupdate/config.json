@@ -19,23 +19,21 @@
     "GEOIPUPDATE_ACCOUNT_ID": "1234567",
     "GEOIPUPDATE_LICENSE_KEY": "abcdefghi",
     "GEOIPUPDATE_EDITION_IDS": "GeoLite2-ASN GeoLite2-City GeoLite2-Country",
-	"GEOIPUPDATE_FREQUENCY": "24"
+    "GEOIPUPDATE_FREQUENCY": "24"
   },
-  "ports": {
-  },
-  "ports_description": {
-  },
+  "ports": {},
+  "ports_description": {},
   "schema": {
-	"GEOIPUPDATE_DB_DIR": "str",
+    "GEOIPUPDATE_DB_DIR": "str",
     "GEOIPUPDATE_ACCOUNT_ID": "str",
     "GEOIPUPDATE_LICENSE_KEY": "str",
     "GEOIPUPDATE_EDITION_IDS": "str",
-	"GEOIPUPDATE_FREQUENCY": "str"
+    "GEOIPUPDATE_FREQUENCY": "str"
   },
   "slug": "geoipupdate",
   "startup": "services",
-  "upstream": "v7.0.1",
+  "upstream": "v7.1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/geoipupdate",
-  "version": "v7.0.1",
+  "version": "v7.1.0",
   "ingress": false
 }
