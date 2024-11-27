@@ -1,0 +1,31 @@
+name: wDOSg
+version: latest
+upstream: latest
+slug: wdosg
+description: >-
+  A Simple web server to manage and run DOS based games on browser
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  3001/tcp: 3001 
+ports_description:
+  3001/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+environment:
+    DB_PATH: "/config/database"
+    GAMES_LIBRARY: "/config/wdosglibrary"   
+options:
+    TWITCH_CLIENT_ID:
+    TWITCH_CLIENT_SECRET:
+schema:
+    TWITCH_CLIENT_ID: "str"
+    TWITCH_CLIENT_SECRET: "str"
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:3001]"
+ingress: false
+ingress_port: 3001
