@@ -21,7 +21,7 @@ The installation of this add-on takes a bit of extra work.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via <your-ip>:port
-1. Consult official documentation to make a jsdos bundle. It is kind of a pain!
+1. Consult official documentation to make a jsdos bundle. It is kind of a pain! Latest version can do it directly from your own zip of a game. Be sure the zipfile has the game directly in the root of the zip, not in a folder inside the zip!
 1. Upload your bundle and play your game.
 1. Settings will be in /addon_configs/2effc9b9_wdosg
 ## Configuration
