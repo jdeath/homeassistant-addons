@@ -1,0 +1,55 @@
+name: Wedding Share
+version: 1.0.9
+upstream: 1.0.9
+slug: weddingshare
+description: >-
+  WeddingShare provides you and your guests a way to share memories of and leading up to the big day
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  5000/tcp: 5000 
+ports_description:
+  5000/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/wwwroot/uploads
+options:
+    TITLE: "Wedding Share"
+    LOGO: "https://someurl/someimage.png"
+    GALLERY_COLUMNS: 4
+    ALLOWED_FILE_TYPES: ".jpg,.jpeg,.png"
+    MAX_FILE_SIZE_MB: 10
+    ADMIN_PASSWORD: "admin"
+    SINGLE_GALLERY_MODE: false
+    REQUIRE_REVIEW: true
+    DISABLE_HOME_LINK: false
+    DISABLE_REVIEW_COUNTER: false
+    DISABLE_UPLOAD: false
+    DISABLE_QR_CODE: false
+    DISABLE_GUEST_GALLERY_CREATION: false
+    HIDE_KEY_FROM_QR_CODE: false
+    IDLE_GALLERY_REFRESH_MINS: 5
+schema:
+    TITLE: "str"
+    LOGO: "url"
+    GALLERY_COLUMNS: "int"
+    ALLOWED_FILE_TYPES: "str"
+    MAX_FILE_SIZE_MB: "int"
+    ADMIN_PASSWORD: "str"
+    SINGLE_GALLERY_MODE: "bool"
+    REQUIRE_REVIEW: "bool"
+    DISABLE_HOME_LINK: "bool"
+    DISABLE_REVIEW_COUNTER: "bool"
+    DISABLE_UPLOAD: "bool"
+    DISABLE_QR_CODE: "bool"
+    DISABLE_GUEST_GALLERY_CREATION: "bool"
+    HIDE_KEY_FROM_QR_CODE: "bool"
+    IDLE_GALLERY_REFRESH_MINS: "int"
+boot: manual
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:5000]"
+ingress: false
+ingress_port: 5000
