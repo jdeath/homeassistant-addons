@@ -18,7 +18,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-This addon uses the [docker image](https://github.com/Athou/commafeed/).
+This addon uses the [docker image](https://github.com/njic/medassist/releases).
 
 ## Installation
 
