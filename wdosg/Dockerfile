@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM soulraven1980/wdosg
+FROM ghcr.io/soulraven80/wdosg
 
 RUN apk add -U --no-cache jq curl bash
 
