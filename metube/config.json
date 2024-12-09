@@ -5,16 +5,14 @@
   ],
   "boot": "auto",
   "description": "Web GUI for youtube-dl",
-  "environment": {
-    "DOWNLOAD_DIR": "/share/metube/"
-  },
   "map": [
     "share:rw"
   ],
   "version": "2024-12-08",
   "name": "metube",
   "options": {
-    "DELETE_FILE_ON_TRASHCAN": false
+    "DELETE_FILE_ON_TRASHCAN": false,
+	"DOWNLOAD_DIR": "/share/metube/"
   },
   "ports": {
     "8081/tcp": "8081"
@@ -23,7 +21,8 @@
     "8081/tcp": "Web interface"
   },
   "schema": {
-    "DELETE_FILE_ON_TRASHCAN": "bool"
+    "DELETE_FILE_ON_TRASHCAN": "bool",
+	"DOWNLOAD_DIR": "str"
   },
   "slug": "metube",
   "startup": "services",
