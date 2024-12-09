@@ -6,6 +6,6 @@
   "slug": "5etools",
   "source": "github",
   "upstream_repo": "5etools-mirror-3/5etools-img",
-  "upstream_version": "2.5.5",
+  "upstream_version": "2.5.6",
   "paused": "false"
 }
