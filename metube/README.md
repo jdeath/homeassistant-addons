@@ -19,7 +19,7 @@ comparison to installing any other Hass.io add-on.
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
 1. Click the `Save` button to store your configuration.
-1. Make the directory /share/metube to store your downloaded files
+1. Download directory defaults to /share/metube, can be changed to anything in share
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via ingress or <your-ip>:port.
