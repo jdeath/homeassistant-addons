@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "17-11-2024",
+  "last_update": "11-12-2024",
   "github_beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "flatnotes",
   "source": "github",
   "upstream_repo": "dullage/flatnotes",
-  "upstream_version": "v5.3.1"
+  "upstream_version": "v5.3.2"
 }
