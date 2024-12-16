@@ -8,11 +8,11 @@
   "map": [
     "share:rw"
   ],
-  "version": "2024-12-08",
+  "version": "2024-12-14",
   "name": "metube",
   "options": {
     "DELETE_FILE_ON_TRASHCAN": false,
-	"DOWNLOAD_DIR": "/share/metube/"
+    "DOWNLOAD_DIR": "/share/metube/"
   },
   "ports": {
     "8081/tcp": "8081"
@@ -22,11 +22,11 @@
   },
   "schema": {
     "DELETE_FILE_ON_TRASHCAN": "bool",
-	"DOWNLOAD_DIR": "str"
+    "DOWNLOAD_DIR": "str"
   },
   "slug": "metube",
   "startup": "services",
-  "upstream": "2024-12-08",
+  "upstream": "2024-12-14",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
