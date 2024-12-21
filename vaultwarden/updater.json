@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "11-12-2024",
+  "last_update": "20-12-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "vaultwarden",
   "source": "github",
   "upstream_repo": "dani-garcia/vaultwarden",
-  "upstream_version": "1.32.6",
+  "upstream_version": "1.32.7",
   "paused": "false"
 }
