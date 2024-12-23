@@ -22,9 +22,9 @@
   "schema": {},
   "slug": "shiori",
   "startup": "services",
-  "upstream": "v1.7.1",
+  "upstream": "v1.7.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "v1.7.1",
+  "version": "v1.7.2",
   "ingress": false,
   "image": "ghcr.io/go-shiori/shiori"
 }
