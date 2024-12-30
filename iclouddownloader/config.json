@@ -23,9 +23,9 @@
   },
   "slug": "iclouddownloader",
   "startup": "services",
-  "upstream": "1.25.0",
+  "upstream": "1.25.1",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/iclouddownloader",
-  "version": "1.25.0",
+  "version": "1.25.1",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,
   "ingress_port": 8080
