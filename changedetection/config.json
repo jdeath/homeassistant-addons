@@ -28,6 +28,7 @@
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/changedetection",
   "version": "0.48.5",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5000]",
+  "panel_admin": false,
   "ingress": true,
   "ingress_port": 5000
 }
