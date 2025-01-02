@@ -33,5 +33,7 @@
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": true,
-  "ingress_port": 3000
+  "ingress_port": 3000,
+  "panel_admin": false,
+  "panel_icon": "mdi:parachute"
 }
