@@ -23,6 +23,7 @@
   "upstream": "2024.10.22-7ca5933",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
+  "panel_admin": false,
   "ingress": false,
   "ingress_port": 80
 }
