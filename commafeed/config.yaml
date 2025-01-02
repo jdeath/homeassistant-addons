@@ -20,5 +20,6 @@ image: athou/commafeed
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:8082]"
+panel_admin: false
 ingress: true
 ingress_port: 8082
