@@ -20,6 +20,7 @@
   "url": "https://github.com/jdeath/homeassistant-addons",
   "image": "registry.gitlab.com/glatteis/earthwalker",
   "version": "latest",
+  "panel_admin": false,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false
 }
