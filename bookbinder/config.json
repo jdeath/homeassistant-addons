@@ -17,5 +17,6 @@
   "slug": "bookbinderjs",
   "startup": "services",
   "upstream": "v1.3.1",
+  "panel_admin": false,
   "url": "https://github.com/jdeath/homeassistant-addons"
 }
