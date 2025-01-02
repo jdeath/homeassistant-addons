@@ -24,5 +24,6 @@ image: ghcr.io/c4illin/convertx
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:3000]"
+panel_admin: false
 ingress: false
 ingress_port: 3000
