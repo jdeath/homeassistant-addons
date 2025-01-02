@@ -22,6 +22,7 @@
   "startup": "services",
   "upstream": "v0.4.4",
   "url": "https://github.com/jdeath/homeassistant-addons",
+  "panel_admin": false,
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
   "ingress": false
 }
