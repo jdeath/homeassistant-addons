@@ -25,6 +25,7 @@
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
   "version": "stable-2024-12-15",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
+  "panel_admin": false,
   "ingress": false,
   "ingress_port": 8000
 }
