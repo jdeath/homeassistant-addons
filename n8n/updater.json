@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "20-12-2024",
+  "last_update": "10-01-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "n8n",
   "source": "github",
   "upstream_repo": "n8n-io/n8n",
-  "upstream_version": "1.72.1",
+  "upstream_version": "1.73.1",
   "paused": "false"
 }
