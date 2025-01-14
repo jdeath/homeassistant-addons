@@ -23,5 +23,5 @@ image: ghcr.io/requarks/wiki
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:3000]"
-ingress: true
+ingress: false
 ingress_port: 3000 
