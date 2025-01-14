@@ -7,5 +7,5 @@
   "source": "github",
   "upstream_repo": "requarks/wiki",
   "upstream_version": "2.3.81",
-  "paused": "false"
+  "paused": "true"
 }
