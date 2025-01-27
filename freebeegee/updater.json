@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "26-08-2024",
+  "last_update": "27-01-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "freebeegee",
   "source": "github",
   "upstream_repo": "ludus-leonis/FreeBeeGee",
-  "upstream_version": "0.24.0",
+  "upstream_version": "",
   "paused": "false"
 }
