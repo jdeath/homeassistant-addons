@@ -6,7 +6,8 @@
   "boot": "auto",
   "description": "Web GUI for youtube-dl",
   "map": [
-    "share:rw"
+    "share:rw",
+    "media:rw"
   ],
   "version": "2025-01-27",
   "name": "metube",
