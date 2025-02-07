@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "20-01-2025",
+  "last_update": "07-02-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "5etools",
   "source": "github",
   "upstream_repo": "5etools-mirror-3/5etools-img",
-  "upstream_version": "2.5.12",
+  "upstream_version": "2.6.0",
   "paused": "false"
 }
