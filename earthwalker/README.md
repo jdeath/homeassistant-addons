@@ -23,6 +23,8 @@ comparison to installing any other Hass.io add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via <your-ip>:port.
 
+## Non AMD
+I posted a version which should compile locally if you do not have an AMD64. Look here: https://github.com/jdeath/homeassistant-addons/issues/37
 ## Configuration
 
 ```
