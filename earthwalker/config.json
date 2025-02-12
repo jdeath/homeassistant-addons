@@ -1,7 +1,6 @@
 {
   "arch": [
-    "amd64",
-    "aarch64"
+    "amd64"
   ],
   "boot": "auto",
   "description": "Earthwalker is a game of a similar concept to GeoGuessr. You get dropped somewhere in the world in Google StreetView, and the goal is to you find out where you are and guess your location more precisely than all of your friends. You can play against the clock, restrict the game to an area, and more.",
