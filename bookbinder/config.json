@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
+  "description": "A JS application to format PDFs for bookbinding, based on Bookbinder, rewritten to use PDF-Lib as its backend library",
   "environment": {},
   "version": "v1.3.1",
   "name": "Book Binder JS",
