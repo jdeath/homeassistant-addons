@@ -7,5 +7,5 @@
   "slug": "pairdrop",
   "source": "dockerhub",
   "upstream_repo": "linuxserver/pairdrop",
-  "upstream_version": "version-v1.11.0"
+  "upstream_version": "version-v1.11.1"
 }
