@@ -12,7 +12,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.17.2",
+  "version": "0.18.0",
   "name": "Homebox",
   "options": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "true"
@@ -28,7 +28,7 @@
   },
   "slug": "homebox",
   "startup": "services",
-  "upstream": "0.17.2",
+  "upstream": "0.18.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7745]",
   "ingress": false,
