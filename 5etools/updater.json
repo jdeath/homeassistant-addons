@@ -7,5 +7,5 @@
   "source": "github",
   "upstream_repo": "5etools-mirror-3/5etools-img",
   "upstream_version": "2.6.0",
-  "paused": "true"
+  "paused": "false"
 }
