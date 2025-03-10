@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "28-02-2025",
+  "last_update": "10-03-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "otterwiki",
   "source": "github",
   "upstream_repo": "redimp/otterwiki",
-  "upstream_version": "2.9.4",
+  "upstream_version": "2.10.0",
   "paused": "false"
 }
