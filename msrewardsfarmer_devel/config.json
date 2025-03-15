@@ -1,0 +1,32 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
+  "environment": {
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "0.1.0",
+  "name": "Microsoft Rewards Farmer - Develop",
+  "options": {
+    "GEO": "US",
+	"LANG": "en"
+  },
+  "schema": {
+    "GEO": "str",
+	"LANG": "str"
+  },
+  "ports": {
+  },
+  "ports_description": {
+  },
+  "slug": "msrewardsfarmer",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "host_network": "true",
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}
