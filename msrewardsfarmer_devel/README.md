@@ -1,4 +1,4 @@
-# Home assistant add-on: MS Rewards Farmer
+# Home assistant add-on: MS Rewards Farmer Development
 
 ## Description
 Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches...)
@@ -7,6 +7,7 @@ This is a dockerized version of [**@klept0**](https://github.com/klept0)'s fork 
 
 Docker implantation leveraged the work of LtCMDstone Docker Image: https://github.com/LtCMDstone/MS-Rewards-Farmer-Docker
 
+This version uses the development branch, which recieved more frequent updates.
  
 This homeassistant version will update Chrome when installing/rebuilding addon. This will keep chrome up to date. I am probably doing something wrong, but the addon seems to work. If you have a cleaner way to build the addon, please do a PR.
 
@@ -25,9 +26,9 @@ comparison to installing any other Hass.io add-on.
 1. Click the `Save` button to store your configuration.
 1. Set your GEO and LANG if not `US` (United States) and `en` (english)
 1. Start the add-on. It will fail, this is ok
-1. go to /addon-configs/2effc9b9_msrewardsfarmer
-1. Edit the accounts.json with your username and password. Delete the second entry if there is one.
-1. (Optional) Edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml` to send a notification (see below)
+1. go to /addon-configs/2effc9b9_msrewardsfarmer_devel
+1. Edit `/addon-configs/2effc9b9_msrewardsfarmer_devel/config.yaml`
+1. You can see the format of config.yaml in the devel branch documentation: `https://github.com/klept0/MS-Rewards-Farmer/tree/develop`
 1. Run the addon again and check the logs
 1. After confirmed working, use an automation to run this once a day
 
@@ -57,12 +58,11 @@ mode: single
 ```
 
 # Sending a notification.
-1. edit `/addon-configs/2effc9b9_msrewardsfarmer/config.yaml`
+1. edit `/addon-configs/2effc9b9_msrewardsfarmer_devel/config.yaml`
 1. Configure the line for a notification
 
 It should look something like this for homeassistant notification:
 ```
-# config.yaml
 apprise:
   urls:
     - 'hassio://192.168.X.XX/eyXXXXXXXXXXXXXXXX.eyXXXXXXXXXXXXXXXXXxx'
@@ -79,7 +79,7 @@ panel_custom:
   - name: panel_rewards
     sidebar_title: Rewards
     sidebar_icon: mdi:medal
-    url_path: 'hassio/addon/2effc9b9_msrewardsfarmer/logs'
+    url_path: 'hassio/addon/2effc9b9_msrewardsfarmer_devel/logs'
     module_url: /api/hassio/app/entrypoint.js
     embed_iframe: true
     require_admin: true
