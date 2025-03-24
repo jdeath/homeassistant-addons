@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "neosmemo/memos",
-  "version": "0.24.1",
+  "version": "0.24.2",
   "name": "memos",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "memos",
   "startup": "services",
-  "upstream": "0.24.1",
+  "upstream": "0.24.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5230]",
   "ingress": false,
