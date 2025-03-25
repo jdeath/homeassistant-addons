@@ -18,7 +18,7 @@ comparison to installing any other Hass.io add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on. It will fail, this is ok
 1. go to /addon-configs/2effc9b9_royalpricecheck
-1. Edit `/addon-configs/2effc9b9_royalpricecheck/config.yaml` 
+1. Edit `/addon-configs/2effc9b9_royalpricecheck/config.yaml` (see below)
 1. Run the addon again and check the logs
 1. After confirmed working, use an automation to run this once a day
 
@@ -26,7 +26,7 @@ comparison to installing any other Hass.io add-on.
 See `https://github.com/jdeath/CheckRoyalCaribbeanPrice`
 
 ## Automatic Running
-1. Create an automation to run this addon once a day (at a random time to avoid ban)
+1. Create an automation to run this addon once a day (at a random time)
 
 ```
 alias: Start Royal Price Check
@@ -58,6 +58,7 @@ Where the `eyXXX.eyXXX` string is a Home Assistant Long-Lived Token. Long-lived 
 
 More details here: `https://github.com/caronc/apprise/wiki/Notify_homeassistant`
 
+More details here: `https://github.com/caronc/apprise` You can include multiple URL lines to send emails, etc
 # Add To Sidebar
 Since there is no WebUI, this cannot be shown in the sidebar. However you can add the following code to your Home Assistant `configuration.yaml` to show the log via a sidebar entry
 
