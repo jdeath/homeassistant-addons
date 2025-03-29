@@ -1,7 +1,6 @@
 {
   "arch": [
-    "amd64",
-    "aarch64"
+    "amd64"
   ],
   "boot": "manual",
   "description": "Automatically get points for the MS Rewards program and does all the tasks for you (playing quizzes, searches, etc)",
