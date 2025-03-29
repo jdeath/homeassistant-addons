@@ -1,13 +1,16 @@
 ARG BUILD_FROM
-#FROM python:3.12-slim
-FROM python:slim
+FROM python:3.12-slim
+#FROM python:slim
 
-ARG CHROME_VERSION="127.0.6533.119-1"
-ARG CHROME_VERSION="128.0.6613.119-1"
-ARG CHROME_VERSION="129.0.6668.100-1"
-ARG CHROME_VERSION="130.0.6723.91-1"
-ARG CHROME_VERSION="131.0.6778.85-1"
-ARG CHROME_VERSION="132.0.6834.159-1"
+#ARG CHROME_VERSION="127.0.6533.119-1"
+#ARG CHROME_VERSION="128.0.6613.119-1"
+#ARG CHROME_VERSION="129.0.6668.100-1"
+#ARG CHROME_VERSION="130.0.6723.91-1"
+#ARG CHROME_VERSION="131.0.6778.85-1"
+#ARG CHROME_VERSION="132.0.6834.159-1"
+ARG CHROME_VERSION="134.0.6998.165-1"
+
+#https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${CHROME_VERSION}_amd64.deb
 
 # Chrome Stable, but 127 works better
 # https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -44,7 +47,8 @@ ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 WORKDIR /app
 COPY run.sh ./
 COPY entrypoint.sh ./
-RUN chmod a+x ./*.sh
+COPY chromedriver /usr/bin/
+RUN chmod a+x ./*.sh /usr/bin/chromedriver
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 CMD ["/app/run.sh"]
