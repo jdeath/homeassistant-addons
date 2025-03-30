@@ -19,6 +19,5 @@
   "slug": "royalpricecheck",
   "startup": "services",
   "upstream": "0.1.0",
-  "host_network": "true",
   "url": "https://github.com/jdeath/homeassistant-addons"
 }
