@@ -36,7 +36,7 @@ cruises:
     paidPrice: "3612.12"	
 
 apprise:
-  - url: "hassio://192.168.1.14/XXXXX"
+  - url: "hassio://192.168.1.XX/XXXXX"
   - url: "mailto://user:XXXX@gmail.com"
 ```
 
