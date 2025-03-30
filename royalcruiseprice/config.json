@@ -1,0 +1,22 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "manual",
+  "description": "Automatically get the price of a cruise",
+  "environment": {
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "0.1.0",
+  "name": "Royal Cruise Price Checker",
+  "ports": {
+  },
+  "ports_description": {
+  },
+  "slug": "royalcruiseprice",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}
