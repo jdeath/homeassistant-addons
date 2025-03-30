@@ -11,7 +11,7 @@
     "addon_config:rw"
   ],
   "version": "0.1.0",
-  "name": "Royal Caribbean Price Check",
+  "name": "Royal Caribbean Price Check for Booked Excursions, Drink Packages, etc",
   "ports": {
   },
   "ports_description": {
