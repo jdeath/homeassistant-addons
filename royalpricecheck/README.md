@@ -1,7 +1,7 @@
 # Home assistant add-on: Royal Price Check
 
 ## Description
-Notify if Royal Caribbean Cruise addons get cheaper. Does not price the cruise, just drink package, internet, excursions, etc
+Notify if Royal Caribbean Cruise addons get cheaper. Can reprice the cruise, just drink package, internet, excursions, etc
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
