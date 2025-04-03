@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Web GUI for youtube-dl",
+  "description": "Web GUI for youtube-dl - Test",
   "map": [
     "share:rw",
     "media:rw"
@@ -12,8 +12,9 @@
   "version": "2025-04-01",
   "name": "metube",
   "options": {
-    "DELETE_FILE_ON_TRASHCAN": false,
-    "DOWNLOAD_DIR": "/share/metube/"
+	"DELETE_FILE_ON_TRASHCAN": false,
+    "DOWNLOAD_DIR": "/share/metube/",
+  "YTDL_OPTIONS": "{\"cookiefile\":\"/share/cookies.txt\"}"
   },
   "ports": {
     "8081/tcp": "8081"
@@ -23,7 +24,8 @@
   },
   "schema": {
     "DELETE_FILE_ON_TRASHCAN": "bool",
-    "DOWNLOAD_DIR": "str"
+    "DOWNLOAD_DIR": "str",
+	"YTDL_OPTIONS": "str"
   },
   "slug": "metube",
   "startup": "services",

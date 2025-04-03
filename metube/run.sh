@@ -12,4 +12,8 @@ DOWNLOAD_DIR=$(jq --raw-output '.DOWNLOAD_DIR' $CONFIG_PATH)
 echo "DOWNLOAD_DIR: ${DOWNLOAD_DIR}"
 export DOWNLOAD_DIR="${DOWNLOAD_DIR}"
 
+YTDL_OPTIONS=$(jq --raw-output '.YTDL_OPTIONS' $CONFIG_PATH)
+echo "YTDL_OPTIONS: ${YTDL_OPTIONS}"
+export YTDL_OPTIONS="${YTDL_OPTIONS}"
+
 ./docker-entrypoint.sh
