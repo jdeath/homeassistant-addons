@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Web GUI for youtube-dl - Test",
+  "description": "Web GUI for youtube-dl",
   "map": [
     "share:rw",
     "media:rw"
