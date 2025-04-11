@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "07-08-2024",
+  "last_update": "11-04-2025",
   "github_beta": "true",
   "repository": "jdeath/homeassistant-addons",
   "slug": "tubesync",
   "source": "github",
   "upstream_repo": "meeb/tubesync",
-  "upstream_version": "v0.13.7"
+  "upstream_version": "v0.14.1"
 }
