@@ -9,12 +9,12 @@
     "share:rw",
     "media:rw"
   ],
-  "version": "2025-04-01",
+  "version": "2025-04-11",
   "name": "metube",
   "options": {
-	"DELETE_FILE_ON_TRASHCAN": false,
+    "DELETE_FILE_ON_TRASHCAN": false,
     "DOWNLOAD_DIR": "/share/metube/",
-  "YTDL_OPTIONS": "{\"cookiefile\":\"/share/cookies.txt\"}"
+    "YTDL_OPTIONS": "{\"cookiefile\":\"/share/cookies.txt\"}"
   },
   "ports": {
     "8081/tcp": "8081"
@@ -25,11 +25,11 @@
   "schema": {
     "DELETE_FILE_ON_TRASHCAN": "bool",
     "DOWNLOAD_DIR": "str",
-	"YTDL_OPTIONS": "str"
+    "YTDL_OPTIONS": "str"
   },
   "slug": "metube",
   "startup": "services",
-  "upstream": "2025-04-01",
+  "upstream": "2025-04-11",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
