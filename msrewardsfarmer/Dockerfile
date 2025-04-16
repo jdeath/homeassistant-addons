@@ -2,10 +2,8 @@ ARG BUILD_FROM
 FROM python:3.12-slim
 
 ARG BUILD_VERSION
-#ARG CHROME_VERSION="127.0.6533.119-1"
-ARG CHROME_VERSION="128.0.6613.119-1"
+ARG CHROME_VERSION="134.0.6998.165-1"
 # Chrome Stable, but 128 works better
-# https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 RUN apt-get update -y && \
 	apt-get install -y tar wget xvfb jq --no-install-recommends && \
@@ -35,6 +33,8 @@ WORKDIR /app
 COPY run.sh ./
 COPY entrypoint.sh ./
 RUN chmod a+x ./*.sh
+COPY chromedriver /usr/bin/
+RUN chmod a+x ./*.sh /usr/bin/chromedriver
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 CMD ["/app/run.sh"]
