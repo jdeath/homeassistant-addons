@@ -28,7 +28,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "version": "1.9.2-ls165",
+  "version": "1.9.2-ls166",
   "panel_admin": false,
   "ingress": true,
   "ingress_port": 80,
