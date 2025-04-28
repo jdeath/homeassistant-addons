@@ -1,10 +1,10 @@
 {
   "github_fulltag": "false",
-  "last_update": "18-04-2025",
+  "last_update": "28-04-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "fusionrss",
   "source": "github",
   "upstream_repo": "0x2E/fusion",
-  "upstream_version": "0.9.5"
+  "upstream_version": "0.9.7"
 }
