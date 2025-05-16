@@ -1,6 +1,6 @@
 {
   "github_fulltag": "false",
-  "last_update": "07-05-2025",
+  "last_update": "16-05-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "commafeed",
@@ -8,6 +8,6 @@
   "github_exclude": "m",
   "source": "dockerhub",
   "upstream_repo": "athou/commafeed",
-  "upstream_version": "5.8.0-h2",
+  "upstream_version": "5.9.0-h2",
   "paused": "false"
 }
