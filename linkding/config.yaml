@@ -1,6 +1,6 @@
 name: "linkding"
-version: "1.39.1"
-upstream: "1.39.1"
+version: "1.40.0"
+upstream: "1.40.0"
 slug: linkding
 description: >-
   linkding is a bookmark manager that you can host yourself. It's designed be to be minimal, fast, and easy to set up using Docker

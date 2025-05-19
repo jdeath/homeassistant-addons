@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "07-03-2025",
+  "last_update": "19-05-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "linkding",
   "source": "github",
   "upstream_repo": "sissbruecker/linkding",
-  "upstream_version": "1.39.1",
+  "upstream_version": "1.40.0",
   "paused": "false"
 }
