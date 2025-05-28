@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "0.18.2",
+  "version": "0.19.1",
   "name": "readeck",
   "options": {},
   "ports": {
