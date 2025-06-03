@@ -1,0 +1,41 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Web GUI for youtube-dl",
+  "map": [
+    "share:rw",
+	"addon_config:rw",
+    "media:rw"
+  ],
+  "version": "master-20250601-a434e3a",
+  "name": "ytptube",
+  "environment": {
+	"PUID": "1000",
+    "PGID": "1000",
+	"USER_ID": "1000"
+  },
+  "options": {
+    "YTP_REMOVE_FILES": false,
+    "YTP_DOWNLOAD_PATH": "/share/ytptube/"
+  },
+  "schema": {
+    "YTP_REMOVE_FILES": "bool",
+    "YTP_DOWNLOAD_PATH": "str"
+  },
+  "ports": {
+    "8081/tcp": "8081"
+  },
+  "ports_description": {
+    "8081/tcp": "Web interface"
+  },
+  "slug": "ytptube",
+  "startup": "services",
+  "upstream": "2025-05-30",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
+  "ingress": false,
+  "ingress_port": 8081
+}
