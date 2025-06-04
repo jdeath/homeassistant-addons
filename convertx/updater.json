@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "16-05-2025",
+  "last_update": "03-06-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "convertx",
   "source": "github",
   "upstream_repo": "C4illin/ConvertX",
-  "upstream_version": "v0.13.0",
+  "upstream_version": "v0.14.0",
   "paused": "false"
 }
