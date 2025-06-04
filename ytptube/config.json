@@ -7,22 +7,26 @@
   "description": "Web GUI for youtube-dl",
   "map": [
     "share:rw",
-    "addon_config:rw",
+	"addon_config:rw",
     "media:rw"
   ],
-  "version": "master-20250603-cf2fb5f",
+  "version": "master-20250601-a434e3a",
   "name": "ytptube",
   "environment": {
-    "PUID": "1000",
+	"PUID": "1000",
     "PGID": "1000",
-    "USER_ID": "1000"
+	"USER_ID": "1000"
   },
   "options": {
     "YTP_REMOVE_FILES": false,
+	"YTP_CONSOLE_ENABLED": false,
+	"YTP_BROWSER_ENABLED": false,
     "YTP_DOWNLOAD_PATH": "/share/ytptube/"
   },
   "schema": {
     "YTP_REMOVE_FILES": "bool",
+	"YTP_CONSOLE_ENABLED": "bool",
+	"YTP_BROWSER_ENABLED": "bool",
     "YTP_DOWNLOAD_PATH": "str"
   },
   "ports": {
