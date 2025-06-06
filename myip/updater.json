@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "31-03-2025",
+  "last_update": "06-06-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "myip",
   "source": "github",
   "upstream_repo": "jason5ng32/MyIP",
-  "upstream_version": "v5.0.1",
+  "upstream_version": "v5.0.2",
   "paused": "false"
 }
