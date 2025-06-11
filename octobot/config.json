@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "2.0.11",
+  "version": "2.0.12",
   "name": "octobot",
   "options": {},
   "ports": {
@@ -21,7 +21,7 @@
   "schema": {},
   "slug": "octobot",
   "startup": "services",
-  "upstream": "2.0.11",
+  "upstream": "2.0.12",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:5001]",
   "ingress": false,
