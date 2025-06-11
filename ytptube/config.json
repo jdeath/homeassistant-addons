@@ -10,7 +10,7 @@
     "addon_config:rw",
     "media:rw"
   ],
-  "version": "master-20250605-f1f79af",
+  "version": "master-20250610-670c995",
   "name": "ytptube",
   "environment": {
     "PUID": "1000",
