@@ -38,7 +38,7 @@
   "startup": "application",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/flatnotes",
-  "version": "v5.5.2",
+  "version": "v5.5.3",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,
   "ingress": false
