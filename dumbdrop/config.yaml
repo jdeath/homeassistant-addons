@@ -1,0 +1,26 @@
+name: Dumb Drop
+version: latest
+upstream: latest
+slug: dumbdrop
+description: >-
+  A stupid simple file upload application that provides a clean, modern interface for dragging and dropping files
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  3000/tcp: 3000  
+ports_description:
+  3000/tcp: "Web Interface"
+map:
+  - type: media
+    read_only: false
+    path: /app/uploads
+environment:
+    UPLOAD_DIR: "/app/uploads/dumbdrop"
+image: dumbwareio/dumbdrop
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:80]"
+ingress: true
+ingress_port: 3000 
