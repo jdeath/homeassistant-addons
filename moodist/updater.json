@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "26-03-2025",
+  "last_update": "20-07-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "moodist",
   "source": "github",
   "upstream_repo": "remvze/moodist",
-  "upstream_version": "v2.0.1"
+  "upstream_version": "v2.1.0"
 }

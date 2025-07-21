@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "ghcr.io/remvze/moodist",
-  "version": "v2.0.1",
+  "version": "v2.1.0",
   "name": "moodist",
   "options": {},
   "ports": {
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "moodist",
   "startup": "services",
-  "upstream": "v2.0.1",
+  "upstream": "v2.1.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,
