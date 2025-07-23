@@ -9,7 +9,7 @@
     "share:rw",
     "media:rw"
   ],
-  "version": "2025-07-01",
+  "version": "2025-07-22",
   "name": "metube",
   "options": {
     "DELETE_FILE_ON_TRASHCAN": false,
@@ -29,7 +29,7 @@
   },
   "slug": "metube",
   "startup": "services",
-  "upstream": "2025-07-01",
+  "upstream": "2025-07-22",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "ingress": true,
