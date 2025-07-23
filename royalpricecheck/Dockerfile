@@ -8,6 +8,7 @@ RUN apt-get update -y && \
 	git clone --depth=1 https://github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
 	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
 
+ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY run.sh ./
 RUN chmod a+x ./*.sh
