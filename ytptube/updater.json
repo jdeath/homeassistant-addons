@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "20-07-2025",
+  "last_update": "25-07-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "ytptube",
   "source": "dockerhub",
   "upstream_repo": "arabcoders/ytptube",
-  "upstream_version": "v0.4.0"
+  "upstream_version": "v0.5.1"
 }
