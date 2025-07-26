@@ -23,6 +23,7 @@ This addon is based on the [docker image](https://github.com/mitmproxy/mitmproxy
 1. Your certificates will be generated in /addon_configs/2effc9b9_mitmproxy
 1. If you have certificates from another install, copy them to this directory instead.
 1. Open WebUI should work via <your-ip>:port.
+1. The password is `homeassistant`
 
 
 Webui can be found at `<your-ip>:port`.
