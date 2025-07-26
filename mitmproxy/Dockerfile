@@ -1,6 +1,6 @@
 FROM mitmproxy/mitmproxy
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["mitmweb", "--no-web-token","--set", "web_host=0.0.0.0","--set","confdir=/config"]
+CMD ["mitmweb", "--set","web_password=homeassistant","--set", "web_host=0.0.0.0","--set","confdir=/config"]
 
 ### LABELS
 ARG BUILD_ARCH
