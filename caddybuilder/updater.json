@@ -1,12 +1,12 @@
 {
   "github_fulltag": "true",
   "fulltag": "true",
-  "last_update": "06-11-2024",
+  "last_update": "30-07-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "caddybuilder",
   "source": "github",
   "upstream_repo": "caddyserver/xcaddy",
-  "upstream_version": "v0.4.4",
+  "upstream_version": "v0.4.5",
   "paused": "false"
 }
