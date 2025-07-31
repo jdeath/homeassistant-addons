@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "ghcr.io/dani-garcia/vaultwarden",
-  "version": "1.34.2",
+  "version": "1.34.3",
   "name": "Vaultwarden",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "vaultwarden",
   "startup": "services",
-  "upstream": "1.34.2",
+  "upstream": "1.34.3",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "ingress": true,
