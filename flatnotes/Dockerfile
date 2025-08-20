@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM dullage/flatnotes
 
-VOLUME [ "/share" ]
+#VOLUME [ "/share" ]
 RUN apt update && apt install -y jq
 
 COPY run.sh /
