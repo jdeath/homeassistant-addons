@@ -1,7 +1,5 @@
 ARG BUILD_FROM
 FROM archivebox/archivebox
-
-VOLUME [ "/share" ]
 	
 COPY run.sh /
 RUN chmod a+x /run.sh
