@@ -1,4 +1,4 @@
-FROM caddy:builder-alpine
+FROM caddy:builder
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
