@@ -1,5 +1,4 @@
 FROM caddy:builder-alpine
-# Hack since caddy builder is not updated
 
 COPY run.sh /
 RUN chmod a+x /run.sh
