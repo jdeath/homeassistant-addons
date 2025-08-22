@@ -1,4 +1,6 @@
-FROM caddy:builder
+FROM caddy:builder-alpine
+# Hack since caddy builder is not updated
+RUN apk upgrade go
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
