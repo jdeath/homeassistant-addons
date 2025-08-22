@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "23-04-2025",
+  "last_update": "22-08-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "wdosg",
   "source": "github",
   "upstream_repo": "SoulRaven80/wdosg",
-  "upstream_version": "v1.3.8",
+  "upstream_version": "v1.3.9",
   "paused": "false"
 }
