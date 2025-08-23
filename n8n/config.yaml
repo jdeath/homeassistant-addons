@@ -1,5 +1,5 @@
 name: n8n
-version: "1.107.4"
+version: "1.94.1"
 upstream: 1.62.4
 slug: n8n
 description: >-
@@ -21,9 +21,15 @@ environment:
     PGID: "1"
     N8N_SECURE_COOKIE: "false"
     TINI_SUBREAPER: "true"
-image: docker.n8n.io/n8nio/n8n
+    N8N_USER_FOLDER: "/home/node/"
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:5678]"
 ingress: false
 ingress_port: 5678 
+options: 
+    USE_ENV_FILE: false
+    N8N_ENV_FILES: "/home/node/config.env"
+schema:
+    USE_ENV_FILE: "bool"
+    N8N_ENV_FILES: "str"

@@ -27,6 +27,14 @@ This addon uses the [docker image](https://github.com/n8n-io/n8n).
 1. Settings will be in /addon_configs/2effc9b9_n8n
 ## Configuration
 
+You can set the addon to use a environment file if you choose. Note use '/home/node' as base path which will map to /addon_configs/2effc9b9_n8n 
+
+You need to create the file yourself and make it a list of environments you want to set, like:
+```
+DB_SQLITE_POOL_SIZE=10
+N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
+```
+
 ```
 port : 5678 #port you want to run on.
 ```
