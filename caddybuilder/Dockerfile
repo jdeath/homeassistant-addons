@@ -1,4 +1,5 @@
 #FROM caddy:builder-alpine
+# Below is hack to handle out of date golang in caddy:builder-alpine
 FROM golang:1.25-alpine3.21
 
 RUN apk add --no-cache \
@@ -35,6 +36,7 @@ RUN set -eux; \
 COPY caddy-builder.sh /usr/bin/caddy-builder
 
 WORKDIR /usr/bin
+# Above is hack to handle out of date golang in caddy:builder-alpine
 
 COPY run.sh /
 RUN chmod a+x /run.sh
