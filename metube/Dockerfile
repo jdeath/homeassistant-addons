@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM alexta69/metube
 
-VOLUME [ "/share" ]
+#VOLUME [ "/share" ]
 RUN apk add -U --no-cache jq
 
 COPY run.sh /
