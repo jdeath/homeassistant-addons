@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM itzg/minecraft-bedrock-server
 
-VOLUME [ "/share" ]
+#VOLUME [ "/share" ]
 
 COPY run.sh /
 RUN chmod a+x /run.sh
