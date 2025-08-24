@@ -50,7 +50,7 @@ The installation of this add-on has a few extra steps.
 1. Start the add-on
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI via <your-ip>:port. Ingress does not work
-
+1. Click "Rebuild" will pull in the latest yt-dlp, even if YTPTube does not have an update.
 ## Configuration
 
 ```
