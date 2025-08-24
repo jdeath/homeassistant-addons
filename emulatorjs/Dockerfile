@@ -1,7 +1,7 @@
 ARG BUILD_VERSION
 FROM lscr.io/linuxserver/emulatorjs
 
-VOLUME [ "/share" ]
+#VOLUME [ "/share" ]
 
 USER root
 
@@ -38,4 +38,5 @@ LABEL \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
+
     org.opencontainers.image.version=${BUILD_VERSION}
