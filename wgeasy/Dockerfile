@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM ghcr.io/wg-easy/wg-easy
 
-VOLUME [ "/ssl" ]
+#VOLUME [ "/ssl" ]
 
 RUN apk add -U --no-cache jq \
 	&& sed -i 's/'\''wg-quick down wg0'\''/`wg-quick down ${WG_PATH}wg0.conf`/' /app/lib/WireGuard.js \
