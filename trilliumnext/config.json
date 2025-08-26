@@ -30,6 +30,6 @@
   "version": "v0.95.0",
   "ingress": false,
   "ingress_port": 8080,
-  "image": "triliumnext/notes",
+  "image": "triliumnext/trilium",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }
