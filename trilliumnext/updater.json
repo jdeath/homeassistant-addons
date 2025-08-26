@@ -4,6 +4,6 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "triliumnext",
   "source": "github",
-  "upstream_repo": "triliumnext/notes",
+  "upstream_repo": "TriliumNext/Trilium",
   "upstream_version": "v0.95.0"
 }
