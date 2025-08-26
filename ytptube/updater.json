@@ -6,5 +6,5 @@
   "slug": "ytptube",
   "source": "dockerhub",
   "upstream_repo": "arabcoders/ytptube",
-  "upstream_version": "v0.8.9"
+  "upstream_version": "v0.8.11"
 }
