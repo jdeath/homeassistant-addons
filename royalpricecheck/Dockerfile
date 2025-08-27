@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM python:slim
+FROM python:alpine
 
 
 RUN apt-get update -y && \
