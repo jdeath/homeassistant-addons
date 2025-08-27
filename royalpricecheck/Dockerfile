@@ -1,5 +1,6 @@
 ARG BUILD_FROM
 FROM python:alpine
+#FROM python:slim
 
 RUN apk add --no-cache bash git jq && \
 	mkdir /app && cd /app && \
