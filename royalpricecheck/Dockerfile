@@ -3,7 +3,7 @@ FROM python:alpine
 
 
 RUN apt-get update -y && \
-	apt-get install -y git jq --no-install-recommends && \
+	apt-get install -y git jq bash --no-install-recommends && \
 	mkdir /app && cd /app && \
 	git clone --depth=1 https://github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
 	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
