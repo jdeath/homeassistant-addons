@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM python:alpine
+FROM python:3.12-alpine
 #FROM python:slim
 
 RUN apk add --no-cache bash git jq && \
