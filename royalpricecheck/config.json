@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "1.6",
+  "version": "1.8",
   "name": "Royal Caribbean Price Check",
   "ports": {},
   "ports_description": {},
