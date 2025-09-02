@@ -31,7 +31,7 @@
   },
   "ports_description": {
     "51820/udp": "WireGuard: forward this port in your router",
-    "51820/tcp": "WebUI"
+    "51821/tcp": "WebUI"
   },
   "schema": {
     "WG_HOST": "str",
