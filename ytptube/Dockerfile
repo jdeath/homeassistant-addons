@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM ghcr.io/arabcoders/ytptube
 
 USER root
-RUN apk add jq
+RUN apt-get install -y --no-install-recommends jq
 
 COPY run.sh /
 RUN chmod a+x /run.sh
