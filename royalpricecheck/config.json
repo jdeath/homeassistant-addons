@@ -7,7 +7,7 @@
   "description": "Automatically get notified if price drop on Royal Caribbean Addons or Cruises",
   "environment": {},
   "map": [
-    "addon_config:rw"
+    "addon_config:ro"
   ],
   "version": "2.1",
   "name": "Royal Caribbean Price Check",

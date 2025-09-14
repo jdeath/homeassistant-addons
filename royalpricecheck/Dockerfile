@@ -1,28 +1,11 @@
 ARG BUILD_FROM
-FROM python:3.12-alpine
-#FROM python:slim
-
-RUN apk add --no-cache bash wget jq && \
-	mkdir /app && cd /app && \
-	wget -O CheckRoyalCaribbeanPrice.py https://raw.githubusercontent.com/jdeath/CheckRoyalCaribbeanPrice/refs/heads/main/CheckRoyalCaribbeanPrice.py && \
-	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
-
-#RUN apk add --no-cache bash git jq && \
-#	mkdir /app && cd /app && \
-#	git clone --depth=1 https://github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
-#	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
-
-#RUN apt-get update -y && \
-#	apt-get install -y git jq --no-install-recommends && \
-#	mkdir /app && cd /app && \
-#	git clone --depth=1 https://github.com/jdeath/CheckRoyalCaribbeanPrice.git ./ && \
-#	pip install --no-cache-dir --root-user-action=ignore requests Apprise bs4
+FROM ghcr.io/jdeath/checkroyalcaribbeanprice
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY run.sh ./
 RUN chmod a+x ./*.sh
-CMD ["/app/run.sh"]
+ENTRYPOINT ["/app/run.sh"]
 
 ### LABELS
 ARG BUILD_ARCH
