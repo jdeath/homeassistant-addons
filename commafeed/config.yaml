@@ -1,5 +1,5 @@
 name: CommaFeed
-version: "5.11.1-h2"
+version: "5.11.1"
 upstream: 5.3.4-h2
 slug: commafeed
 description: >-
@@ -16,10 +16,16 @@ map:
   - type: addon_config
     read_only: false
     path: /commafeed/data
-image: athou/commafeed
+#image: athou/commafeed
 boot: auto
 startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:8082]"
 panel_admin: false
 ingress: true
 ingress_port: 8082
+options: 
+    USE_ENV_FILE: false
+    N8N_ENV_FILES: "/commafeed/data/config.env"
+schema:
+    USE_ENV_FILE: "bool"
+    N8N_ENV_FILES: "str"

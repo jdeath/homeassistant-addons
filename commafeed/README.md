@@ -21,8 +21,15 @@ comparison to installing any other Hass.io add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via <your-ip>:port and ingress. Default user:password is admin:admin
 1. Settings will be in /addon_configs/2effc9b9_commafeed
-## Configuration
 
+## Configuration
+You can set the addon to use a environment file if you choose. Note use '/commafeed/data' as base path which will map to /addon_configs/2effc9b9_commafeed 
+
+The config file in the UI will `/commafeed/data/config.env` , but you make the file `addon_configs/2effc9b9_commafeed/config.env` 
+You need to create the file yourself and make it a list of environments you want to set, like:
+```
+COMMAFEED_USERS_ALLOW_REGISTRATIONS=true
+```
 ```
 port : 8082 #port you want to run on.
 ```
