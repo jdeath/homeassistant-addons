@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM zefhemel/silverbullet
 
-RUN apt update && apt install -y jq
+RUN apk add -U --no-cache jq
 
 COPY run.sh /
 RUN chmod a+x /run.sh
