@@ -26,6 +26,6 @@
   "version": "0.99.1",
   "ingress": true,
   "ingress_port": 8080,
-  "image": "zadam/trilium",
+  "image": "ghcr.io/triliumnext/trilium",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]"
 }
