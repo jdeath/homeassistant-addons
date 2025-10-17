@@ -1,6 +1,6 @@
 name: "Stirling-PDF"
-version: "1.4.0"
-upstream: "1.4.0"
+version: "1.5.0"
+upstream: "1.5.0"
 slug: stirling-pdf
 description: >-
   A robust, locally hosted web-based PDF manipulation tool
