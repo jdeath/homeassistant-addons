@@ -1,12 +1,12 @@
 {
   "github_fulltag": "true",
   "fulltag": "true",
-  "last_update": "25-08-2025",
+  "last_update": "17-10-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "mitmproxy",
   "source": "github",
   "upstream_repo": "mitmproxy/mitmproxy",
-  "upstream_version": "v12.1.2",
+  "upstream_version": "v12.2.0",
   "paused": "false"
 }

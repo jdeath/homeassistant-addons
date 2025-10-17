@@ -10,7 +10,7 @@
     "addon_config:rw"
   ],
   "init": "false",
-  "version": "v12.1.2",
+  "version": "v12.2.0",
   "name": "mitmproxy",
   "options": {},
   "ports": {
@@ -24,7 +24,7 @@
   "schema": {},
   "slug": "mitmproxy",
   "startup": "services",
-  "upstream": "v12.1.2",
+  "upstream": "v12.2.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
   "ingress": false,
