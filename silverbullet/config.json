@@ -11,7 +11,8 @@
     "PGID": "0"
   },
   "map": [
-    "addon_config:rw"
+    "addon_config:rw",
+    "share:rw"
   ],
   "version": "2.1.9",
   "name": "silverbullet",
@@ -22,10 +23,12 @@
     "3000/tcp": "Web interface"
   },
   "options": {
-    "SB_USER": ""
+    "SB_USER": "",
+    "SB_FOLDER": ""
   },
   "schema": {
-    "SB_USER": "str?"
+    "SB_USER": "str?",
+    "SB_FOLDER": "str?"
   },
   "slug": "silverbullet",
   "startup": "services",
