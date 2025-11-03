@@ -14,7 +14,7 @@
     "addon_config:rw",
     "share:rw"
   ],
-  "version": "2.1.9",
+  "version": "2.2.1",
   "name": "silverbullet",
   "ports": {
     "3000/tcp": "3000"
@@ -32,7 +32,7 @@
   },
   "slug": "silverbullet",
   "startup": "services",
-  "upstream": "2.1.9",
+  "upstream": "2.2.1",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:3000]",
   "ingress": false,
