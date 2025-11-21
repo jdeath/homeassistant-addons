@@ -1,6 +1,7 @@
 {
   "arch": [
-    "amd64"
+    "amd64",
+    "arm64"
   ],
   "boot": "manual",
   "description": "Fasten securely connects your healthcare providers together, creating a personal health record that never leaves your hands",
