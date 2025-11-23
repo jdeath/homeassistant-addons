@@ -19,6 +19,6 @@ if [[ "$USE_ENV_FILE" = "true" ]]; then
 fi
 
 cd /commafeed/
-./application
+./commafeed
 
 
