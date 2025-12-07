@@ -1,12 +1,12 @@
 {
   "github_fulltag": "true",
   "fulltag": "true",
-  "last_update": "10-11-2024",
+  "last_update": "07-12-2025",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "readeck",
   "source": "gitlab",
   "upstream_repo": "https://codeberg.org/readeck",
-  "upstream_version": "0.17.1",
+  "upstream_version": "",
   "paused": "false"
 }
