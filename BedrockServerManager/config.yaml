@@ -24,4 +24,4 @@ startup: services
 webui: "[PROTO:ssl]://[HOST]:[PORT:11325]"
 panel_admin: false
 ingress: true
-ingress_port: 8080
+ingress_port: 11325
