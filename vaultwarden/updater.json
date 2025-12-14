@@ -7,7 +7,5 @@
   "source": "github",
   "upstream_repo": "dani-garcia/vaultwarden",
   "upstream_version": "testing-alpine",
-  "github_tagfilter": "alpine",
-  "github_exclude": "testing",
   "paused": "false"
 }
