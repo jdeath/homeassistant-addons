@@ -6,6 +6,6 @@
   "slug": "vaultwarden",
   "source": "github",
   "upstream_repo": "dani-garcia/vaultwarden",
-  "upstream_version": "testing-alpine",
+  "upstream_version": "1.34.3",
   "paused": "false"
 }
