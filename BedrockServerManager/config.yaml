@@ -22,5 +22,5 @@ map:
 boot: auto
 startup: services
 panel_admin: false
-ingress: true
+ingress: false
 ingress_port: 11325
