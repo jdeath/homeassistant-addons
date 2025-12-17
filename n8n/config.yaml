@@ -1,5 +1,5 @@
 name: n8n
-version: "2.0.0"
+version: "2.0.2"
 upstream: 1.62.4
 slug: n8n
 description: >-
