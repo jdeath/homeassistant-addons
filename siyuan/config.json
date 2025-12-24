@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "v3.5.0",
+  "version": "v3.5.1",
   "name": "siyuan",
   "ports": {
     "6806/tcp": "6806"
@@ -25,7 +25,7 @@
   },
   "slug": "siyuan",
   "startup": "services",
-  "upstream": "v3.5.0",
+  "upstream": "v3.5.1",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:6806]",
   "ingress": false,
