@@ -1,5 +1,5 @@
 name: CommaFeed
-version: "5.12.1-h2"
+version: "6.0.0-h2"
 upstream: 5.3.4-h2
 slug: commafeed
 description: >-
