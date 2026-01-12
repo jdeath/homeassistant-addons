@@ -10,7 +10,7 @@
     "addon_config:rw",
     "media:rw"
   ],
-  "version": "v1.0.15",
+  "version": "v1.1.0",
   "name": "ytptube",
   "environment": {
     "PUID": "1000",
