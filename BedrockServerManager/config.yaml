@@ -1,5 +1,5 @@
 name: Bedrock Server Manager
-version: "3.7.1"
+version: "3.7.2"
 upstream: 3.7.1
 slug: bedrockservermanager
 description: >-
