@@ -4,6 +4,8 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 This runs version 15 of WG Easy. Ingress does not work. If you need ingress, run the non-15plus version. 
 
+Remember, you need a reverse proxy in front of the UI to be secure. This version enabled non-secure access, but you should not use it unless on your local network.
+
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
