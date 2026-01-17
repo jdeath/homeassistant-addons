@@ -3,10 +3,10 @@
   "last_update": "13-08-2024",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
-  "slug": "wgeasy",
+  "slug": "wgeasy15plus",
   "source": "github",
   "upstream_repo": "wg-easy/wg-easy",
-  "upstream_version": "14",
+  "upstream_version": "15.2.1",
   "fulltag": "false",
-  "paused": "true"
+  "paused": "false"
 }
