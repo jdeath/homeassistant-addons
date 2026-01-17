@@ -1,4 +1,4 @@
-# Home assistant add-on: WireGuard Easy
+# Home assistant add-on: WireGuard Easy Version 15+
 
 You have found the easiest way to install & manage WireGuard on any Linux host!
 
