@@ -23,8 +23,7 @@ environment:
   INSECURE: "true" 
 boot: auto
 startup: services
-ingress: true
-ingress_port: "51821" 
+ingress: false 
 privileged:
   - "NET_ADMIN"
 devices:
