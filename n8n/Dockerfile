@@ -2,7 +2,6 @@ ARG BUILD_FROM
 FROM docker.n8n.io/n8nio/n8n
 
 USER root
-#RUN apk add -U --no-cache jq
 COPY run.sh /
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
