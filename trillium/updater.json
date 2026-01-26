@@ -6,5 +6,5 @@
   "source": "github",
   "github_exclude": "clipper",
   "upstream_repo": "zadam/trilium",
-  "upstream_version": "web-clipper-v1.1.0"
+  "upstream_version": "v0.101.3"
 }
