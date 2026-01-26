@@ -4,6 +4,7 @@
   "repository": "jdeath/homeassistant-addons",
   "slug": "triliumnext",
   "source": "github",
+  "github_exclude": "clipper",
   "upstream_repo": "TriliumNext/Trilium",
   "upstream_version": "web-clipper-v1.1.0"
 }
