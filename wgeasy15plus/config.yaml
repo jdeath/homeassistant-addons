@@ -24,6 +24,7 @@ environment:
 boot: auto
 startup: services
 ingress: false 
+webui: http://[HOST]:[PORT:51821]
 privileged:
   - "NET_ADMIN"
 devices:
