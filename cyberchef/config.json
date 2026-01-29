@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "ghcr.io/gchq/cyberchef",
-  "version": "10.19.4",
+  "version": "10.20.0",
   "name": "CyberChef",
   "options": {},
   "ports": {
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "cyberchef",
   "startup": "services",
-  "upstream": "10.19.4",
+  "upstream": "10.20.0",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
   "panel_admin": false,
