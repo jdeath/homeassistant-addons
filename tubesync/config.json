@@ -25,7 +25,7 @@
   "startup": "services",
   "upstream": "1.0",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/tubesync",
-  "version": "v0.16.1",
+  "version": "v0.16.2",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:4848]",
   "init": false,
   "ingress": false
