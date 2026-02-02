@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "04-01-2026",
+  "last_update": "2026-02-02",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "homebox",
   "source": "github",
   "upstream_repo": "sysadminsmedia/homebox",
-  "upstream_version": "0.22.3",
+  "upstream_version": "0.23.1",
   "paused": "false"
 }
