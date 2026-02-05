@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM alexta69/metube
 
 #VOLUME [ "/share" ]
-RUN apk add -U --no-cache jq
+RUN apt-get update && apt-get install -y jq && rm -rf /var/lib/apt/lists/*
 
 COPY run.sh /
 RUN chmod a+x /run.sh
