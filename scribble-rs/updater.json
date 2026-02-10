@@ -1,9 +1,9 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-02-04",
+  "last_update": "2026-02-09",
   "repository": "jdeath/homeassistant-addons",
   "slug": "scribble-rs",
   "source": "github",
   "upstream_repo": "scribble-rs/scribble.rs",
-  "upstream_version": "v0.9.11"
+  "upstream_version": "v0.9.12"
 }
