@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-02-02",
+  "last_update": "2026-02-09",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "memos",
   "source": "github",
   "upstream_repo": "usememos/memos",
-  "upstream_version": "0.26.0",
+  "upstream_version": "0.26.1",
   "dockerhub_by_date": "false"
 }
