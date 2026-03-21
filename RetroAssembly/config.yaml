@@ -1,0 +1,23 @@
+name: Retro Assembly
+version: "v6.260321.1810"
+upstream: v6.260321.1810
+slug: retroassembly
+description: >-
+  RetroAssembly is the personal retro game collection cabinet in your browser
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+image: "arianrhodsandlot/retroassembly"
+ports:
+  8000/tcp: 8000 
+ports_description:
+  8000/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/data
+boot: auto
+startup: services
+panel_admin: false
+ingress: false
