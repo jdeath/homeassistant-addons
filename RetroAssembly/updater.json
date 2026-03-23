@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-01-16",
+  "last_update": "2026-03-23",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "retroassembly",
   "source": "github",
   "upstream_repo": "arianrhodsandlot/retroassembly",
-  "upstream_version": "v6.260321.1810",
+  "upstream_version": "v0.250616.0154",
   "paused": "false"
 }
