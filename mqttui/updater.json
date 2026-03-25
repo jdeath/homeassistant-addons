@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "25-08-2025",
+  "last_update": "2026-03-25",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "mqttui",
   "source": "github",
   "upstream_repo": "terdia/mqttui",
-  "upstream_version": "v1.3.2"
+  "upstream_version": "v2.0.2"
 }
