@@ -1,10 +1,10 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-04-06",
+  "last_update": "2026-04-08",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "royalpricecheck",
   "source": "github",
   "upstream_repo": "jdeath/CheckRoyalCaribbeanPrice",
-  "upstream_version": "3.2.1"
+  "upstream_version": "3.3.0"
 }
