@@ -1,5 +1,5 @@
 name: MyIP
-version: "v5.2.2"
+version: "v5.3.0"
 upstream: latest
 slug: myip
 description: >-
