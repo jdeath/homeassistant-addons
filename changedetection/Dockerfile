@@ -2,7 +2,10 @@ ARG BUILD_FROM
 FROM dgtlmoon/changedetection.io
 
 #VOLUME [ "/share" ]
-	
+
+RUN apt-get update && apt-get install -y --no-install-recommends nginx && rm -rf /var/lib/apt/lists/*
+
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY run.sh /
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
