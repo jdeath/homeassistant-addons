@@ -30,16 +30,16 @@
     "YTP_DOWNLOAD_PATH": "str"
   },
   "ports": {
-    "8081/tcp": "8081"
+    "8082/tcp": "8082"
   },
   "ports_description": {
-    "8081/tcp": "Web interface"
+    "8082/tcp": "Web interface (direct)"
   },
   "slug": "ytptube",
   "startup": "services",
   "upstream": "2025-05-30",
   "url": "https://github.com/jdeath/homeassistant-addons",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:8081]",
-  "ingress": false,
-  "ingress_port": 8081
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8082]",
+  "ingress": true,
+  "ingress_port": 8099
 }

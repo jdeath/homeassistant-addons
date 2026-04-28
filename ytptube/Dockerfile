@@ -2,9 +2,10 @@ ARG BUILD_FROM
 FROM ghcr.io/arabcoders/ytptube
 
 USER root
-RUN apt-get update && apt-get install -y --no-install-recommends jq
+RUN apt-get update && apt-get install -y --no-install-recommends jq nginx gettext-base
 
 COPY run.sh /
+COPY nginx.conf.tmpl /etc/nginx/nginx.conf.tmpl
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
 
