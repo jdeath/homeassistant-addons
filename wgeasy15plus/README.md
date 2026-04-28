@@ -37,14 +37,14 @@ comparison to installing any other Hass.io add-on.
 1. Start the addon. This addon takes a while to start. Give it time and hit reload a few times
 1. To setup the addon, you must first go to non-Ingress and change the URL
 1. To to `http://HomeAssistantIPAddress:Port/` (port will probably be 51821)
-1. It will reload the URL to something like `http://192.168.1.XXX:51821/api/hassio_ingress/XXXXXXX/login`
+1. It will reload the URL to something like `http://192.168.1.XXX:51821/login`
 1. Remove `login` and make it `setup/1`
 1. Go through the wizard and set everything up
 1. Close the web browser tab
 1. Go back to home assistant apps.
 1. Open WebUI (ingress) or directly at port 51821
 1. Enter your login and should work like normal
-1. If you go to http://port:ip and cannot login, make sure url looks like `http://192.168.1.XXX:51821/api/hassio_ingress/XXXXXXX/login`
+1. If you go to http://port:ip and cannot login, make sure url looks like `http://192.168.1.XXX:51821/login`
 1. If you messed something up. shutdown app, clear `/addon_configs/2effc9b9_wgeasy15plus`, restart, and do the `setup/1` trick
    
 ## Configuration
