@@ -32,6 +32,8 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
+1. Set your ports (or leave the default)
+1. Forward the TCP and UDP ports on your router. Forward the same ports, do not try to make them different.
 1. Start the addon. This addon takes a while to start. Give it time and hit reload a few times
 1. To setup the addon, you must first go to non-Ingress and change the URL
 1. To to `http://HomeAssistantIPAddress:Port/` (port will probably be 51821)

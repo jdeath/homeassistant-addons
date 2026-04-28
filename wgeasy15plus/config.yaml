@@ -12,8 +12,8 @@ ports:
   51820/udp: "51820" 
   51821/tcp: "51821" 
 ports_description:
-  51820/udp: "51820"   
-  51821/tcp: "WireGuard: forward this port in your router"
+  51820/udp: "WireGuard: forward this udp port in your router" 
+  51821/tcp: "WireGuard: forward this tcp port in your router"
 map:
   - type: addon_config
     read_only: false
