@@ -1,6 +1,6 @@
 name: WG Easy 15+
 version: "15.2.2"
-upstream: 15.2.1
+upstream: 15.2.2
 slug: wgeasy15plus
 description: >-
   WireGuard Easy 15+: WireGuard + UI in one
@@ -8,7 +8,6 @@ arch:
   - amd64
   - aarch64
 url: "https://github.com/jdeath/homeassistant-addons"
-image: ghcr.io/wg-easy/wg-easy
 ports:
   51820/udp: "51820" 
   51821/tcp: "51821" 
@@ -23,7 +22,10 @@ environment:
   INSECURE: "true" 
 boot: auto
 startup: services
-ingress: false 
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:shield-lock
+panel_title: WireGuard
 webui: http://[HOST]:[PORT:51821]
 privileged:
   - "NET_ADMIN"
