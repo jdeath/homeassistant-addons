@@ -41,5 +41,6 @@
   "version": "v5.5.4",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "init": false,
-  "ingress": false
+  "ingress": true,
+  "ingress_port": 8099
 }

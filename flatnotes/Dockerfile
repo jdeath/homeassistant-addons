@@ -2,9 +2,10 @@ ARG BUILD_FROM
 FROM dullage/flatnotes
 
 #VOLUME [ "/share" ]
-RUN apt update && apt install -y jq
+RUN apt update && apt install -y jq nginx
 
 COPY run.sh /
+COPY nginx-ingress.conf /etc/nginx/nginx-ingress.conf
 RUN chmod a+x /run.sh
 ENTRYPOINT [ "/run.sh" ]
 

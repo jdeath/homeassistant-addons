@@ -19,7 +19,7 @@ comparison to installing any other Hass.io add-on.
 1. Make the directory /config/addon_config/flatnotes to store your configuration.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI at homeassistant:8080
+1. Open WebUI at homeassistant:8080 or ingress
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons

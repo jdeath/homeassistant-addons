@@ -28,4 +28,6 @@ FLATNOTES_TOTP_KEY=$(jq --raw-output '.FLATNOTES_TOTP_KEY' $CONFIG_PATH)
 echo "FLATNOTES_TOTP_KEY: ${FLATNOTES_TOTP_KEY}"
 export FLATNOTES_TOTP_KEY="${FLATNOTES_TOTP_KEY}"
 
+nginx -c /etc/nginx/nginx-ingress.conf
+
 /entrypoint.sh
