@@ -29,7 +29,7 @@ formats:
 Restart the addon
 
 Point your llama.cpp MCP server to: http://IP:MCPPORT/mcp 
-Add the MCP server to claude code: `claude mcp add --transport http searxng http://IP:PORT/mcp`
+Add the MCP server to claude code: `claude mcp add --transport http searxng http://IP:MCPPORT/mcp`
 
 If you installed the Valkey addon you can connect to it by setting the Valkey url in the settings.yml to:
 ```
