@@ -36,25 +36,6 @@ search:
     - json
 ```
 
----
-
-## Installation
-
-```bash
-git clone <your-repo-url>
-cd go_mcp_server_searxng-main
-pip install -r requirements.txt
-```
-
----
-
-## Configuration
-
-Copy `.env` and edit the values:
-
-```bash
-cp .env .env.local  # or edit .env directly
-```
 
 | Variable           | Default                    | Description                        |
 |--------------------|----------------------------|------------------------------------|
@@ -74,55 +55,6 @@ The server starts on `http://0.0.0.0:32769/mcp`.
 
 ---
 
-## Connecting to Ollama
-
-Ollama's MCP support is configured in `~/.ollama/config.json` (or wherever your client stores MCP config). Add:
-
-```json
-{
-  "mcpServers": {
-    "searxng": {
-      "url": "http://localhost:32769/mcp"
-    }
-  }
-}
-```
-
-If Ollama is running in Docker and the MCP server is on the host:
-
-```json
-{
-  "mcpServers": {
-    "searxng": {
-      "url": "http://host.docker.internal:32769/mcp"
-    }
-  }
-}
-```
-
----
-
-## Connecting to Other Clients
-
-**Open WebUI / any streamable-HTTP client:**
-
-```
-http://<server-ip>:32769/mcp
-```
-
-**Claude Desktop / Cursor / Windsurf:**
-
-```json
-{
-  "mcpServers": {
-    "searxng": {
-      "url": "http://localhost:32769/mcp"
-    }
-  }
-}
-```
-
----
 
 ## Search Tool
 
