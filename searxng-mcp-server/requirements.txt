@@ -1,0 +1,4 @@
+fastmcp
+httpx
+python-dotenv
+fastapi

@@ -1,0 +1,28 @@
+name: searxng-mcp-server
+version: "1.0"
+upstream: "1.0"
+slug: searxngmcpserver
+description: >-
+  An MCP sse implementation of the Model Context Protocol (MCP) server integrated with SearXNG for providing AI agents with powerful, privacy-respecting search capabilities.
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  32769/tcp: 32769 
+ports_description:
+  32769/tcp: "API Interface"
+map:
+  - type: addon_config
+    read_only: false
+environment:
+    HOST: "0.0.0.0"
+    TRANSPORT: = "SSE"
+options:
+    SEARXNG_BASE_URL: "http://172.17.0.1:32768"
+schema:
+    SEARXNG_BASE_URL: "str"
+boot: manual
+#host_pid: true
+init: false
+startup: services
