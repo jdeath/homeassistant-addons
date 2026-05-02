@@ -1,0 +1,8 @@
+{
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "searxng_with_mcp",
+  "source": "dockerhub",
+  "upstream_repo": "searxng/searxng",
+  "upstream_version": "2026.4.29-9240b38d8",
+  "last_update": "2026-04-29"
+}

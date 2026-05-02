@@ -1,0 +1,37 @@
+{
+  "name": "SearXNG w/ MCP",
+  "version": "2026.4.29-9240b38d8",
+  "slug": "searxng_with_mcp",
+  "description": "SearXNG is a metasearch engine. Adds MCP endpoint for llama.cpp, Claude code, etc. ",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "map": [
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/etc/searxng"
+    }
+  ],
+  "hassio_api": true,
+  "init": false,
+  "options": {
+    "set_base_url_for_ingress": true
+  },
+  "schema": {
+    "set_base_url_for_ingress": "bool"
+  },
+  "ports": {
+    "8080/tcp": 8080,
+	"8081/tcp": 8081
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface http",
+	"8081/tcp": "MCP Server interface http"
+  },
+  "ingress": true,
+  "ingress_port": 8080,
+  "panel_icon": "mdi:magnify",
+  "arch": [
+    "aarch64",
+    "amd64"
+  ]
+}
