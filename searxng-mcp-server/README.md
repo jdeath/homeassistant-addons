@@ -4,6 +4,7 @@ A lightweight MCP server that gives llama.cpp (and any other MCP-compatible clie
 
 Adapted from https://github.com/The-AI-Workshops/searxng-mcp-server using Claude
 
+Use this if you have an existing SearXNG installation. Use my other addon if you do not already have an installation, because it includes the MCP server inside the SearXNG container `https://github.com/jdeath/homeassistant-addons/tree/main/searxng_with_mcp`. 
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
 
