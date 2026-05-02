@@ -31,9 +31,9 @@ Restart the addon
 Point your llama.cpp MCP server to: http://IP:MCPPORT/mcp 
 Add the MCP server to claude code: `claude mcp add --transport http searxng http://IP:MCPPORT/mcp`
 
-If you installed the Valkey addon you can connect to it by setting the Valkey url in the settings.yml to:
+If you installed the @Danni Valkey addon you can connect to it by setting the Valkey url in the settings.yml to:
 ```
-  url: valkey://2effc9b9-valkey:6379/0
+  url: valkey://57fef649-valkey:6379/0
 ```
 
 For convenience there is one addon configuration option:
