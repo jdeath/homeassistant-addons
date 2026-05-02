@@ -11,6 +11,8 @@ This includes a lightweight MCP server that gives llama.cpp (and any other MCP-c
 
 Adapted from https://github.com/The-AI-Workshops/searxng-mcp-server using Claude
 
+If you just want SearXNG use @DDanii addon
+
 ## Configuration
 
 Configure your SearXNG port and your MCP Port
