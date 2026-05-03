@@ -1,0 +1,23 @@
+arch:
+  - amd64
+  - aarch64
+boot: auto
+description: "A Settlers of Catan game server with web interface."
+map:
+  - type: addon_config
+    read_only: false
+    path: /tmp/data
+init: false
+version: "1"
+name: tinc
+options: {}
+ports:
+  4567/tcp: 4567
+ports_description:
+  4567/tcp: Web interface
+schema: {}
+slug: tinc
+startup: services
+upstream: v0.6.13
+url: https://github.com/jdeath/homeassistant-addons
+ingress: false

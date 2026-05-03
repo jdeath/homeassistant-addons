@@ -1,0 +1,11 @@
+target/
+.classpath
+.mvn-classpath
+.project
+.settings/
+.metadata
+.settings
+*.jar
+*.class
+
+/src/
