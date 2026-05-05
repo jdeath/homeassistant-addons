@@ -1,6 +1,10 @@
 #!/bin/sh
 
-python /server.py &
+
+python /mcp_server.py --http &
+
+sleep 5
+chown searxng:searxng /etc/searxng/ods_config.json
 
 set_url=$(cat /data/options.json | grep set_base_url_for_ingress | cut -d: -f2 | xargs)
 

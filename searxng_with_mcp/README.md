@@ -7,9 +7,9 @@
 
 Home Assistant addon adapted from https://github.com/DDanii/HA-Add-ons-by-DDanii/tree/master/searxng
 
-This includes a lightweight MCP server that gives llama.cpp (and any other MCP-compatible client) web search via a private [SearXNG](https://github.com/searxng/searxng) instance. Uses the **streamable-HTTP** transport over a single `/mcp` endpoint.
+This includes a lightweight MCP server that gives llama.cpp (and any other MCP-compatible client) web search via a private [SearXNG](https://github.com/searxng/searxng) instance. 
 
-Adapted from https://github.com/The-AI-Workshops/searxng-mcp-server using Claude
+MCP server adapted from https://github.com/jdeath/mcp-searxng-enhanced to give an FastMCP IP endpoint (used Ai to edit). For with MCP code at `https://github.com/jdeath/mcp-searxng-enhanced`
 
 If you just want SearXNG use @DDanii addon
 
@@ -17,7 +17,7 @@ If you just want SearXNG use @DDanii addon
 
 Configure your SearXNG port and your MCP Port
 
-The apps can be configured in the addon_configs/2effc9b9_searxng_with_mcp/settings.yml file
+SearXNG must be configured in the `addon_configs/2effc9b9_searxng_with_mcp/settings.yml` file
 
 To use the MCP server you must add `- json` the formats section in settings.yml to
 ```
@@ -25,6 +25,9 @@ formats:
     - html
     - json
 ```
+
+You should **not** need edit the MCP server settings in `addon_configs/2effc9b9_searxng_with_mcp/ods_config.json` file, but you can. The server/ports/host should not be touched.
+
 
 Restart the addon
 

@@ -6,10 +6,10 @@ ARG BUILD_VERSION
 FROM $BUILD_FROM
 
 COPY rootfs/ /
-COPY server.py /
-
+COPY mcp_server.py /
+COPY requirements.txt .
 RUN python -m ensurepip --upgrade
-RUN pip3 install --no-cache-dir fastmcp httpx python-dotenv fastapi
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN chmod a+x /run.sh
 
