@@ -12,7 +12,7 @@ COPY run.sh /
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the code
-COPY server.py .
+COPY mcp_server.py .
 
 # Expose the default port (can be overridden)
 EXPOSE 32769

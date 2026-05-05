@@ -1,5 +1,5 @@
 name: searxng-mcp-server
-version: "1.0"
+version: "1.1"
 upstream: "1.0"
 slug: searxngmcpserver
 description: >-
@@ -9,19 +9,20 @@ arch:
   - aarch64
 url: "https://github.com/jdeath/homeassistant-addons"
 ports:
-  32769/tcp: 32769 
+  8081/tcp: 8081 
 ports_description:
-  32769/tcp: "API Interface"
+  8081/tcp: "API Interface"
 map:
   - type: addon_config
     read_only: false
 environment:
-    HOST: "0.0.0.0"
-    TRANSPORT: = "SSE"
+    MCP_HTTP_HOST: "0.0.0.0"
+    MCP_HTTP_PORT: "8081"
+    ODS_CONFIG_PATH: "/config/ods_config.json"
 options:
-    SEARXNG_BASE_URL: "http://172.17.0.1:32768"
+    SEARXNG_ENGINE_API_BASE_URL: "http://172.17.0.1:8080/search"
 schema:
-    SEARXNG_BASE_URL: "str"
+    SEARXNG_ENGINE_API_BASE_URL: "str"
 boot: manual
 #host_pid: true
 init: false
