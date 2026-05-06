@@ -1,15 +1,15 @@
 {
   "name": "SearXNG w/ MCP",
-  "version": "2026.5.2-cd75013c9",
+  "version": "2026.5.5-d3566fe8a",
   "slug": "searxng_with_mcp",
   "description": "SearXNG is a metasearch engine. Adds OvertliDS/mcp-searxng-enhanced endpoint for llama.cpp, Claude code, etc. ",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "environment": {
-      "ODS_CONFIG_PATH": "/etc/searxng/ods_config.json",
-	  "SEARXNG_ENGINE_API_BASE_URL": "http://0.0.0.0:8080/search",
-	  "MCP_HTTP_HOST": "0.0.0.0",
-	  "MCP_HTTP_PORT": "8081"
-    },
+    "ODS_CONFIG_PATH": "/etc/searxng/ods_config.json",
+    "SEARXNG_ENGINE_API_BASE_URL": "http://0.0.0.0:8080/search",
+    "MCP_HTTP_HOST": "0.0.0.0",
+    "MCP_HTTP_PORT": "8081"
+  },
   "map": [
     {
       "type": "addon_config",
