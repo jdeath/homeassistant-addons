@@ -1,9 +1,9 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-05-01",
+  "last_update": "2026-05-06",
   "repository": "jdeath/homeassistant-addons",
   "slug": "minecraftbe",
   "source": "github",
   "upstream_repo": "itzg/docker-minecraft-bedrock-server",
-  "upstream_version": "2026.4.4"
+  "upstream_version": "2026.5.0"
 }
