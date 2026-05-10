@@ -67,7 +67,7 @@ panel_custom:
   - name: panel_rewards
     sidebar_title: Rewards
     sidebar_icon: mdi:medal
-    url_path: 'hassio/addon/2effc9b9_royalpricecheck/logs'
+    url_path: 'config/app/2effc9b9_royalpricecheck/logs'
     module_url: /api/hassio/app/entrypoint.js
     embed_iframe: true
     require_admin: true
