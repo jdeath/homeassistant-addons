@@ -1,0 +1,58 @@
+configuration:
+  REDLIB_DEFAULT_THEME:
+    name: Theme
+    description: Default UI theme for Redlib
+  REDLIB_DEFAULT_FRONT_PAGE:
+    name: Front Page
+    description: Default landing page shown in Redlib
+  REDLIB_DEFAULT_LAYOUT:
+    name: Layout
+    description: Default page layout for posts and content
+  REDLIB_DEFAULT_WIDE:
+    name: Wide Mode
+    description: Enable or disable wide page display
+  REDLIB_DEFAULT_POST_SORT:
+    name: Post Sort
+    description: Default sorting method for posts
+  REDLIB_DEFAULT_COMMENT_SORT:
+    name: Comment Sort
+    description: Default sorting method for comments
+  REDLIB_DEFAULT_BLUR_SPOILER:
+    name: Blur Spoilers
+    description: Blur spoiler content by default
+  REDLIB_DEFAULT_SHOW_NSFW:
+    name: Show NSFW
+    description: Show NSFW content by default
+  REDLIB_DEFAULT_BLUR_NSFW:
+    name: Blur NSFW
+    description: Blur NSFW content by default
+  REDLIB_DEFAULT_USE_HLS:
+    name: Use HLS
+    description: Enable HLS streaming support by default
+  REDLIB_DEFAULT_HIDE_HLS_NOTIFICATION:
+    name: Hide HLS Notification
+    description: Hide the HLS playback notification by default
+  REDLIB_DEFAULT_AUTOPLAY_VIDEOS:
+    name: Autoplay Videos
+    description: Autoplay videos by default
+  REDLIB_DEFAULT_SUBSCRIPTIONS:
+    name: Subscriptions
+    description: + separated list of subreddits to preload (sub1+sub2+sub3+...)
+  REDLIB_DEFAULT_HIDE_AWARDS:
+    name: Hide Awards
+    description: Hide award icons and counts by default
+  REDLIB_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION:
+    name: Disable Visit Reddit Confirmation
+    description: Disable the confirmation prompt before visiting Reddit
+  REDLIB_DEFAULT_HIDE_SCORE:
+    name: Hide Score
+    description: Hide post and comment scores by default
+  REDLIB_DEFAULT_HIDE_SIDEBAR_AND_SUMMARY:
+    name: Hide Sidebar and Summary
+    description: Hide the sidebar and summary panel by default
+  REDLIB_DEFAULT_FIXED_NAVBAR:
+    name: Fixed Navbar
+    description: Keep the top navigation bar fixed by default
+  REDLIB_DEFAULT_REMOVE_DEFAULT_FEEDS:
+    name: Remove Default Feeds
+    description: Remove default feed shortcuts by default
