@@ -19,6 +19,5 @@ RUN mkdir -p /tmp/bashio && \
 COPY rootfs/ /
 
 RUN chmod a+x /run.sh
-RUN chmod a+x /custom.sh
 
 ENTRYPOINT /run.sh
