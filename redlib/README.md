@@ -36,4 +36,8 @@ port : 8081 #port you want to run on.
 
 Webui can be found at `<your-ip>:port`.
 
+## Customization
+
+After the first run in the addon config folder (addon_configs/2effc9b9_redlib) there will be a custom.sh file in witch you can add your own commands
+
 [repository]: https://github.com/jdeath/homeassistant-addons

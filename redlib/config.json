@@ -6,7 +6,9 @@
   "boot": "auto",
   "description": "Redlib is a private front-end like Invidious but for Reddit",
   "environment": {},
-  "map": [],
+  "map": [
+    "addon_config:rw"
+  ],
   "version": "0.36.0-2",
   "name": "Redlib",
   "options": {
