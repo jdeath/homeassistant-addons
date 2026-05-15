@@ -1,10 +1,10 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-04-06",
+  "last_update": "2026-05-15",
   "repository": "jdeath/homeassistant-addons",
   "slug": "trilium",
   "source": "github",
   "github_exclude": "clipper",
   "upstream_repo": "zadam/trilium",
-  "upstream_version": "v0.102.2"
+  "upstream_version": "v0.103.0"
 }
