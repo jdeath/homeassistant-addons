@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "zelon88/hrconvert2",
-  "version": "v3.3.7",
+  "version": "v3.4.5",
   "name": "hrconvert2",
   "options": {},
   "ports": {
@@ -20,7 +20,7 @@
   "schema": {},
   "slug": "hrconvert2",
   "startup": "services",
-  "upstream": "v3.3.7",
+  "upstream": "v3.4.5",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
   "ingress": false,
