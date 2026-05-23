@@ -1,4 +1,4 @@
-FROM ghcr.io/wg-easy/wg-easy:15.2.2
+FROM ghcr.io/wg-easy/wg-easy:15.3.0
 
 RUN apk add --no-cache nginx jq
 
