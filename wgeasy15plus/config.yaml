@@ -1,6 +1,6 @@
 name: WG Easy 15+
-version: "15.2.2"
-upstream: 15.2.2
+version: "15.3.0"
+upstream: 15.3.0
 slug: wgeasy15plus
 description: >-
   WireGuard Easy 15+: WireGuard + UI in one
