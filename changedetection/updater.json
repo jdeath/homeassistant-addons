@@ -1,9 +1,9 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-05-20",
+  "last_update": "2026-05-27",
   "repository": "jdeath/homeassistant-addons",
   "slug": "changedetection",
   "source": "github",
   "upstream_repo": "dgtlmoon/changedetection.io",
-  "upstream_version": "0.55.5"
+  "upstream_version": "0.55.7"
 }
