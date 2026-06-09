@@ -24,7 +24,7 @@ comparison to installing any other Hass.io add-on.
 ## Configuration
 data files in \addon_configs\2effc9b9_degoog\
 ```
-port : 8080 #port you want to run on.
+port : 4445 #port you want to run on. Cannot be 4444
 ```
 
 Webui can be found at `<your-ip>:port`.
