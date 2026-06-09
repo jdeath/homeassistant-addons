@@ -19,7 +19,7 @@ comparison to installing any other Hass.io add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI — accessible via Home Assistant ingress (side panel) or `<your-ip>:4444`.
+1. Open WebUI — accessible via Home Assistant ingress (side panel) or `<your-ip>:4445`.
 
 ## Configuration
 data files in \addon_configs\2effc9b9_degoog\
