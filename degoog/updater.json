@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "false",
+  "last_update": "2026-04-27",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "degoog",
+  "source": "github",
+  "upstream_repo": "degoog-org/degoog",
+  "upstream_version": "0.20.0",
+  "paused": "false"
+}

@@ -1,0 +1,34 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Search aggregator that queries multiple engines and shows results in one place. You can add custom search engines, bang-command plugins, slot plugins (query-triggered panels above/below results or in the sidebar), and transports (custom HTTP fetch strategies like curl, FlareSolverr, or your own). The dream would be to eventually have a user made marketplace for plugins/engines.",
+  "environment": {
+	"DEGOOG_DATA_DIR": "/config/",
+	"PUID": "0",
+    "PGID": "0"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "0.20.0",
+  "name": "degoog",
+  "options": {},
+  "ports": {
+    "4445/tcp": "4445"
+  },
+  "ports_description": {
+    "4445/tcp": "Web interface (direct, without ingress)"
+  },
+  "schema": {},
+  "slug": "degoog",
+  "startup": "services",
+  "upstream": "latest",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:4445]",
+  "panel_admin": false,
+  "ingress": true,
+  "ingress_port": 4444
+}
