@@ -6,14 +6,14 @@
   "boot": "auto",
   "description": "Search aggregator that queries multiple engines and shows results in one place. You can add custom search engines, bang-command plugins, slot plugins (query-triggered panels above/below results or in the sidebar), and transports (custom HTTP fetch strategies like curl, FlareSolverr, or your own). The dream would be to eventually have a user made marketplace for plugins/engines.",
   "environment": {
-	"DEGOOG_DATA_DIR": "/config/",
-	"PUID": "0",
+    "DEGOOG_DATA_DIR": "/config/",
+    "PUID": "0",
     "PGID": "0"
   },
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.20.0",
+  "version": "0.21.0",
   "name": "degoog",
   "options": {},
   "ports": {
