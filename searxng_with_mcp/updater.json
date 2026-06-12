@@ -3,6 +3,6 @@
   "slug": "searxng_with_mcp",
   "source": "dockerhub",
   "upstream_repo": "searxng/searxng",
-  "upstream_version": "2026.6.8-f3fab143b",
-  "last_update": "2026-06-10"
+  "upstream_version": "2026.6.11-a1490676e",
+  "last_update": "2026-06-12"
 }
