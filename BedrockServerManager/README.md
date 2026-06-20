@@ -30,4 +30,5 @@ port : 11325 #port you want to run on.
 
 Webui can be found at `<your-ip>:port`.
 
+Ingress works partially. It will not show the live "Monitor Tab" or other websocket calls. However, basic adminstration is available. You must go to ip:port for full functionality
 [repository]: https://github.com/jdeath/homeassistant-addons

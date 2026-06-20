@@ -1,6 +1,6 @@
 name: Bedrock Server Manager
-version: "3.9.1"
-upstream: 3.7.1
+version: "3.9.1-2"
+upstream: "3.7.1"
 slug: bedrockservermanager
 description: >-
   Bedrock Server Manager is a comprehensive python server designed for installing, managing, and maintaining Minecraft Bedrock Dedicated Servers with ease
@@ -8,13 +8,13 @@ arch:
   - amd64
   - aarch64
 url: "https://github.com/jdeath/homeassistant-addons"
-image: "ghcr.io/dmedina559/bedrock-server-manager"
 ports:
-  11325/tcp: 11325 
-  19132/udp: 19132 
+  11325/tcp: 11325
+  19132/udp: 19132
 ports_description:
-  11325/tcp: "Web Interface"
+  11325/tcp: "Web Interface (direct, without ingress)"
   19132/udp: "Minecraft API"
+webui: "[PROTO:ssl]://[HOST]:[PORT:11325]"
 map:
   - type: addon_config
     read_only: false
@@ -22,5 +22,5 @@ map:
 boot: auto
 startup: services
 panel_admin: false
-ingress: false
-ingress_port: 11325
+ingress: true
+ingress_port: 8099
