@@ -1,6 +1,7 @@
 # Home assistant add-on: WireGuard Easy
 
 You have found the easiest way to install & manage WireGuard on any Linux host!
+**Issue: 23 June 2026 Switch to v15 Version of Addon if upgraded to HAOS 18**
 
 **Issue: If add-on will not start, make sure WG_POST_UP, WG_POST_DOWN is set to "" in the YAML or blank in the UI. There was a error after a recent update.**
 
