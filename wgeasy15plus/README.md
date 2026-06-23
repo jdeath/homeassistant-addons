@@ -4,6 +4,8 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 This runs version 15+ of WG Easy with Home Assistant ingress support.
 
+**Issue: 23 June 2026 Look at this thread for directions to work on HAOS 18** https://github.com/jdeath/homeassistant-addons/issues/86#issuecomment-4778605817
+
 Remember, you need a reverse proxy in front of the UI to be secure. This version enables non-secure access for setup, but you should not use it unless on your local network.
 
 _Thanks to everyone having starred my repo! To star it click on the image below, then it will be on top right. Thanks!_
