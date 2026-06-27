@@ -1,0 +1,29 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Self-hostable web tool for generating ambient noises",
+  "map": [
+	  "addon_config:rw"
+  ],
+  "init": "false",
+  "version": "v0.7.1",
+  "name": "noisedash",
+  "options": {},
+  "ports": {
+    "1432/tcp": "1432"
+  },
+  "ports_description": {
+    "1432/tcp": "Web interface (direct access)"
+  },
+  "schema": {},
+  "slug": "noisedash",
+  "startup": "services",
+  "upstream": "v0.6.13",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:1432]",
+  "ingress": true,
+  "ingress_port": 8099
+}
