@@ -19,6 +19,7 @@ This addon is based on the [docker image](https://github.com/wg-easy/wg-easy).
 
 * All-in-one: WireGuard + Web UI.
 * Ingress support via HA sidebar.
+* Ingress works for basic commands (new client, display QR code), but cannot download a configuration file.
 * Easy installation, simple to use.
 * List, create, edit, delete, enable & disable clients.
 * Show a client's QR code.
