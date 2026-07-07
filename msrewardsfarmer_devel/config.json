@@ -27,5 +27,6 @@
   "startup": "services",
   "upstream": "0.1.0",
   "host_network": "true",
+  "stage": "deprecated",
   "url": "https://github.com/jdeath/homeassistant-addons"
 }
