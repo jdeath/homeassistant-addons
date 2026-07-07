@@ -22,6 +22,7 @@
   "ports_description": {},
   "slug": "msrewardsfarmer",
   "startup": "services",
+  "stage": "deprecated",
   "upstream": "2.0.0",
   "url": "https://github.com/jdeath/homeassistant-addons"
 }
