@@ -21,6 +21,7 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
+1. In configuration, set HBOX_AUTH_API_KEY_PEPPER to the output of `openssl rand -base64 48` if you are exposing to internet. If not, default key is fine.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
