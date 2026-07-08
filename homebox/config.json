@@ -26,7 +26,7 @@
   },
   "schema": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "list(true|false)",
-    "HBOX_AUTH_API_KEY_PEPPER": "str"
+    "HBOX_AUTH_API_KEY_PEPPER": "str(64,64)"
   },
   "slug": "homebox",
   "startup": "services",
