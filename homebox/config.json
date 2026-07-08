@@ -15,7 +15,8 @@
   "version": "0.26.2",
   "name": "Homebox",
   "options": {
-    "HBOX_OPTIONS_ALLOW_REGISTRATION": "true"
+    "HBOX_OPTIONS_ALLOW_REGISTRATION": "true",
+    "HBOX_AUTH_API_KEY_PEPPER": "kEotDMciZBFEueJm7l9yyzh16DuX291CL+CNqH00pjTWAA5iqk1LFODsFY4CCjgF"
   },
   "ports": {
     "7745/tcp": "7745"
