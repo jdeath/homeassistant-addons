@@ -7,12 +7,13 @@
   "description": "Inventory and organization system built for the Home User",
   "environment": {
     "HBOX_STORAGE_DATA": "/config",
-    "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1"
+    "HBOX_STORAGE_SQLITE_URL": "/config/homebox.db?_fk=1",
+    "HBOX_OPTIONS_TRUST_PROXY": "true"
   },
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.26.2-2",
+  "version": "0.26.2-3",
   "name": "Homebox",
   "options": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "true",
@@ -33,6 +34,6 @@
   "upstream": "0.26.2",
   "url": "https://github.com/jdeath/homeassistant-addons",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7745]",
-  "ingress": false,
-  "ingress_port": 7745
+  "ingress": true,
+  "ingress_port": 8099
 }

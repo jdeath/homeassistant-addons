@@ -1,6 +1,11 @@
 FROM ghcr.io/sysadminsmedia/homebox
+
+RUN apk add --no-cache jq nginx && rm -rf /var/cache/apk/*
+
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY run.sh /
-RUN  apk add --no-cache jq && chmod a+x /run.sh
+RUN chmod a+x /run.sh
+
 ENTRYPOINT [ "/run.sh" ]
 
 ### LABELS

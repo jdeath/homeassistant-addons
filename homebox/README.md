@@ -25,7 +25,7 @@ comparison to installing any other Hass.io add-on.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via <your-ip>:port.
+1. Open WebUI should work via <your-ip>:port or ingress.
 1. Register a user
 1. Go to add-on configuration and disable user registration, if you desire
 ## Configuration
