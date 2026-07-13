@@ -32,8 +32,8 @@
   },
   "slug": "geoipupdate",
   "startup": "services",
-  "upstream": "v7.1.1",
+  "upstream": "v8.0.0",
   "url": "https://github.com/jdeath/homeassistant-addons/geoipupdate",
-  "version": "v7.1.1",
+  "version": "v8.0.0",
   "ingress": false
 }
