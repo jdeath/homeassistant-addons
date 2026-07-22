@@ -6,5 +6,5 @@
   "source": "dockerhub",
   "dockerhub_by_date": "true",
   "upstream_repo": "archivebox/archivebox",
-  "upstream_version": "v0.9.35rc118-2026-07-20"
+  "upstream_version": "v0.9.35rc131-2026-07-20"
 }
