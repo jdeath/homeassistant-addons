@@ -19,6 +19,8 @@ This addon is based on the [docker image](https://github.com/mitmproxy/mitmproxy
 1. Install this add-on.
 1. Click the `Save` button to store your configuration for proxy port and webUI port.
 1. Start the add-on.
+1. The addon will fail, that is ok
+1. ssh into your home assistant and download `chmod 2777 /addon_configs/2effc9b9_mitmproxy/`
 1. Check the logs of the add-on to see if everything went well.
 1. Your certificates will be generated in /addon_configs/2effc9b9_mitmproxy
 1. If you have certificates from another install, copy them to this directory instead.
