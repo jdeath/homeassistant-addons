@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "v3.7.3",
+  "version": "v3.8.0",
   "name": "siyuan",
   "ports": {
     "6806/tcp": "6806"
