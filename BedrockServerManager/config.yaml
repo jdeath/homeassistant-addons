@@ -1,6 +1,6 @@
 name: Bedrock Server Manager
-version: "3.10.5"
-upstream: "3.7.1"
+version: "3.10.5-1"
+upstream: "3.10.5"
 slug: bedrockservermanager
 description: >-
   Bedrock Server Manager is a comprehensive python server designed for installing, managing, and maintaining Minecraft Bedrock Dedicated Servers with ease
