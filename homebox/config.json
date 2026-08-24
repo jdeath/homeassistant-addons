@@ -17,7 +17,11 @@
   "name": "Homebox",
   "options": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "true",
-    "HBOX_AUTH_API_KEY_PEPPER": "kEotDMciZBFEueJm7l9yyzh16DuX291CL+CNqH00pjTWAA5iqk1LFODsFY4CCjgF"
+    "HBOX_AUTH_API_KEY_PEPPER": "kEotDMciZBFEueJm7l9yyzh16DuX291CL+CNqH00pjTWAA5iqk1LFODsFY4CCjgF",
+    "HBOX_OIDC_ENABLED": "false",
+    "HBOX_OIDC_ISSUER_URL": "",
+    "HBOX_OIDC_CLIENT_ID": "",
+    "HBOX_OIDC_CLIENT_SECRET": ""
   },
   "ports": {
     "7745/tcp": "7745"
@@ -27,7 +31,11 @@
   },
   "schema": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "list(true|false)",
-    "HBOX_AUTH_API_KEY_PEPPER": "str"
+    "HBOX_AUTH_API_KEY_PEPPER": "str",
+    "HBOX_OIDC_ENABLED": "list(true|false)",
+    "HBOX_OIDC_ISSUER_URL": "str",
+    "HBOX_OIDC_CLIENT_ID": "str",
+    "HBOX_OIDC_CLIENT_SECRET": "str"
   },
   "slug": "homebox",
   "startup": "services",

@@ -34,6 +34,9 @@ comparison to installing any other Hass.io add-on.
 port : 7745 #port you want to run on.
 ```
 
+### SSO/OIDC Setup
+See [HomeBox Documentation](https://homebox.software/en/quick-start/configure/oidc/) for details.
+
 Webui can be found at `<your-ip>:port`.
 
 [repository]: https://github.com/jdeath/homeassistant-addons
