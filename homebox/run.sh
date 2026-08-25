@@ -14,7 +14,20 @@ HBOX_OIDC_CLIENT_SECRET
 
 for key in $ENV_KEYS; do
 	value=$(jq --raw-output --arg key "$key" '.[$key] // empty' "$CONFIG_PATH")
-	echo "$key: ${value}"
+	case "$key" in
+        # Redact sensitive values in logs
+		HBOX_AUTH_API_KEY_PEPPER|HBOX_OIDC_CLIENT_SECRET)
+			if [ -n "$value" ]; then
+				echo "$key: [REDACTED]"
+			else
+				echo "$key: [empty]"
+			fi
+			;;
+		*)
+			echo "$key: ${value}"
+			;;
+	esac
+
 	export "$key=$value"
 done
 
