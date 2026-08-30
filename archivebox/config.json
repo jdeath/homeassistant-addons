@@ -23,7 +23,7 @@
   "startup": "services",
   "upstream": "v0.9.35rc131-2026-07-20",
   "url": "https://github.com/jdeath/homeassistant-addons/tree/main/archivebox",
-  "version": "2026.08.13",
+  "version": "2026.08.28",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:8000]",
   "panel_admin": false,
   "ingress": false,
