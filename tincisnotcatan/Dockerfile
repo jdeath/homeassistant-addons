@@ -3,12 +3,12 @@ FROM alpine
 WORKDIR /tmp
 RUN apk update
 RUN apk fetch openjdk8
-RUN apk add openjdk8 bash maven
+RUN apk add --no-cache openjdk8 bash maven bash
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
 
 EXPOSE 4567/tcp
 COPY tincisnotcatan-master .
-RUN cd /tmp && ./build.sh
+RUN chmod 755 ./build.sh && cd /tmp && ./build.sh
 RUN mkdir -p /tmp/data
 CMD java -jar /tmp/target/catan-1.0-jar-with-dependencies.jar
 
