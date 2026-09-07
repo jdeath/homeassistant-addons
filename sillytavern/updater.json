@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "true",
+  "last_update": "2026-06-22",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "sillytavern",
+  "source": "github",
+  "upstream_repo": "SillyTavern/SillyTavern",
+  "upstream_version": "1.18.0",
+  "paused": "false"
+}
