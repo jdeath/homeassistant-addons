@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "ghcr.io/remvze/moodist",
-  "version": "v2.6.1",
+  "version": "v3.0.0",
   "name": "moodist",
   "options": {},
   "ports": {
