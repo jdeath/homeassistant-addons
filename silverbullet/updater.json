@@ -3,8 +3,8 @@
   "last_update": "2026-03-09",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
-  "slug": "moodist",
+  "slug": "silverbullet",
   "source": "github",
-  "upstream_repo": "zefhemel/silverbullet",
+  "upstream_repo": "silverbulletmd/silverbullet",
   "upstream_version": ""
 }
