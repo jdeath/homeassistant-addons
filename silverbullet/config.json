@@ -14,7 +14,7 @@
     "addon_config:rw",
     "share:rw"
   ],
-  "version": "",
+  "version": "2.10.0",
   "name": "silverbullet",
   "ports": {
     "3000/tcp": "3000"
