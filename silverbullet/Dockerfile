@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM zefhemel/silverbullet
+FROM ghcr.io/silverbulletmd/silverbullet
 
 RUN apk add -U --no-cache jq
 
