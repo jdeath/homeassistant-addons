@@ -8,7 +8,7 @@
   "environment": {},
   "map": [],
   "image": "ghcr.io/gchq/cyberchef",
-  "version": "11.4.0",
+  "version": "11.5.0",
   "name": "CyberChef",
   "options": {},
   "ports": {
