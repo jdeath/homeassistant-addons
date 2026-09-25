@@ -1,5 +1,5 @@
 ARG BUILD_VERSION
-FROM lscr.io/linuxserver/emulatorjs
+FROM ghcr.io/linuxserver/emulatorjs
 
 #VOLUME [ "/share" ]
 
