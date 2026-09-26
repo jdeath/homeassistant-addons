@@ -1,16 +1,15 @@
 ARG BUILD_VERSION
-FROM ghcr.io/linuxserver/emulatorjs:1.9.2
+FROM linuxserver/emulatorjs:1.9.2
 
 #VOLUME [ "/share" ]
 
 USER root
 
-RUN mkdir /share/emulatorjs \
-	&& mkdir /share/emulatorjs/config \
-	&& mkdir /share/emulatorjs/data \
-	&& rmdir /data \
+RUN mkdir -p /share/emulatorjs && mkdir -p /share/emulatorjs/config \
+	&& mkdir -p /share/emulatorjs/data \
+	&& rmdir -p /data \
     && ln -s /share/emulatorjs/data/ /data \
-	&& rmdir /config \
+	&& rmdir -p /config \
     && ln -s /share/emulatorjs/config /config 
 
 ### LABELS

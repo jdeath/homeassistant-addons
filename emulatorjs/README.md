@@ -22,6 +22,8 @@ comparison to installing any other Hass.io add-on.
 1. Make the /share/emulatorjs/config and /share/emulatorjs/data
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
+1. Go Admin Port
+1. Download default config
 1. Place roms in the correct folders in /share/emulatorjs/data/EMULATORNAME/roms
 1. Go to Admin port
 1. Click Scan for the Emulator you added games for
