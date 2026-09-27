@@ -18,6 +18,9 @@ comparison to installing any other Hass.io add-on.
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Click the `Save` button to store your configuration.
 1. Start the add-on.
+1. Addon will fail
+1. ssh into home assistant: `chmod 2777 /addon_configs/local_mindspark/`
+1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via ingress or <your-ip>:port.
 
