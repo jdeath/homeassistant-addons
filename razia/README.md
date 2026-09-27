@@ -1,4 +1,4 @@
-# Home assistant add-on: SillyTavern
+# Home assistant add-on: Razzia
 
 Razzia is a straightforward and open-source quiz platform, allowing users to host it on their own server for smaller events.
 
