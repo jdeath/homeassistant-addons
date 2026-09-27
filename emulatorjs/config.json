@@ -1,7 +1,7 @@
 {
   "arch": [
     "amd64",
-    "armv7"
+    "aarch64"
   ],
   "boot": "auto",
   "description": "Retroarch Web",
