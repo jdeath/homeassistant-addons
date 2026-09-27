@@ -1,0 +1,25 @@
+name: "Razzia"
+version: "3.1.0"
+upstream: "3.1.0"
+slug: razzia
+description: >-
+  Razzia is a straightforward and open-source quiz platform, allowing users to host it on their own server for smaller events.
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  3000/tcp: 3000
+ports_description:
+  3000/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /app/config
+image: ghcr.io/ralex91/razzia
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:3000]"
+panel_admin: false
+ingress: false
+ingress_port: 3000
