@@ -1,0 +1,27 @@
+name: Free Games Claimer Remaster
+version: "dev"
+upstream: dev
+slug: freegamesclaimerremaster
+description: >-
+  Claims free games from Epic, Prime, GOG, Steam, Ubisoft and more
+arch:
+  - amd64
+  - aarch64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  7080/tcp: 7080 
+ports_description:
+  7080/tcp: "Web Interface"
+map:
+  - type: addon_config
+    read_only: false
+    path: /fgc/data
+boot: auto
+startup: services
+webui: "[PROTO:ssl]://[HOST]:[PORT:7080]"
+panel_admin: false
+ingress: false
+ingress_port: 7080
+environment:
+  TINI_SUBREAPER: "false"
+udev: true
