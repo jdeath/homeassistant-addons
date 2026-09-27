@@ -2,7 +2,7 @@
 
 Not a fork – a complete ground-up Python remaster inspired by vogler/free-games-claimer.
 
-This version uses the stock Free Games Claimer Remaster docker imager, versus rebuilding it (as alexbelgium does). This addon will track beta versions too.
+This version uses the stock Free Games Claimer Remaster docker image, versus rebuilding it (as alexbelgium does). This addon will track beta versions too.
 
 [![Stargazers repo roster for @jdeath/homeassistant-addons](https://reporoster.com/stars/jdeath/homeassistant-addons)](https://github.com/jdeath/homeassistant-addons/stargazers)
 
