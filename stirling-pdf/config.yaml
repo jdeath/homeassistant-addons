@@ -1,5 +1,5 @@
 name: "Stirling-PDF"
-version: "3.0.0"
+version: "3.0.1"
 upstream: "2.14.2"
 slug: stirling-pdf
 description: >-
