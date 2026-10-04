@@ -37,7 +37,7 @@ comparison to installing any other Hass.io add-on.
 1. Restart addon
 1. Then setup AI and begin playing
 
-
+Voice and TTS will not work (I have not figured that part out with home assistant)
 [repository]: https://github.com/jdeath/homeassistant-addons
 
 
