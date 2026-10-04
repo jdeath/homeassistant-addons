@@ -1,0 +1,18 @@
+name: Kokoru cpu
+version: "v0.9.0"
+upstream: "v0.9.0"
+slug: kokorucpu
+description: >-
+  Dockerized FastAPI wrapper for Kokoro-82M text-to-speech model. Generate hours of high quality speech in minutes.
+image: ghcr.io/remsky/kokoro-fastapi-cpu
+arch:
+  - amd64
+url: "https://github.com/jdeath/homeassistant-addons"
+ports:
+  8880/tcp: 8880 
+ports_description:
+  8880/tcp: "Web Interface"
+boot: auto
+startup: services
+panel_admin: false
+ingress: false
