@@ -47,7 +47,7 @@ llm:
 
 1. Edit `/addon-configs/2effc9b9_anyworld/config.yaml` (see below)
 1. Run the addon again and check the logs
-1. login at https://homeassistantIP:4141 (you must use https)
+1. login at https://homeassistantIP:4141 (you must use https and accept the self signed certificate)
 
 
 [repository]: https://github.com/jdeath/homeassistant-addons
