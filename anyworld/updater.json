@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "false",
+  "last_update": "2026-04-10",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "anyworld",
+  "source": "github",
+  "upstream_repo": "iamarxs/AnyWorld",
+  "upstream_version": "dev",
+  "paused": "true"
+}

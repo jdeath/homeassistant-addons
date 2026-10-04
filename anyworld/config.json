@@ -1,0 +1,29 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "A multiplayer text adventure where you never have to roll dice or keep score — just write what your character does. One player (the host) describes the scenario, then everyone takes turns acting in their own words while an AI weaves every choice into a story that keeps unfolding.",
+  "environment": {
+	"AD_SERVER__PORT": "4141"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "dev",
+  "name": "Anyworld",
+  "ports": {
+    "4141/tcp": "4141"
+  },
+  "ports_description": {
+    "4141/tcp": "WebUI"
+  },
+  "slug": "anyworld",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:4141]",
+  "ingress": true,
+  "ingress_port": 4141,
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}

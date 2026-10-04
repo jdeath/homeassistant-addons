@@ -1,0 +1,29 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "A multiplayer text adventure where you never have to roll dice or keep score — just write what your character does. One player (the host) describes the scenario, then everyone takes turns acting in their own words while an AI weaves every choice into a story that keeps unfolding.",
+  "environment": {
+	"AD_SERVER__PORT": "4141"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "0.24.3",
+  "name": "opendm",
+  "ports": {
+    "3005/tcp": "3005"
+  },
+  "ports_description": {
+    "3005/tcp": "WebUI"
+  },
+  "slug": "opendm",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:3005]",
+  "ingress": false,
+  "ingress_port": 3005,
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}
