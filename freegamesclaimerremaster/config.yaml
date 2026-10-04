@@ -1,6 +1,6 @@
 name: Free Games Claimer Remaster
-version: "dev"
-upstream: dev
+version: "v1.11"
+upstream: v1.11
 slug: freegamesclaimerremaster
 description: >-
   Claims free games from Epic, Prime, GOG, Steam, Ubisoft and more
