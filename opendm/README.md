@@ -26,8 +26,8 @@ comparison to installing any other Hass.io add-on.
 
 	This is a dummy value, replace with running: `openssl rand -hex 32`
 
-1. Run the addon again and check the logs
-1. Login in at IP:3005, create first user (will be the addin)
+1. Run the addon again and check the logs and get the setup code
+1. Login in at IP:3005, create first user (will be the admin) using setup code from log
 1. You must manually install the content pack
 1. log into your home assistant via SSH
 1. `docker ps`
