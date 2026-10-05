@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "A multiplayer text adventure where you never have to roll dice or keep score — just write what your character does. One player (the host) describes the scenario, then everyone takes turns acting in their own words while an AI weaves every choice into a story that keeps unfolding.",
+  "description": "Open Dungeon Master runs multiplayer (and solo) Dungeons & Dragons 5e campaigns with an AI Dungeon Master, on your own machine. The narrator is whichever AI you already have: a local model (llama.cpp, Ollama, LM Studio, vLLM), an API key (OpenAI, OpenRouter, or any OpenAI-compatible endpoint), or a CLI agent you already pay for (Claude Code, Codex, opencode, Grok Build), which narrates on its own subscription with no API key handed over.",
   "environment": {
     "AD_SERVER__PORT": "4141"
   },
