@@ -32,7 +32,7 @@ comparison to installing any other Hass.io add-on.
 1. log into your home assistant via SSH
 1. `docker ps`
 1. find the running container and log into it
-1. `docker exec -it CONTAINERCODE /bin/bash`
+1. `docker exec -it CONTAINERID /bin/bash`
 1. `node scripts/import-open5e.mjs` then `exit`
 1. Restart addon
 1. Then setup AI and begin playing
