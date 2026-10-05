@@ -11,7 +11,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.24.4",
+  "version": "0.24.5",
   "name": "opendm",
   "ports": {
     "3005/tcp": "3005"
