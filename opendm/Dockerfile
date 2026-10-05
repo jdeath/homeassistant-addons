@@ -3,7 +3,7 @@ FROM ghcr.io/lebbitheplow/open-dungeon-master
 USER root	
 WORKDIR /app
 COPY run.sh ./
-RUN chmod a+x ./*.sh && rm -rf /app/data
+RUN chmod a+x ./*.sh
 ENTRYPOINT ["/app/run.sh"]
 
 ### LABELS

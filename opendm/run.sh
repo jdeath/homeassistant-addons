@@ -1,30 +1,26 @@
 #!/bin/bash
 set -e
 
-cd /config
+cd /app/data
 
-#rmdir /app/data
-mkdir -p /config/data
-ln -s /config/data /app/data
+rmdir /app/public/uploads
+mkdir -p /app/data/uploads
+ln -s /app/data/uploads /app/public/uploads
 
-#rm /app/public/uploads
-mkdir -p /config/uploads
-ln -s /config/uploads /app/public/uploads
+rmdir /app/public/generated
+mkdir -p /app/data/generated
+ln -s /app/data/generated /app/public/generated
 
-#rm /app/public/generated
-mkdir -p /config/generated
-ln -s /config/generated /app/public/generated
+rmdir  /app/public/generated-audio
+mkdir -p /app/data/generated-audio
+ln -s /app/data/generated-audio /app/public/generated-audio
 
-#rm  /app/public/generated-audio
-mkdir -p /config/generated-audio
-ln -s /config/generated-audio /app/public/generated-audio
-
-#rm /root/odm-backups
-mkdir -p /config/backups
-ln -s /config/backups /root/odm-backups
+[ -d /root/odm-backups ] && rmdir /root/odm-backups
+mkdir -p /app/data/backups
+ln -s /app/data/backups /root/odm-backups
 
 set -a
-source /config/env.server
+source /app/data/env.server
 set +a
 
 node /app/server.js

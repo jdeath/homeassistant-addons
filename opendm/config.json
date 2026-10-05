@@ -9,7 +9,11 @@
     "AD_SERVER__PORT": "4141"
   },
   "map": [
-    "addon_config:rw"
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/app/data"
+    }
   ],
   "version": "0.24.5",
   "name": "opendm",
