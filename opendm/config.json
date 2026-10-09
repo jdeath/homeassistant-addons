@@ -15,7 +15,7 @@
       "path": "/app/data"
     }
   ],
-  "version": "0.24.7",
+  "version": "0.25.0",
   "name": "opendm",
   "ports": {
     "3005/tcp": "3005"
