@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-10-05",
+  "last_update": "2026-10-09",
   "beta": "true",
   "repository": "jdeath/homeassistant-addons",
   "slug": "freegamesclaimerremaster",
   "source": "github",
   "upstream_repo": "P-Adamiec/Free-Games-Claimer-Remaster",
-  "upstream_version": "v1.11",
+  "upstream_version": "v1.12d",
   "paused": "false"
 }
