@@ -6,6 +6,6 @@
   "slug": "n8n",
   "source": "github",
   "upstream_repo": "n8n-io/n8n",
-  "upstream_version": "2.42.5",
+  "upstream_version": "2.42.6",
   "paused": "false"
 }
