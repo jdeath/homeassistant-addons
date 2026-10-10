@@ -1,11 +1,11 @@
 {
-  "github_fulltag": "false",
+  "github_fulltag": "true",
   "last_update": "2026-08-31",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
-  "slug": "5etools",
+  "slug": "mindspark",
   "source": "github",
-  "upstream_repo": "5etools-mirror-3/5etools-img",
-  "upstream_version": "2.34.1",
+  "upstream_repo": "prasadpatil25/MindSpark",
+  "upstream_version": "v1.1.3",
   "paused": "false"
 }
