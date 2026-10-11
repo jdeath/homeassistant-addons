@@ -12,7 +12,7 @@
   "map": [
     "ssl:rw"
   ],
-  "name": "WG Easy",
+  "name": "zzz_archived - WG Easy",
   "options": {
     "WG_HOST": "hassio.local",
     "WG_CONFIG_PORT": "51820",
