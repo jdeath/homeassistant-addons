@@ -15,6 +15,7 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add my Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install this add-on.
+1. Highly recommend change the default JWTTOKEN to output of `openssl rand -base64 48` (ssh into home assistant and run)
 1. Click the `Save` button to store your configuration.
 1. If not behind a reverse proxy or ingress, need to set INSECURE COOKIES to 0
 1. Ingress will work AFTER you setup the server
