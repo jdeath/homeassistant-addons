@@ -1,0 +1,3 @@
+nodriver==0.50.6
+curl_cffi==0.15.0
+PyYAML==6.0.3

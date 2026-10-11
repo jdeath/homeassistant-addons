@@ -1,0 +1,33 @@
+{
+  "arch": [
+    "amd64"
+  ],
+  "boot": "manual",
+  "description": "Automatically get notified if price drop on Royal Caribbean Addons or Cruises",
+  "environment": {},
+  "map": [
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/app/data-dir"
+    }
+  ],
+  "ports": {
+    "6080/tcp": "6080"
+  },
+  "ports_description": {
+    "6080/tcp": "Web interface"
+  },
+  "options": {
+    "MODE": "signin"
+  },
+  "schema": {
+    "MODE": "list(signin|run)"
+  },
+  "version": "3.3.1",
+  "name": "Rewards Farmer New",
+  "slug": "rewardsfarmernew",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}

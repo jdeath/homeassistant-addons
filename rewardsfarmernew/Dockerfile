@@ -1,0 +1,56 @@
+FROM python:3.12-slim-bookworm
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Edge, from Microsoft's own repository.
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		git jq ca-certificates curl gnupg unzip fonts-liberation \
+	&& curl -fsSL https://packages.microsoft.com/keys/microsoft.asc \
+		| gpg --dearmor -o /usr/share/keyrings/microsoft.gpg \
+	&& echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/edge stable main" \
+		> /etc/apt/sources.list.d/microsoft-edge.list \
+	&& apt-get update \
+	&& apt-get install -y --no-install-recommends microsoft-edge-stable \
+	&& rm -rf /var/lib/apt/lists/*
+
+# The driver has to match the browser build, so it is pinned to whatever Edge
+# the layer above installed rather than to "latest", which drifts apart from it
+# between releases.
+RUN EDGE_VERSION="$(microsoft-edge --version | awk '{print $3}')" \
+	&& curl -fsSL -o /tmp/edgedriver.zip \
+		"https://msedgedriver.microsoft.com/${EDGE_VERSION}/edgedriver_linux64.zip" \
+	&& unzip -j /tmp/edgedriver.zip msedgedriver -d /usr/local/bin \
+	&& chmod +x /usr/local/bin/msedgedriver \
+	&& rm /tmp/edgedriver.zip \
+	&& msedgedriver --version
+
+# Signing in needs a browser window, and the profile has to be written by the
+# container's own Edge: Chromium takes the cookie key from the operating system,
+# and on a Windows or macOS host that key is wrapped with DPAPI or the login
+# Keychain, neither of which the container can unwrap. Xvfb gives that browser a
+# display and noVNC puts it on the user's screen with nothing installed on the
+# host. Only src/signin.py reaches any of this; a run never does.
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		xvfb x11vnc novnc websockify \
+	&& rm -rf /var/lib/apt/lists/* \
+	# Debian ships vnc.html and no index.html, so a bare localhost:6080 is a 404
+	# that reads as the feature being broken.
+	&& ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
+
+WORKDIR /app
+
+RUN pip install --no-cache-dir "selenium>=4.46.0,<5.0.0" "numpy" "python-dotenv" "requests"
+RUN git clone https://github.com/User0332/rewards-farmer .
+RUN sed -i 's/"-localhost",//g' src/signin.py
+RUN sed -i 's/127\.0\.0\.1/0.0.0.0/g' src/signin.py
+# Headless because there is no display, and trends because there is no model.
+ENV REWARDS_HEADLESS=1 \
+	QUERY_SOURCE=trends \
+	PYTHONUNBUFFERED=1
+
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
+CMD ["/run.sh"]
