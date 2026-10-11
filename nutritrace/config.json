@@ -1,0 +1,37 @@
+{
+  "name": "NutriTrace",
+  "slug": "nutritrace",
+  "description": "Self-hosted personal nutrition tracker",
+  "version": "1.4.0",
+  "arch": ["amd64", "aarch64"],
+  "boot": "manual",
+  "startup": "application",
+  "map": [
+    "addon_config:rw"
+  ],
+  "environment": {
+    "DB_PATH": "/config/db/nutritrace.db",
+    "UPLOADS_PATH": "/config/uploads"
+  },
+  "options": {
+    "JWT_SECRET": "jQEg0MVUxKPmHq6P1zBd0HZtc+79GxKZ3nbRZHJY4IKFnSVe/njPR5/aSXzUACiY",
+    "INSECURE_COOKIES": "0",
+    "timeout": "180"
+  },
+  "schema": {
+    "JWT_SECRET": "str",
+    "INSECURE_COOKIES": "list(0|1)",
+    "timeout": "float"
+  },
+  "panel_icon": "mdi:credit-card-multiple",
+  "panel_admin": true,
+  "ports": {
+    "3001/tcp": "3001"
+  },
+  "ports_description": {
+    "3001/tcp": "Web interface"
+  },
+  "ingress": true,
+  "ingress_port": 3001,
+  "url": "https://github.com/example/citi-offers"
+}

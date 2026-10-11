@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "false",
+  "last_update": "2026-06-15",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "nutritrace",
+  "source": "github",
+  "upstream_repo": "TraceApps/nutritrace",
+  "upstream_version": "1.4.0",
+  "paused": "false"
+}
