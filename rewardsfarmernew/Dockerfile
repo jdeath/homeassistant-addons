@@ -41,7 +41,7 @@ RUN apt-get update \
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir "selenium>=4.46.0,<5.0.0" "numpy" "python-dotenv" "requests"
+RUN pip install --no-cache-dir "selenium>=4.46.0,<5.0.0" "numpy" "python-dotenv" "requests" "Pillow"
 RUN git clone https://github.com/User0332/rewards-farmer .
 RUN sed -i 's/"-localhost",//g' src/signin.py
 RUN sed -i 's/127\.0\.0\.1/0.0.0.0/g' src/signin.py
