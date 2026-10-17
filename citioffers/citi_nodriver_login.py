@@ -29,6 +29,7 @@ import getpass
 import json
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -88,13 +89,16 @@ CHROME_CANDIDATES = [
 # (N changes per render). Submit button text is "Sign On". We match by id-pattern,
 # type, and label so it survives re-renders. (Confirmed live: #CdsSignon3_0_username,
 # #CdsSignon3_0_password, button "Sign On".)
+# NOTE: keep these TIGHT. A loose selector like input[name*='user' i] matched a
+# NON-username field and the password got typed into the user field. Only match
+# fields that are unambiguously the user-id / password inputs.
 USER_SELECTORS = [
     "input[id*='username' i]", "input[id*='userid' i]", "input[id*='coboUserName' i]",
-    "input[autocomplete='username']", "input[name*='user' i]",
+    "input[autocomplete='username']",
 ]
 PASS_SELECTORS = [
     "input[id*='password' i]", "input[type='password']",
-    "input[autocomplete='current-password']", "input[name*='password' i]",
+    "input[autocomplete='current-password']",
 ]
 # Cookie-consent banner buttons to dismiss before the form (order matters: try
 # "Continue" / "Accept" first; they vary).
@@ -173,41 +177,194 @@ def _js_type(selector: str, text: str) -> str:
     ).replace("__SEL__", json.dumps(selector)).replace("__TXT__", json.dumps(text))
 
 
-async def _type_into(field_selector: str, text: str, page) -> bool:
-    """Focus a field and type `text`.
-    Primary: real keyboard events (send_keys) after focusing. If a CDP node error
-    breaks that path, fall back to an in-page JS keystroke simulation. Verify the
-    value actually landed before reporting success."""
-    landed = False
+def _js_type_char(selector: str, ch: str) -> str:
+    """In-page JS that appends ONE char to `selector` with full keystroke events
+    (keydown/keypress/input/keyup) + native value setter — what Angular ngModel
+    accepts. Returns the new value length, or -1 if the element is missing."""
+    return (
+        "(function(){var el=document.querySelector(__SEL__);if(!el)return -1;"
+        "if(document.activeElement!==el)el.focus();"
+        "var setV=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value');"
+        "var ch=__CH__;"
+        "el.dispatchEvent(new KeyboardEvent('keydown',{key:ch,bubbles:true}));"
+        "el.dispatchEvent(new KeyboardEvent('keypress',{key:ch,bubbles:true}));"
+        "setV.set.call(el,(el.value||'')+ch);"
+        "el.dispatchEvent(new Event('input',{bubbles:true}));"
+        "el.dispatchEvent(new KeyboardEvent('keyup',{key:ch,bubbles:true}));"
+        "return (el.value||'').length;})()"
+    ).replace("__SEL__", json.dumps(selector)).replace("__CH__", json.dumps(ch))
+
+
+async def _fresh_el(page, selector: str, timeout: int = 8):
+    """Re-resolve an element FRESH (the Angular SPA re-renders, so a previously
+    obtained reference can go stale/null). Returns the element or None."""
     try:
-        el = await page.wait_for(field_selector, timeout=8)
-        await page.evaluate(
-            "(function(){var el=document.querySelector(" + json.dumps(field_selector) +
-            ");if(el){el.focus();if(el.select)el.select();}return 1;})()",
-            return_by_value=True)
-        await page.wait(0.3)
-        try:
-            await el.click()
-        except Exception:
-            pass
-        for ch in text:
-            await el.send_keys(ch)
-            await asyncio.sleep(0.02)
-        await page.wait(0.3)
-        v = _val(await page.evaluate(
-            "(document.querySelector(" + json.dumps(field_selector) + ").value)||''",
+        return await page.wait_for(selector, timeout=timeout)
+    except Exception:
+        return None
+
+
+async def _read_value(page, selector: str):
+    """Read a field's current value, tolerating a missing element (null)."""
+    try:
+        return _val(await page.evaluate(
+            "(function(){var el=document.querySelector(" + json.dumps(selector) + ");"
+            "return el ? (el.value||'') : null;})()", return_by_value=True))
+    except Exception:
+        return None
+
+
+# Windows virtual key codes for printable characters (A-Z=65-90, 0-9=48-57, and
+# punctuation per the US-QWERTY layout). Used by _cdp_type_text so keyDown events
+# carry the correct code for a Carbon masked input to accept.
+_VK = {}
+for _i in range(26):
+    _VK[chr(ord("a") + _i)] = 65 + _i      # a-z -> A-Z VK codes (65-90)
+    _VK[chr(ord("A") + _i)] = 65 + _i
+for _i in range(10):
+    _VK[str(_i)] = 48 + _i                 # 0-9 -> 48-57
+# Punctuation / symbols (US layout)
+_VK.update({
+    "-": 189, "=": 187, "[": 219, "]": 221, "\\": 220, ";": 186, "'": 192,
+    ",": 188, ".": 190, "/": 191, "`": 192, " ": 32,
+})
+
+
+def _vk_code(ch: str) -> int:
+    """Best-effort Windows virtual key code for a single character."""
+    if ch in _VK:
+        return _VK[ch]
+    if ch.isalpha():
+        return ord(ch.upper())
+    if ch.isdigit():
+        return ord(ch)
+    # Fallback: uppercase code point (works for most letters/digits).
+    return ord(ch.upper()) if ch.isalpha() else ord(ch)
+
+
+async def _cdp_type_text(page, selector: str, text: str) -> bool:
+    """Type `text` into `selector` using CDP Input.dispatchKeyEvent (isTrusted=true
+    events). The username field has a 'nnn' honeypot that Citi's JS resets when it
+    detects a non-trusted (JS-dispatched) value change; trusted CDP keystrokes
+    bypass that check. Returns True if the value landed."""
+    from nodriver import cdp
+    import random
+    LEFT = getattr(cdp.input_.MouseButton, "LEFT", None)
+    try:
+        # Get the field's center so we can click it with a trusted mouse event.
+        r = _val(await page.evaluate(
+            "(function(){var el=document.querySelector(" + json.dumps(selector) + ");"
+            "if(!el)return null;var b=el.getBoundingClientRect();"
+            "return JSON.stringify({x:b.left+b.width/2,y:b.top+b.height/2});})()",
             return_by_value=True))
-        landed = len(v or "") > 0
+        if not r:
+            return False
+        x, y = float(r["x"]), float(r["y"])
+        # Trusted click to focus.
+        await page.send(cdp.input_.dispatch_mouse_event(type_="mouseMoved", x=x, y=y))
+        await asyncio.sleep(random.uniform(0.05, 0.15))
+        await page.send(cdp.input_.dispatch_mouse_event(
+            type_="mousePressed", x=x, y=y, button=LEFT, click_count=1))
+        await page.send(cdp.input_.dispatch_mouse_event(
+            type_="mouseReleased", x=x, y=y, button=LEFT, click_count=1))
+        await asyncio.sleep(random.uniform(0.1, 0.25))
+        # Clear via trusted key events (select-all + delete), then type.
+        await page.send(cdp.input_.dispatch_key_event("keyDown", key="a",
+            text="", unmodified_text="", windows_virtual_key_code=65, modifiers=2))
+        await page.send(cdp.input_.dispatch_key_event("keyUp", key="a",
+            windows_virtual_key_code=65, modifiers=2))
+        await page.send(cdp.input_.dispatch_key_event("keyDown", key="Backspace",
+            windows_virtual_key_code=8))
+        await page.send(cdp.input_.dispatch_key_event("keyUp", key="Backspace",
+            windows_virtual_key_code=8))
+        await asyncio.sleep(0.2)
+        for ch in text:
+            # The field is a Carbon Design System MASKED Angular input
+            # (cdsinputmask, formcontrolname). The mask processes KEYDOWN events
+            # to manage the value; a bare 'char' event bypasses the mask and gets
+            # cleared. So send keyDown + keyUp with the correct virtual key code
+            # and the character in `text`, so the mask's handler accepts it.
+            vkc = _vk_code(ch)
+            await page.send(cdp.input_.dispatch_key_event("keyDown", key=ch,
+                text=ch, unmodified_text=ch, windows_virtual_key_code=vkc))
+            await page.send(cdp.input_.dispatch_key_event("char", text=ch))
+            await page.send(cdp.input_.dispatch_key_event("keyUp", key=ch,
+                windows_virtual_key_code=vkc))
+            await asyncio.sleep(random.uniform(0.05, 0.15))
+        await page.wait(0.4)
+        return True
     except Exception as e:
-        log(f"    (send_keys path failed: {type(e).__name__}; trying JS typing…)")
-    if not landed:
+        log(f"    (CDP trusted type failed: {type(e).__name__}: {e})")
+        return False
+
+
+async def _type_into(field_selector: str, text: str, page, expect: str | None = None) -> bool:
+    """Focus a field and type `text` with human-timed keystrokes.
+
+    Citi's sign-on form is an Angular SPA that re-renders, so element references
+    go stale. We re-resolve the element fresh, focus + clear it via JS, then type
+    char-by-char with real CDP keystrokes (nodriver send_keys) at ~40-140ms/char.
+    Finally we VERIFY the field holds the expected value (not a decoy)."""
+    import random
+    sel = field_selector
+    # NOTE: we do NOT rely on page.wait_for() here — it timed out on the user-id
+    # field even though document.querySelector found it. All typing below goes
+    # through in-page JS that resolves the element itself via querySelector.
+    # Focus + clear the LIVE element via JS so we start from an empty field.
+    # (insertText then writes the full value; we don't strip the Carbon mask
+    # attributes — insertText works with them in place.)
+    try:
+        await page.evaluate(
+            "(function(){var el=document.querySelector(" + json.dumps(sel) + ");"
+            "if(!el)return false;"
+            "el.focus();"
+            "var s=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;"
+            "s.call(el,''); el.dispatchEvent(new Event('input',{bubbles:true}));"
+            "el.dispatchEvent(new Event('change',{bubbles:true})); return true;})()",
+            return_by_value=True)
+        await page.wait(0.2)
+    except Exception as e:
+        log(f"    (focus/clear failed: {e})")
+    # PRIMARY: CDP Input.insertText — a full trusted string insert (like a paste).
+    # PROVEN to work on Citi's Carbon-masked username field (cdsinputmask), which
+    # rejects per-keystroke events (CDP keyDown, JS events). insertText bypasses
+    # the mask's keydown handler and the value lands cleanly.
+    from nodriver import cdp
+    ok = False
+    try:
+        c = await _field_center(page, sel)
+        if c:
+            await _trusted_click(page, c[0], c[1])
+        await page.wait(0.3)
+        await page.send(cdp.input_.insert_text(text=text))
+        await page.wait(0.4)
+        v = await _read_value(page, sel)
+        ok = (v == expect) if expect is not None else bool(v)
+        if ok:
+            info(f"    {sel!r}: insertText landed")
+    except Exception as e:
+        info(f"    {sel!r}: insertText failed ({type(e).__name__}: {e})")
+    # FALLBACK: in-page JS per-keystroke (works for the password field, which has
+    # no mask; the username needs insertText).
+    if not ok:
         try:
-            n = _val(await page.evaluate(_js_type(field_selector, text), return_by_value=True))
-            landed = isinstance(n, int) and n > 0
-            if landed:
-                await page.wait(0.3)
+            for ch in text:
+                r = _val(await page.evaluate(_js_type_char(sel, ch), return_by_value=True))
+                if r in (None, -1):
+                    break
+                await asyncio.sleep(random.uniform(0.04, 0.14))
+            await page.wait(0.4)
+            v = await _read_value(page, sel)
+            ok = (v == expect) if expect is not None else bool(v)
         except Exception as e:
-            log(f"    (JS typing failed: {e})")
+            info(f"    {sel!r}: JS typing failed ({type(e).__name__}: {e})")
+    v = await _read_value(page, sel)
+    landed = (v == expect) if expect is not None else bool(v)
+    # Never print the actual secret (especially the password) to the logs —
+    # show only length + a match flag.
+    info(f"    {sel!r}: value={'(len %d)' % len(v) if v else 'empty'} "
+         f"expected={'(len %d)' % len(expect) if expect else 'any'} "
+         f"landed={landed}")
     return landed
 
 
@@ -222,17 +379,406 @@ async def _fill_first_match(page, selectors, text, label) -> bool:
             pass
         if not present:
             continue
-        ok = await _type_into(sel, text, page)
-        log(f"    {label}: selector {sel!r} present, landed={ok}")
+        ok = await _type_into(sel, text, page, expect=text)
+        info(f"    {label}: selector {sel!r} present, landed={ok}")
         if ok:
             return True
     log(f"    {label}: no selector landed text (tried {len(selectors)})")
     return False
 
 
+async def _wait_form_settled(page, timeout_s: int = 25) -> bool:
+    """Wait until the login form is stable: both the username and password fields
+    are present in the DOM, and the page is NOT mid-navigation. Citi's SSO does
+    several client-side re-navigations right after landing on /login; any CDP
+    command issued during one of those throws 'Inspected target navigated or
+    closed' (ProtocolException). We treat that as 'not settled yet' and retry.
+    Returns True once the form is stably present."""
+    import time
+    deadline = time.time() + timeout_s
+    stable_count = 0
+    while time.time() < deadline:
+        try:
+            r = _val(await page.evaluate(
+                "(function(){"
+                " var u=document.querySelector(" + json.dumps("input[id*='username' i]") + ")"
+                "  || document.querySelector('input[autocomplete=username]')"
+                "  || document.querySelector('input[type=text]');"
+                " var p=document.querySelector('input[type=password]');"
+                " return JSON.stringify({u:!!u, p:!!p, ready:document.readyState});" +
+                " })()", return_by_value=True)) or {}
+            if r.get("u") and r.get("p") and r.get("ready") == "complete":
+                stable_count += 1
+                # Require it to be stable for 2 consecutive checks (~2s) to avoid
+                # catching a fleeting render between navigations.
+                if stable_count >= 2:
+                    return True
+            else:
+                stable_count = 0
+        except Exception:
+            # ProtocolException / navigation in progress -> not settled.
+            stable_count = 0
+        await page.wait(1)
+    return False
+
+
+async def _field_center(page, selector: str):
+    """Return (x, y) center of the element matching `selector`, or None."""
+    raw = await page.evaluate(
+        "(function(){var el=document.querySelector(" + json.dumps(selector) + ");"
+        "if(!el)return null;var b=el.getBoundingClientRect();"
+        "return JSON.stringify({x:b.left+b.width/2,y:b.top+b.height/2});})()",
+        return_by_value=True)
+    # raw is the JSON string (or None if the element wasn't found).
+    if raw in (None, "", "null"):
+        return None
+    try:
+        r = json.loads(raw) if isinstance(raw, str) else raw
+        return (float(r["x"]), float(r["y"]))
+    except Exception:
+        return None
+
+
+async def _trusted_click(page, x, y):
+    """A trusted CDP mouse click at (x, y)."""
+    from nodriver import cdp
+    LEFT = getattr(cdp.input_.MouseButton, "LEFT", None)
+    await page.send(cdp.input_.dispatch_mouse_event(type_="mouseMoved", x=x, y=y))
+    await page.wait(0.15)
+    await page.send(cdp.input_.dispatch_mouse_event(
+        type_="mousePressed", x=x, y=y, button=LEFT, click_count=1))
+    await page.send(cdp.input_.dispatch_mouse_event(
+        type_="mouseReleased", x=x, y=y, button=LEFT, click_count=1))
+
+
+async def _autofill_login(page, timeout_s: int = 20) -> bool:
+    """Trigger Chrome's native password-manager autofill and submit. Chrome fills
+    BOTH fields with trusted input Citi's anti-bot accepts (unlike programmatic
+    typing into the Carbon masked username field). Requires the Citi password to
+    already be saved in this Chrome profile (origin https://www.citi.com/login).
+
+    Strategy: click the USERNAME field, then click the PASSWORD field. Chrome's
+    0-click autofill is keyed off the password field focus + a matching saved
+    credential; focusing it populates both. Then wait for both to fill and
+    submit. Returns True if autofilled + submitted."""
+    import time
+    USER = "input[id*='username' i]"
+    PASS = "input[type=password]"
+    # Help Chrome's autofill match: Citi's fields have empty autocomplete attrs,
+    # which makes 0-click autofill unreliable. Set the standard values so Chrome
+    # unambiguously pairs the saved (username, password) with these fields.
+    try:
+        await page.evaluate(
+            "(function(){var u=document.querySelector(" + json.dumps(USER) + ");"
+            " var p=document.querySelector(" + json.dumps(PASS) + ");"
+            " if(u)u.setAttribute('autocomplete','username');"
+            " if(p)p.setAttribute('autocomplete','current-password');"
+            " var f=document.querySelector('form');"
+            " if(f){f.setAttribute('autocomplete','on');}" +
+            " return true; })()", return_by_value=True)
+
+    except Exception as e:
+        log(f"    [autofill] could not set autocomplete hints: {e}")
+    await page.wait(0.4)
+    # 1) Focus the username field (trusted click).
+    cu = await _field_center(page, USER)
+    if not cu:
+        info("    [autofill] no username field found")
+        return False
+    info(f"    [autofill] focusing username field…")
+    try:
+        await _trusted_click(page, cu[0], cu[1])
+    except Exception as e:
+        log(f"    [autofill] username focus failed: {e}")
+    await page.wait(0.6)
+    # 2) Focus the password field (this is what triggers Chrome's autofill).
+    cp = await _field_center(page, PASS)
+    if cp:
+        info(f"    [autofill] focusing password field to trigger autofill…")
+        try:
+            await _trusted_click(page, cp[0], cp[1])
+        except Exception as e:
+            log(f"    [autofill] password focus failed: {e}")
+    # 2b) Also try a JS focus + a real CDP keypress in the password field. Some
+    #     Chrome builds only trigger the PM when a genuine key event lands in the
+    #     password field, not just on focus/click.
+    try:
+        await page.evaluate(
+            "(function(){var p=document.querySelector(" + json.dumps(PASS) + ");"
+            "if(p){p.focus();return true;}return false;})()", return_by_value=True)
+        from nodriver import cdp
+        await page.wait(0.3)
+        await page.send(cdp.input_.dispatch_key_event("keyDown", key="a",
+            text="a", unmodified_text="a", windows_virtual_key_code=65))
+        await page.send(cdp.input_.dispatch_key_event("keyUp", key="a",
+            windows_virtual_key_code=65))
+        # Remove the stray 'a' we just typed so the field is clean if autofill
+        # doesn't take over immediately.
+        await page.evaluate(
+            "(function(){var p=document.querySelector(" + json.dumps(PASS) + ");"
+            "if(p){var s=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;"
+            " s.call(p,'');p.dispatchEvent(new Event('input',{bubbles:true}));}return true;})()",
+            return_by_value=True)
+    except Exception as e:
+        log(f"    [autofill] keypress trigger failed: {e}")
+    # 3) Wait for both fields to populate.
+    deadline = time.time() + timeout_s
+    filled = False
+    while time.time() < deadline:
+        st = _val_json(await page.evaluate(
+            "(function(){var u=document.querySelector(" + json.dumps(USER) + ");"
+            " var p=document.querySelector(" + json.dumps(PASS) + ");"
+            " return JSON.stringify({u:u?(u.value||''):'', p:p?(p.value||''):'(none)'});})()",
+            return_by_value=True)) or {}
+        u, p = st.get("u", ""), st.get("p", "")
+        if u and p and p != "(none)":
+            info(f"    [autofill] fields populated (user={u[:3]}…, pass={'yes' if p else 'no'})")
+            filled = True
+            break
+        await page.wait(1)
+    if not filled:
+        # 4) Fallback: click username, Tab to password (a real keyboard nav that
+        #    also triggers Chrome's autofill on the password field).
+        info("    [autofill] still empty — trying Tab navigation from username…")
+        cu2 = await _field_center(page, USER)
+        if cu2:
+            try:
+                await _trusted_click(page, cu2[0], cu2[1])
+                from nodriver import cdp
+                await page.send(cdp.input_.dispatch_key_event("keyDown", key="Tab",
+                    windows_virtual_key_code=9))
+                await page.send(cdp.input_.dispatch_key_event("keyUp", key="Tab",
+                    windows_virtual_key_code=9))
+            except Exception as e:
+                log(f"    [autofill] Tab fallback failed: {e}")
+        await page.wait(3)
+        st = _val_json(await page.evaluate(
+            "(function(){var u=document.querySelector(" + json.dumps(USER) + ");"
+            " var p=document.querySelector(" + json.dumps(PASS) + ");"
+            " return JSON.stringify({u:u?(u.value||''):'', p:p?(p.value||''):'(none)'});})()",
+            return_by_value=True)) or {}
+        if st.get("u") and st.get("p") and st.get("p") != "(none)":
+            info(f"    [autofill] fields populated via Tab (user={st.get('u','')[:3]}…)")
+            filled = True
+    if not filled:
+        info("    [autofill] Chrome did NOT autofill.")
+        info("    → confirm the password is saved for https://www.citi.com/login in")
+        info("      this profile, and that Chrome's 'Autofill & save passwords'")
+        info("      setting is ON. Then re-run with --autofill.")
+        return False
+    # Submit.
+    submitted = await _click_submit(page)
+    if submitted:
+        info("    [autofill] submitted (clicked Sign On)")
+    return True
+
+
+async def _probe_username_typing(page) -> dict:
+    """Try several typing methods on the username field and report which lands.
+    Used to determine how to fill the Carbon-masked username field. Returns a dict
+    of method -> final value."""
+    from nodriver import cdp
+    import random
+    USER = "input[id*='username' i]"
+    results = {}
+    test = "TEST123"
+
+    async def _read():
+        return _val(await page.evaluate(
+            "(function(){var el=document.querySelector(" + json.dumps(USER) + ");"
+            "return el?(el.value||''):'(gone)';})()", return_by_value=True))
+
+    async def _reset():
+        await page.evaluate(
+            "(function(){var el=document.querySelector(" + json.dumps(USER) + ");"
+            "if(!el)return false;el.focus();"
+            "var s=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;"
+            "s.call(el,'');el.dispatchEvent(new Event('input',{bubbles:true}));return true;})()",
+            return_by_value=True)
+        await page.wait(0.3)
+
+    async def _url():
+        try:
+            return (_val(await page.evaluate("location.href", return_by_value=True)) or "").strip()
+        except Exception:
+            return "(nav?)"
+
+    url0 = await _url()
+    results["url_before"] = url0
+
+    # Method 1: Input.insertText (full trusted string, like a paste).
+    try:
+        await _reset()
+        c = await _field_center(page, USER)
+        if c:
+            await _trusted_click(page, c[0], c[1])
+        await page.wait(0.3)
+        await page.send(cdp.input_.insert_text(text=test))
+        await page.wait(0.5)
+        v = await _read()
+        results["insertText"] = v
+        results["insertText_url_after"] = await _url()
+    except Exception as e:
+        results["insertText"] = f"ERR {e}"
+
+    # Method 2: CDP keyDown with text + VKC (proper keystrokes).
+    try:
+        await _reset()
+        c = await _field_center(page, USER)
+        if c:
+            await _trusted_click(page, c[0], c[1])
+        await page.wait(0.3)
+        for ch in test:
+            vkc = _vk_code(ch)
+            await page.send(cdp.input_.dispatch_key_event("keyDown", key=ch,
+                text=ch, unmodified_text=ch, windows_virtual_key_code=vkc))
+            await page.send(cdp.input_.dispatch_key_event("char", text=ch))
+            await page.send(cdp.input_.dispatch_key_event("keyUp", key=ch,
+                windows_virtual_key_code=vkc))
+            await asyncio.sleep(random.uniform(0.05, 0.12))
+        await page.wait(0.5)
+        v = await _read()
+        results["cdp_keydown"] = v
+        results["cdp_keydown_url_after"] = await _url()
+    except Exception as e:
+        results["cdp_keydown"] = f"ERR {e}"
+
+    # Method 3: JS per-keystroke (works for the password field) — test if it works
+    # for the username when the page is stable.
+    try:
+        await _reset()
+        c = await _field_center(page, USER)
+        if c:
+            await _trusted_click(page, c[0], c[1])
+        await page.wait(0.3)
+        for ch in test:
+            r = _val(await page.evaluate(_js_type_char(USER, ch), return_by_value=True))
+            if r in (None, -1):
+                break
+            await asyncio.sleep(0.06)
+        await page.wait(0.5)
+        v = await _read()
+        results["js_typing"] = v
+        results["js_typing_url_after"] = await _url()
+    except Exception as e:
+        results["js_typing"] = f"ERR {e}"
+
+    results["url_final"] = await _url()
+    results["reloaded"] = (await _url()) != url0
+    return results
+
+
+async def _click_submit(page) -> bool:
+    """Click the 'Sign On' button (full trusted MouseEvent sequence) and verify we
+    left the login page. A bare JS .click() does NOT trigger Citi's Angular
+    submit, so we dispatch pointerdown/mousedown/mouseup/click with proper
+    bubbles/composed. Falls back to form.requestSubmit(), then Enter."""
+    submit_js = (
+        "(function(){ var bs=[].slice.call(document.querySelectorAll('button,a,[type=submit],[role=button],input[type=submit]'));"
+        " var b=bs.find(function(x){return /sign on|sign in|log in/i.test((x.textContent||x.value||'').trim());});"
+        " if(!b){ var f=document.querySelector('form'); if(f&&f.requestSubmit){f.requestSubmit(); return {clicked:'form.requestSubmit'};}; return {clicked:null}; }"
+        " var opts={bubbles:true, cancelable:true, composed:true, view:window, button:0};"
+        " b.dispatchEvent(new PointerEvent('pointerdown',opts));"
+        " b.dispatchEvent(new MouseEvent('mousedown',opts));"
+        " b.dispatchEvent(new PointerEvent('pointerup',opts));"
+        " b.dispatchEvent(new MouseEvent('mouseup',opts));"
+        " b.dispatchEvent(new MouseEvent('click',opts));"
+        " return {clicked:b.textContent.trim()}; })()"
+    )
+    try:
+        res = _val(await page.evaluate(submit_js, return_by_value=True)) or {}
+        clicked = res.get("clicked") if isinstance(res, dict) else None
+        if not clicked:
+            info("    'Sign On' button not found — click it manually.")
+            return False
+        info(f"    submitted (clicked {clicked!r}), waiting for navigation…")
+        for _ in range(6):
+            await page.wait(1)
+            if "/login" not in (page.url or "").lower():
+                log("    (navigated off login page)")
+                break
+        else:
+            info("    (still on login page after click — pressing Enter to submit)")
+            try:
+                pw = await page.wait_for(PASS_SELECTORS[0], timeout=3)
+                await pw.send_keys("\n")
+                await page.wait(2)
+            except Exception as e:
+                log(f"    (Enter fallback failed: {e})")
+        try:
+            await page.wait(1.5)
+            u = (_val(await page.evaluate("location.href", return_by_value=True)) or "").strip()
+            info(f"    after submit, URL = {u}")
+        except Exception:
+            pass
+        return True
+    except Exception as e:
+        info(f"    submit click failed ({type(e).__name__}: {e})")
+        return False
+
+
 async def fill_and_submit(page, user: str, password: str) -> bool:
     """Fill the dynamic sign-on fields (real keyboard) and click Sign On (JS)."""
     try:
+        # One-time diagnostic: dump every input field (id, type, current value,
+        # whether it's in an iframe) so we can see exactly what we're filling.
+        try:
+            # Dump EVERY input field (id, type, autocomplete, visibility, value)
+            # so we can see the real form structure. Always printed.
+            dump = _val_json(await page.evaluate(
+                "(function(){"
+                " var out={url:location.href, iframes:document.querySelectorAll('iframe').length, inputs:[]};"
+                " [].slice.call(document.querySelectorAll('input')).slice(0,40).forEach(function(i,idx){"
+                "  var vis=(i.offsetParent!==null && i.type!=='hidden');"
+                "  out.inputs.push(idx+': id=['+i.id+'] type=['+i.type+'] auto=['+(i.autocomplete||'')+']'"
+                "   +(vis?'':' [HIDDEN]')+' val=['+(i.value||'').slice(0,20)+']');"
+                " });"
+                " return JSON.stringify(out); })()", return_by_value=True)) or {}
+            info(f"    [inputs] url={dump.get('url')} iframes={dump.get('iframes')}")
+            for line in (dump.get("inputs") or []):
+                # Mask the value of any password field so secrets never hit the log.
+                if "type=[password]" in line and "val=[" in line:
+                    head, _, _valpart = line.partition("val=[")
+                    line = head + "val=[••••••••]"
+                info(f"      {line}")
+            # Probe: retry a few times reporting which selectors match + visibility,
+            # then type ONE char into the first match and read it back.
+            probe_sels = ["input[id*='username' i]", "input[id*='userid' i]",
+                          "input[autocomplete='username']", "input[type='text']"]
+            probe_arr = json.dumps(probe_sels)
+            for attempt in range(4):
+                info(f"    [probe try{attempt+1}]")
+                match = _val_json(await page.evaluate(
+                    "(function(){var out={};"
+                    " " + probe_arr + ".forEach(function(s){"
+                    "  var el;try{el=document.querySelector(s);}catch(e){return;}"
+                    "  if(el)out[s]={id:el.id,type:el.type,visible:el.offsetParent!==null,val:(el.value||'')};});"
+                    " return JSON.stringify(out); })()", return_by_value=True)) or {}
+                info(f"      matches: {match}")
+                if match:
+                    sel = list(match.keys())[0]
+                    # Probe BOTH typing methods and read value + placeholder +
+                    # outerHTML immediately after, to see what the field does.
+                    # (1) JS type one char
+                    r1 = _val(await page.evaluate(_js_type_char(sel, "a"), return_by_value=True))
+                    info(f"      JS-typed 'a' -> jsret={r1}")
+                    # (2) CDP trusted char for 'b'
+                    try:
+                        await _cdp_type_text(page, sel, "b")
+                        info(f"      CDP-typed 'b' -> done")
+                    except Exception as e:
+                        info(f"      CDP-typed 'b' -> failed: {e}")
+                    st = _val(await page.evaluate(
+                        "(function(){var el=document.querySelector(" + json.dumps(sel) + ");"
+                        "if(!el)return JSON.stringify({gone:true});"
+                        "return JSON.stringify({value:el.value,placeholder:el.placeholder,"
+                        "  readonly:el.readOnly,disabled:el.disabled,"
+                        "  html:el.outerHTML.slice(0,160)});})()", return_by_value=True))
+                    info(f"      state: {st}")
+                    break
+                await page.wait(1)
+        except Exception as e:
+            info(f"    [inputs] DUMP FAILED: {type(e).__name__}: {e}")
         # Wait for ANY username-like field to render.
         found_sel = None
         for _ in range(40):
@@ -268,46 +814,10 @@ async def fill_and_submit(page, user: str, password: str) -> bool:
             log(f"    field fill incomplete (user={ok_u}, pass={ok_p}) — finish manually.")
             return False
         await page.wait(0.4)
-        # Submit. A bare JS .click() does NOT trigger Citi's Angular submit, so we
-        # dispatch a full MouseEvent sequence (pointerdown/mousedown/mouseup/click)
-        # with proper bubbles/composed, then verify we left the login page. If we
-        # still haven't navigated, press Enter in the password field (submits form).
-        submit_js = (
-            "(function(){ var bs=[].slice.call(document.querySelectorAll('button,a,[type=submit],[role=button],input[type=submit]'));"
-            " var b=bs.find(function(x){return /sign on|sign in|log in/i.test((x.textContent||x.value||'').trim());});"
-            " if(!b){ var f=document.querySelector('form'); if(f&&f.requestSubmit){f.requestSubmit(); return {clicked:'form.requestSubmit'};}; return {clicked:null}; }"
-            " var opts={bubbles:true, cancelable:true, composed:true, view:window, button:0};"
-            " b.dispatchEvent(new PointerEvent('pointerdown',opts));"
-            " b.dispatchEvent(new MouseEvent('mousedown',opts));"
-            " b.dispatchEvent(new PointerEvent('pointerup',opts));"
-            " b.dispatchEvent(new MouseEvent('mouseup',opts));"
-            " b.dispatchEvent(new MouseEvent('click',opts));"
-            " return {clicked:b.textContent.trim()}; })()"
-        )
-        res = _val(await page.evaluate(submit_js, return_by_value=True)) or {}
-        clicked = res.get("clicked") if isinstance(res, dict) else None
-        if not clicked:
-            log("    'Sign On' button not found — click it manually.")
-            return False
-        log(f"    clicked Sign On ({clicked!r}), waiting for navigation…")
-        # Give the SSO a moment; if we're still on the login page, press Enter.
-        for _ in range(6):
-            await page.wait(1)
-            if "/login" not in (page.url or "").lower():
-                log("    (navigated off login page)")
-                break
-        else:
-            log("    (still on login page — pressing Enter to submit the form)")
-            try:
-                pw = await page.wait_for(PASS_SELECTORS[0], timeout=3)
-                await pw.send_keys("\n")
-                await page.wait(2)
-            except Exception as e:
-                log(f"    (Enter fallback failed: {e})")
-        return True
+        # Submit via the shared helper (trusted MouseEvent sequence + Enter fallback).
+        return await _click_submit(page)
     except Exception as e:
-        log(f"    auto-fill failed ({type(e).__name__}: {e}). Complete the login "
-              f"manually in the window.")
+        info(f"    auto-fill failed ({type(e).__name__}: {e}).")
         return False
 
 
@@ -388,11 +898,10 @@ async def _check_login_error(page):
     try:
         d = _val_json(await page.evaluate(js, return_by_value=True)) or {}
         if d.get("captcha"):
-            log("[login] CAPTCHA detected — a human must solve it (use --manual).")
+            info("[login] CAPTCHA detected — a human must solve it (use --manual).")
         if d.get("bad") or d.get("err"):
-            log(f"[login] possible login failure: bad={d.get('bad')} err={d.get('err')!r} "
-                  f"url={d.get('url')}")
-            log("[login]  ^ If 'invalid/incorrect', the credentials were rejected.")
+            info(f"[login] possible login failure: err={d.get('err')!r} url={d.get('url')}")
+            info("[login]   ^ if 'invalid/incorrect', the credentials were rejected.")
     except Exception as e:
         log(f"[login] error-check failed: {e}")
 
@@ -473,10 +982,23 @@ async def wait_for_login(browser, page, timeout_s: int) -> bool:
                 url = (page.url or "").lower()
             except Exception:
                 pass
-        # Success: we're on the offers page (login's nextRoute target).
+        # Success (1): we're on the offers page (login's nextRoute target).
         if "merchantoffers" in url and "/login" not in url:
             return True
-        on_login_page = "/login" in url or "signon" in url
+        # Success (2): we've LEFT the login page AND hold a real session cookie.
+        # A successful login lands on the dashboard homepage ("Good Evening,
+        # <name>"), NOT directly on merchantoffers. The main flow then navigates
+        # to the offers page. So 'left /login + citi_authorization present' is a
+        # valid success signal.
+        on_login_page = "/login" in url or "signon" in url or "loginscreenid" in url
+        if not on_login_page and url and "citi.com" in url:
+            try:
+                names = {getattr(c, "name", "") for c in await browser.cookies.get_all()}
+            except Exception:
+                names = set()
+            if "citi_authorization" in names:
+                log(f"    (logged in — on {url[:70]}, has citi_authorization)")
+                return True
         if on_login_page and url != last_url and not warned:
             warned = True
             log(f"    (still on sign-on: {url[:80]})")
@@ -726,6 +1248,8 @@ def _resolve_account_id(offers_data: dict, cookies: list) -> str | None:
 
 
 async def run(args) -> int:
+    # First line: when this run started (local time), for log correlation.
+    info(f"===== citi-offers started {datetime.now():%Y-%m-%d %H:%M:%S} =====")
     # Clean mode banner (always shown, not gated by --verbose).
     if args.activate and not args.dry_run:
         info("===== MODE: ACTIVATE — this will ENROLL available offers =====")
@@ -743,7 +1267,10 @@ async def run(args) -> int:
         "--disable-dev-shm-usage",        # avoid /dev/shm crashes in Docker
         "--no-first-run",
         "--no-default-browser-check",
+        "--no-remote-extensions",
         "--disable-infobars",
+        "--disable-session-crashed-bubble",
+        "--disable-features=Translate,MediaRouter,OptimizationHints",
         "--disable-extensions",
         "--disable-background-networking",
         "--disable-sync",
@@ -753,6 +1280,14 @@ async def run(args) -> int:
         "--mute-audio",
         "--lang=en-US",
         "--window-size=1280,900",
+        # Enable the password manager + autofill so --autofill works, and keep the
+        # 'Save password' UI from stealing focus / blocking unattended runs.
+        "--enable-features=PasswordManagerOnboarding,AutofillServerCommunication",
+        "--disable-features=PasswordLeakDetection",  # don't hang on leak checks
+        # Keep a REAL (headed) window — TMX blocks headless — but tuck it out of
+        # the way so it's not obtrusive: start minimized and offset off-screen.
+        "--start-minimized",
+        "--window-position=-2000,-2000",
     ]
     # Running as root (e.g. Home Assistant add-on) makes Chrome refuse to start
     # without these; add them when uid==0.
@@ -810,12 +1345,71 @@ async def run(args) -> int:
     await browser.sleep(2)  # let Angular render the signon form (if redirected)
     await dismiss_consent(page)      # cookie banner may overlay the form
 
-    on_login = "/login" in (page.url or "").lower() or "signon" in (page.url or "").lower()
+    # We're on a login screen if the URL looks like one OR the page has a
+    # password field. The inactivity page (https://www.citi.com/?loginScreenId=
+    # inactivityHomePage) has NO /login in the path, so the URL check alone
+    # misses it — the password-field check catches it.
+    url_now = (page.url or "").lower()
+    on_login_url = ("/login" in url_now or "signon" in url_now or "loginscreenid" in url_now)
+    has_pw_field = False
+    try:
+        has_pw_field = bool(_val(await page.evaluate(
+            "!!document.querySelector('input[type=password]')", return_by_value=True)))
+    except Exception:
+        pass
+    on_login = on_login_url or has_pw_field
+    if getattr(args, "probe_typing", False):
+        import sys as _sys
+        def _p(msg):
+            print(msg, file=_sys.stderr, flush=True)
+            print(msg, file=_sys.stdout, flush=True)
+        _p("[probe] STEP 0: probe branch entered")
+        try:
+            _p("[probe] STEP 1: waiting for form to settle…")
+            await _wait_form_settled(page, timeout_s=25)
+            _p("[probe] STEP 2: settled, probing typing methods…")
+            res = await _probe_username_typing(page)
+            _p(f"[probe] url_before = {res.get('url_before')}")
+            _p(f"[probe] url_final  = {res.get('url_final')}  reloaded={res.get('reloaded')}")
+            for method in ("insertText", "cdp_keydown", "js_typing"):
+                val = res.get(method)
+                mark = "  LANDED" if val == "TEST123" else ("  partial" if val else "  empty")
+                _p(f"[probe]    {method:14} -> value={val!r}{mark}")
+            _p("[probe] STEP 4: done")
+        except Exception as e:
+            import traceback
+            _p(f"[probe] ERROR: {type(e).__name__}: {e}")
+            _p(traceback.format_exc())
+        try:
+            await browser.aclose()
+        except Exception:
+            pass
+        _p("[probe] STEP 5: returning 0")
+        return 0
     if not on_login:
         log("Already authenticated (offers page loaded directly) — skipping login.")
     elif args.manual:
         log("Manual mode: type your credentials (and any MFA) in the window.")
+    elif args.autofill:
+        # Chrome's native password-manager autofill (trusted input that Citi's
+        # anti-bot accepts). The password must already be saved in this profile.
+        info("waiting for the login form to settle…")
+        await _wait_form_settled(page, timeout_s=25)
+        ok = await _autofill_login(page, timeout_s=25)
+        if not ok:
+            log("    [autofill] failed — Chrome did not autofill.")
+            log("    → save the password first (run once with --manual and accept")
+            log("      the 'Save password' prompt), then re-run with --autofill.")
+            log("    Manual mode: type your credentials in the window to finish.")
     else:
+        # Wait for the login form to be STABLE (both fields present, no pending
+        # navigation). Citi's SSO re-navigates a few times after landing on
+        # /login; interacting mid-navigation throws 'Inspected target navigated
+        # or closed'. Poll until the form settles, up to ~20s.
+        info("waiting for the login form to settle…")
+        settled = await _wait_form_settled(page, timeout_s=25)
+        if not settled:
+            log("    (form did not fully settle — attempting fill anyway)")
         info(f"auto-filling credentials for '{args.user}' …")
         ok = await fill_and_submit(page, args.user, args.password)
         if not ok:
@@ -1022,29 +1616,43 @@ async def run(args) -> int:
 
 
 def _load_credentials(args) -> tuple:
-    """Resolve (user, password) from --config YAML, then -u/-p, then env, then prompt.
+    """Resolve (user, password). Sources, in priority order:
+      1. -u / -p CLI flags
+      2. CITI_USER / CITI_PASSWORD environment variables (ideal for Docker/HA
+         — no file needed, and the HA add-on passes these as env vars)
+      3. --config YAML file (defaults to ./credentials.yaml if it exists)
+      4. interactive prompt (last resort)
     YAML format:
         user:  your_username
         password: your_password
     (top-level keys, or a nested 'citi:' block)"""
     user = password = None
-    if args.config:
+    # 3. YAML config — default to ./credentials.yaml if present and --config
+    #    wasn't given explicitly.
+    cfg = args.config or ("credentials.yaml" if Path("credentials.yaml").exists() else None)
+    if cfg:
         try:
             import yaml
-            with open(args.config) as f:
+            with open(cfg) as f:
                 data = yaml.safe_load(f) or {}
             node = data.get("citi", data) if isinstance(data, dict) else {}
             user = node.get("user") or node.get("username")
             password = node.get("password")
-            log(f"Loaded credentials from {args.config}")
+            log(f"Loaded credentials from {cfg}")
         except Exception as e:
-            sys.exit(f"Could not read --config {args.config}: {e}")
-    user = args.user or user
+            sys.exit(f"Could not read --config {cfg}: {e}")
+    # 1 + 2. CLI flags and env vars override the file.
+    user = args.user or os.environ.get("CITI_USER") or user
     password = args.password or os.environ.get("CITI_PASSWORD") or password
     if not user:
-        sys.exit("No username. Pass --config credentials.yaml or -u USER")
+        sys.exit("No username. Pass --config credentials.yaml, -u USER, "
+                 "or set the CITI_USER environment variable.")
     if not password:
-        password = getpass.getpass(f"Password for {user} (hidden): ")
+        if os.isatty(0):   # interactive terminal only
+            password = getpass.getpass(f"Password for {user} (hidden): ")
+        else:
+            sys.exit(f"No password for {user!r}. Pass -p, set CITI_PASSWORD, "
+                     "or add it to credentials.yaml.")
     return user, password
 
 
@@ -1061,6 +1669,14 @@ def main() -> int:
     p.add_argument("--chrome", help="path to Chrome/Chromium binary (auto-detected if omitted)")
     p.add_argument("--manual", action="store_true",
                    help="skip auto-fill; you type credentials + any MFA yourself")
+    p.add_argument("--probe-typing", action="store_true",
+                   help="DIAGNOSTIC: launch, go to login, and try several typing "
+                        "methods on the username field, reporting which lands.")
+    p.add_argument("--autofill", action="store_true",
+                   help="use Chrome's native password-manager autofill (password "
+                        "must be saved in this profile first via one manual login); "
+                        "best for unattended runs — Chrome fills both fields, the "
+                        "script just clicks Sign On")
     p.add_argument("--timeout", type=int, default=90,
                    help="seconds to wait for login success if it hasn't completed "
                         "(default 90; on success this returns immediately, so this "
