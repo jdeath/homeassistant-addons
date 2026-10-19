@@ -13,7 +13,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.26.2-4",
+  "version": "0.27.0",
   "name": "Homebox",
   "options": {
     "HBOX_OPTIONS_ALLOW_REGISTRATION": "true",
