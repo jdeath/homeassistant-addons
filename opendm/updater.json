@@ -1,10 +1,10 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-10-21",
+  "last_update": "2026-10-22",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "opendm",
   "source": "github",
   "upstream_repo": "Lebbitheplow/open-dungeon-master",
-  "upstream_version": "0.28.4"
+  "upstream_version": "0.29.0"
 }
