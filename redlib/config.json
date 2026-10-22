@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.36.0-2",
+  "version": "0.40.0",
   "name": "Redlib",
   "options": {
     "REDLIB_DEFAULT_THEME": "system",
