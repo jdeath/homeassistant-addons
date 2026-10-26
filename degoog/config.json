@@ -13,7 +13,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "degoog",
   "options": {},
   "ports": {
