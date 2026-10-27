@@ -22,7 +22,7 @@ comparison to installing any other Hass.io add-on.
 1. If you want to password protection, set SB_HOME field to UserName:Password, eg. Mike:Pass123
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
-1. Open WebUI should work via ingress or <your-ip>:port.
+1. Open WebUI should work via <your-ip>:port.
 1. Data should live in /addon_config/2effc9b9_silverbullet
 ## Configuration
 
