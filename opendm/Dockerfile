@@ -1,4 +1,4 @@
-FROM ghcr.io/lebbitheplow/open-dungeon-master
+FROM ghcr.io/lebbitheplow/open-game-master
 
 USER root	
 WORKDIR /app
