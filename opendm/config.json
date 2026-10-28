@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "manual",
-  "description": "Open Dungeon Master runs multiplayer (and solo) Dungeons & Dragons 5e campaigns with an AI Dungeon Master, on your own machine. The narrator is whichever AI you already have: a local model (llama.cpp, Ollama, LM Studio, vLLM), an API key (OpenAI, OpenRouter, or any OpenAI-compatible endpoint), or a CLI agent you already pay for (Claude Code, Codex, opencode, Grok Build), which narrates on its own subscription with no API key handed over.",
+  "description": "Open Game Master runs multiplayer (and solo) 5e campaigns with an AI Game Master, on your own machine.",
   "environment": {
     "AD_SERVER__PORT": "4141"
   },
@@ -16,7 +16,7 @@
     }
   ],
   "version": "0.31.0",
-  "name": "opendm",
+  "name": "Open Game Master",
   "ports": {
     "3005/tcp": "3005"
   },
