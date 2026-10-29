@@ -19,7 +19,7 @@
     "6080/tcp": "Web interface"
   },
   "options": {
-    "MODE": "signin"
+    "MODE": "run"
   },
   "schema": {
     "MODE": "list(signin|run)"
