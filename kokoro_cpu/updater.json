@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-01-16",
+  "last_update": "2026-10-28",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "kokorucpu",
   "source": "github",
   "upstream_repo": "remsky/Kokoro-FastAPI",
-  "upstream_version": "v0.9.0",
+  "upstream_version": "v0.9.1",
   "paused": "false"
 }
