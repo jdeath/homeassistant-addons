@@ -1,6 +1,6 @@
 {
   "name": "SearXNG w/ MCP",
-  "version": "2026.10.28-c360868e5",
+  "version": "2026.10.29-cff884f98",
   "slug": "searxng_with_mcp",
   "description": "SearXNG is a metasearch engine. Adds OvertliDS/mcp-searxng-enhanced endpoint for llama.cpp, Claude code, etc. ",
   "url": "https://github.com/jdeath/homeassistant-addons",
