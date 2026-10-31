@@ -22,7 +22,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "dev",
+  "version": "v1.0.0-beta.620",
   "name": "Fast SD CPU",
   "ports": {
     "7860/tcp": "7860"
@@ -32,7 +32,7 @@
   },
   "slug": "fastsdcpu",
   "startup": "services",
-  "upstream": "0.1.0",
+  "upstream": "v1.0.0-beta.620",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:7860]",
   "ingress": true,
   "ingress_port": 8099,
