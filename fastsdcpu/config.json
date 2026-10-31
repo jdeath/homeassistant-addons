@@ -1,0 +1,40 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "manual",
+  "description": "FastSD CPU is a faster version of Stable Diffusion on CPU. Based on Latent Consistency Models , Adversarial Diffusion Distillation and distilled few steps models. ",
+  "environment": {
+	"HF_HOME": "/config/huggingface",
+	"TRANSFORMERS_CACHE": "/config/huggingface/transformers",
+	"HF_DATASETS_CACHE": "/config/huggingface/datasets",
+	"PYTHONUNBUFFERED": "1"
+  },
+  "options": {
+    "MODE": "webui",
+	"DEVICE": "cpu"
+  },
+  "schema": {
+  "MODE": "list(webui|api|mcp)",
+  "DEVICE": "list(cpu|gpu|npu)"
+  },
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "dev",
+  "name": "Fast SD CPU",
+  "ports": {
+    "7860/tcp": "7860"
+  },
+  "ports_description": {
+    "7860/tcp": "Server (WebUI / API / MCP)"
+  },
+  "slug": "fastsdcpu",
+  "startup": "services",
+  "upstream": "0.1.0",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:7860]",
+  "ingress": true,
+  "ingress_port": 8099,
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}

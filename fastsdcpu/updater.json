@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "true",
+  "last_update": "2026-04-10",
+  "beta": "true",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "fastsdcpu",
+  "source": "github",
+  "upstream_repo": "rupeshs/fastsdcpu",
+  "upstream_version": "v1.0.0-beta.620",
+  "paused": "false"
+}
