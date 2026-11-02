@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "ghcr.io/dani-garcia/vaultwarden",
-  "version": "1.37.4",
+  "version": "1.37.5",
   "name": "Vaultwarden",
   "options": {},
   "ports": {
