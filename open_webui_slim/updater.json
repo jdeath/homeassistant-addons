@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "true",
+  "last_update": "2026-06-15",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "openwebuislim",
+  "source": "github",
+  "upstream_repo": "open-webui/open-webui",
+  "upstream_version": "v0.12.5",
+  "paused": "false"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "OpenWebUI Slim",
+  "slug": "openwebuislim",
+  "description": "Open WebUI is a home for AI, a self-hosted AI platform that's extensible, feature-rich, user-friendly, and built to run entirely offline. The slim image is 88% smaller than main, saving about 1.42 GB on a fresh pull. Use it with a hosted API, your own model server, or a separate Ollama instance",
+  "version": "v0.12.5",
+  "arch": ["amd64", "aarch64"],
+  "boot": "manual",
+  "startup": "application",
+  "map": [
+    {
+      "type": "addon_config",
+      "read_only": false,
+      "path": "/app/backend/data"
+    }
+  ],
+  "options": {
+    "WEBUI_SECRET_KEY": "ccbd372db280a9e97ca87c8e35c221e253dcd29d9f5cdfa8bbf15cf84d4cdbb7"
+  },
+  "schema": {
+    "WEBUI_SECRET_KEY": "str"
+  },
+  "panel_icon": "mdi:credit-card-multiple",
+  "panel_admin": true,
+  "ports": {
+    "8080/tcp": "8080"
+  },
+  "ports_description": {
+    "8080/tcp": "Web interface"
+  },
+  "ingress": true,
+  "ingress_port": 8080,
+  "url": "https://github.com/jdeath/homeassistant-addons"
+}
