@@ -27,7 +27,7 @@
   "ports_description": {
     "8080/tcp": "Web interface"
   },
-  "ingress": true,
+  "ingress": false,
   "ingress_port": 8080,
   "url": "https://github.com/jdeath/homeassistant-addons"
 }
