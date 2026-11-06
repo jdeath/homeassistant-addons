@@ -15,7 +15,7 @@
       "path": "/app/data"
     }
   ],
-  "version": "0.31.4",
+  "version": "0.32.3",
   "name": "Open Game Master",
   "ports": {
     "3005/tcp": "3005"
