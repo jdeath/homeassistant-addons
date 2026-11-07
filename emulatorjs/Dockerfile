@@ -1,15 +1,13 @@
 ARG BUILD_VERSION
 FROM linuxserver/emulatorjs:1.9.2
 
-#VOLUME [ "/share" ]
-
 USER root
 
 RUN mkdir -p /share/emulatorjs && mkdir -p /share/emulatorjs/config \
 	&& mkdir -p /share/emulatorjs/data \
-	&& rmdir -p /data \
+	&& rm -rf /data \
     && ln -s /share/emulatorjs/data/ /data \
-	&& rmdir -p /config \
+	&& rm -rf /config \
     && ln -s /share/emulatorjs/config /config 
 
 ### LABELS
