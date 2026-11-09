@@ -14,7 +14,7 @@ _Thanks to everyone having starred my repo! To star it click on the image below,
 
 ## About
 
-This addon is based on the [docker image](https://github.com/redlib-org/redlib).
+Using binaries from fork: https://github.com/Nachtalb/redlib
 
 ## Installation
 

@@ -1,27 +1,21 @@
-ARG BUILD_ARCH
+FROM ghcr.io/home-assistant/base:3.24
 
-FROM quay.io/redlib/redlib:latest
-#FROM ghcr.io/cycneuramus/containers:redlib
-
-ARG BUILD_ARCH
+ARG TARGETARCH
 
 USER root
-
-RUN apk add jq bash wget tar curl
-
-RUN mkdir -p /tmp/bashio && \
-    wget -q -O - "https://github.com/hassio-addons/bashio/archive/refs/tags/v0.17.5.tar.gz" | \
-    tar -xzf - --strip 1 -C /tmp/bashio && \
-    mv /tmp/bashio/lib /usr/lib/bashio && \
-    ln -s /usr/lib/bashio/bashio /usr/bin/bashio && \
-    rm -rf /tmp/bashio \
-    \
-    && wget -q -O /usr/bin/tempio \
-    "https://github.com/home-assistant/tempio/releases/download/2026.05.0/tempio_$BUILD_ARCH" \
-    && chmod a+x /usr/bin/tempio
+WORKDIR /
+RUN if [ "${TARGETARCH}" = "amd64" ]; then \
+        echo "Running AMD64 specific setup..." && \
+        curl -fL -o redlib https://github.com/Nachtalb/redlib/releases/latest/download/redlib-x86_64-unknown-linux-musl;\
+    elif [ "${TARGETARCH}" = "arm64" ]; then \
+        echo "Running ARM64 specific setup..." && \
+        curl -fL -o redlib https://github.com/Nachtalb/redlib/releases/download/latest/redlib-aarch64-unknown-linux-musl; \
+    else \
+        echo "Running fallback setup for $TARGETARCH..."; \
+    fi
 
 COPY rootfs/ /
-
+RUN chmod a+x /redlib
 RUN chmod a+x /run.sh
 RUN chmod a+x /custom.sh
 

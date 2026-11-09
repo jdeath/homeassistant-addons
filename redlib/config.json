@@ -9,7 +9,7 @@
   "map": [
     "addon_config:rw"
   ],
-  "version": "0.40.0",
+  "version": "0.40.0-1",
   "name": "Redlib",
   "options": {
     "REDLIB_DEFAULT_THEME": "system",
@@ -29,7 +29,8 @@
     "REDLIB_DEFAULT_HIDE_SCORE": "off",
     "REDLIB_DEFAULT_HIDE_SIDEBAR_AND_SUMMARY": "off",
     "REDLIB_DEFAULT_FIXED_NAVBAR": "on",
-    "REDLIB_DEFAULT_REMOVE_DEFAULT_FEEDS": "off"
+    "REDLIB_DEFAULT_REMOVE_DEFAULT_FEEDS": "off",
+	"REDLIB_REDDIT_COOKIE": ""
   },
   "schema": {
     "REDLIB_DEFAULT_THEME": "list(system|light|dark|black|dracula|nord|laserwave|violet|gold|rosebox|gruvboxdark|gruvboxlight|tokyoNight|icebergDark|doomone|libredditBlack|libredditDark|libredditLight)",
@@ -50,7 +51,8 @@
     "REDLIB_DEFAULT_HIDE_SCORE": "list(on|off)",
     "REDLIB_DEFAULT_HIDE_SIDEBAR_AND_SUMMARY": "list(on|off)",
     "REDLIB_DEFAULT_FIXED_NAVBAR": "list(on|off)",
-    "REDLIB_DEFAULT_REMOVE_DEFAULT_FEEDS": "list(on|off)"
+    "REDLIB_DEFAULT_REMOVE_DEFAULT_FEEDS": "list(on|off)",
+	"REDLIB_REDDIT_COOKIE": "str?"
   },
   "ports": {
     "8080/tcp": "8080"
