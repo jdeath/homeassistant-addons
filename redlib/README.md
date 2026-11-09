@@ -27,7 +27,7 @@ comparison to installing any other Hass.io add-on.
 1. Start the add-on.
 1. Check the logs of the add-on to see if everything went well.
 1. Open WebUI should work via ingress or <your-ip>:port.
-
+1. If you upgraded from an earlier version, delete /addon_configs/2effc9b9_redlib/config.sh
 ## Configuration
 
 ```
