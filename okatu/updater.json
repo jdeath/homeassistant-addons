@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "2026-10-22",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "otaku",
+  "source": "github",
+  "upstream_repo": "enclavum/otaku",
+  "upstream_version": "v0.10.0"
+}

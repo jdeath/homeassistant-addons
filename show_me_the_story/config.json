@@ -1,0 +1,28 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "A local application for writing long fiction with AI. One executable and a browser interface connect to an OpenAI-compatible model service to manage settings, plan batches of chapters, draft and revise prose, and export your work",
+  "environment": {},
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "v4.0.2",
+  "name": "Show Me The Story",
+  "ports": {
+    "48090/tcp": "48090"
+  },
+  "ports_description": {
+    "48090/tcp": "Web interface"
+  },
+  "slug": "show_me_the_story",
+  "startup": "services",
+  "upstream": "v4.0.2",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:48090]",
+  "ingress": false,
+  "init": false,
+  "ingress_port": 48090
+}

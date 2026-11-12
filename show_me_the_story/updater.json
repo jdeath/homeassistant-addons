@@ -1,0 +1,10 @@
+{
+  "github_fulltag": "true",
+  "last_update": "2026-10-22",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "show_me_the_story",
+  "source": "github",
+  "upstream_repo": "Nigh/show-me-the-story",
+  "upstream_version": "v4.0.2"
+}

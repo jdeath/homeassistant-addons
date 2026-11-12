@@ -1,0 +1,27 @@
+{
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
+  "boot": "auto",
+  "description": "Otaku",
+  "environment": {},
+  "map": [
+    "addon_config:rw"
+  ],
+  "version": "v0.10.0",
+  "name": "Otaku",
+  "ports": {
+    "9600/tcp": "9600"
+  },
+  "ports_description": {
+    "9600/tcp": "Web interface"
+  },
+  "slug": "otaku",
+  "startup": "services",
+  "upstream": "v0.10.0",
+  "url": "https://github.com/jdeath/homeassistant-addons",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:8080]",
+  "ingress": true,
+  "ingress_port": 9600
+}
