@@ -4,7 +4,7 @@
     "aarch64"
   ],
   "boot": "auto",
-  "description": "Otaku",
+  "description": "An LLM frontend for roleplay and creative writing",
   "environment": {},
   "map": [
     "addon_config:rw"
