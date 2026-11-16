@@ -1,0 +1,11 @@
+{
+  "github_fulltag": "false",
+  "last_update": "2026-11-06",
+  "beta": "false",
+  "repository": "jdeath/homeassistant-addons",
+  "slug": "marginalia",
+  "source": "github",
+  "upstream_repo": "Enerccio/Marginalia",
+  "upstream_version": "1.8.0",
+  "paused": "false"
+}
