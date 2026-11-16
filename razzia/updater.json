@@ -1,11 +1,11 @@
 {
   "github_fulltag": "true",
-  "last_update": "2026-10-28",
+  "last_update": "2026-11-16",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "razzia",
   "source": "github",
   "upstream_repo": "Ralex91/Razzia",
-  "upstream_version": "4.0.2",
+  "upstream_version": "4.1.0",
   "paused": "false"
 }
