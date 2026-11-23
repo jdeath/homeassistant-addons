@@ -12,7 +12,7 @@
     "addon_config:rw"
   ],
   "image": "neosmemo/memos",
-  "version": "26.11.1",
+  "version": "26.11.2",
   "name": "memos",
   "options": {},
   "ports": {
