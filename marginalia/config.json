@@ -6,14 +6,14 @@
   "boot": "auto",
   "description": "Marginalia is a self-hosted writing tool for long-form fiction co-written with large language models. You write the instructions for each part of the story, the model writes the prose, and Marginalia keeps everything around it in order: the branching story, the world lore, the summaries that keep long books within the model's context, and the prompt settings that shape the style",
   "environment": {
-  "JAVA_TOOL_OPTIONS": "-Duser.home=/config -Xms256m -Xmx1g",
-  "MARGINALIA_DATA": "/config"
+    "JAVA_TOOL_OPTIONS": "-Duser.home=/config -Xms256m -Xmx1g",
+    "MARGINALIA_DATA": "/config"
   },
   "map": [
     "addon_config:rw"
   ],
   "image": "ghcr.io/enerccio/marginalia",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "name": "Marginalia",
   "options": {},
   "ports": {
