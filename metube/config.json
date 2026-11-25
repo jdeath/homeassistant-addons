@@ -9,7 +9,7 @@
     "share:rw",
     "media:rw"
   ],
-  "version": "2026.11.22",
+  "version": "2026.11.24",
   "name": "metube",
   "options": {
     "DELETE_FILE_ON_TRASHCAN": false,
