@@ -1,11 +1,11 @@
 {
   "github_fulltag": "false",
-  "last_update": "2026-10-30",
+  "last_update": "2026-11-25",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
   "slug": "bedrockservermanager",
   "source": "github",
   "upstream_repo": "DMedina559/bedrock-server-manager",
-  "upstream_version": "4.0.2",
+  "upstream_version": "4.1.0",
   "paused": "false"
 }
