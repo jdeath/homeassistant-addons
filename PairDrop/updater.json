@@ -1,6 +1,6 @@
 {
-  "github_fulltag": "true",
-  "fulltag": "true",
+  "github_fulltag": "false",
+  "fulltag": "false",
   "last_update": "2026-11-27",
   "beta": "false",
   "repository": "jdeath/homeassistant-addons",
